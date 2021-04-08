@@ -28,9 +28,9 @@ public class CameraController : MonoBehaviour
         
         _scrollDelta = Input.mouseScrollDelta;
         
-        // follow target
         if (_target != null)
         {
+            // Follow target
             transform.position = _target.transform.position + _cameraOffset;
         }
 
@@ -39,6 +39,7 @@ public class CameraController : MonoBehaviour
 
     private void LateUpdate()
     {
+        // Get player for cam following
         if (_target == null)
         {
             _target = GameObject.FindWithTag("Player");
