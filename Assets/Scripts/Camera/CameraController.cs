@@ -25,6 +25,7 @@ public class CameraController : MonoBehaviour
     
     void Update()
     {
+        
         _scrollDelta = Input.mouseScrollDelta;
         
         // follow target

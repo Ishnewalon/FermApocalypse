@@ -17,6 +17,7 @@ public class GameManager : Singleton<GameManager>
     public GameObject[] systemPrefabs;
     private List<GameObject> _instanceSystemPrefabs = new List<GameObject>();
     private GameState _currentGameState = GameState.PREGAME;
+    private GameObject _menuCamera;
     private string _currentLevelName = string.Empty;
     public string _playerGender = string.Empty;
     
@@ -24,6 +25,7 @@ public class GameManager : Singleton<GameManager>
     {
         DontDestroyOnLoad(this);
         InstanciateSystemPrefab();
+        _menuCamera = GameObject.FindWithTag("MainCamera");
     }
     
     void InstanciateSystemPrefab()
@@ -93,6 +95,7 @@ public class GameManager : Singleton<GameManager>
     
     public void StartGame()
     {
+        _menuCamera.GetComponent<AudioListener>().enabled = false;
         LoadLevel("Farm");
     }
     

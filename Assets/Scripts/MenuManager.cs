@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
@@ -57,6 +58,12 @@ public class MenuManager : MonoBehaviour
          _background.gameObject.SetActive(false);
         GameManager.Instance.TogglePause();
      }
+
+    public void CharacterSelection()
+    {
+        Debug.Log("Hi");
+        _playerGender = EventSystem.current.currentSelectedGameObject.name;
+    }
 
     public void Quit()
     {
