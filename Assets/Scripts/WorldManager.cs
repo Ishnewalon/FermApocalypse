@@ -12,6 +12,8 @@ public class WorldManager : MonoBehaviour
     
     [SerializeField]
     private GameObject _nonBinaryPlayer;
+
+    public GameObject character;
     
     // Start is called before the first frame update
     void Start()
@@ -21,23 +23,19 @@ public class WorldManager : MonoBehaviour
 
     private void CharacterSpawning()
     {
-        Debug.Log(GameManager.Instance._playerGender);
         if (GameManager.Instance._playerGender == "Male")
         {
-            print("Male");
-            Instantiate(_malePlayer, Vector3.zero, Quaternion.identity);
+            character = Instantiate(_malePlayer, Vector3.zero, Quaternion.identity);
         }
 
         if (GameManager.Instance._playerGender.Equals("Non-Binary"))
         {
-            print("NB");
-            Instantiate(_nonBinaryPlayer, Vector3.zero, Quaternion.identity);
+            character = Instantiate(_nonBinaryPlayer, Vector3.zero, Quaternion.identity);
         }
 
         if (GameManager.Instance._playerGender.Equals("Female"))
         {
-            print("female");
-            Instantiate(_femalePlayer, Vector3.zero, Quaternion.identity);
+            character = Instantiate(_femalePlayer, Vector3.zero, Quaternion.identity);
         }
     }
 

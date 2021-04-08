@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,7 +20,6 @@ public class CameraController : MonoBehaviour
     void Start()
     {
         _camera = GetComponent<Camera>();
-        _target = GameObject.FindWithTag("Player");
         _cameraOffset = new Vector3(0, 0, -10);
     }
     
@@ -32,6 +32,14 @@ public class CameraController : MonoBehaviour
         transform.position = _target.transform.position + _cameraOffset;
         
         ManageZoom();
+    }
+
+    private void LateUpdate()
+    {
+        if (_target == null)
+        {
+            _target = GameObject.FindWithTag("Player");
+        }
     }
 
     private void ManageZoom()
