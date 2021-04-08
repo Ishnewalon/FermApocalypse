@@ -29,8 +29,11 @@ public class CameraController : MonoBehaviour
         _scrollDelta = Input.mouseScrollDelta;
         
         // follow target
-        transform.position = _target.transform.position + _cameraOffset;
-        
+        if (_target != null)
+        {
+            transform.position = _target.transform.position + _cameraOffset;
+        }
+
         ManageZoom();
     }
 
