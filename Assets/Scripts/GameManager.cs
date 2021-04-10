@@ -65,6 +65,23 @@ public class GameManager : Singleton<GameManager>
         print("load completed");
     }
     
+    public void UnloadLevel(string levelName)
+    {
+        AsyncOperation unloadSceneAsync = SceneManager.UnloadSceneAsync(levelName);
+        if (unloadSceneAsync == null)
+        {
+            print("error unloading scene : " + levelName);
+            return;
+        }
+
+        unloadSceneAsync.completed += OnUnloadSceneComplete;
+    }
+    
+    private void OnUnloadSceneComplete(AsyncOperation obj)
+    {
+        print("unload completed");
+    }
+    
     void UpdateGameState(GameState newGameState)
     {
         var previousGameState = _currentGameState;

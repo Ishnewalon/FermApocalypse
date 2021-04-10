@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WorldManager : MonoBehaviour
 {
@@ -28,12 +29,23 @@ public class WorldManager : MonoBehaviour
 
     private void CharacterSpawning()
     {
+        Vector3 startPosition = Vector3.zero;
         Debug.Log(GameManager.Instance._playerGender);
         if (GameManager.Instance._playerGender == null)
         {
             GameManager.Instance.SetCharacterGender("Male");
         }
-        character = Instantiate(_characterPrefabs[GameManager.Instance._playerGender], Vector3.zero, Quaternion.identity);
+
+        if (SceneManager.GetActiveScene().name.Equals("Farm"))
+        {
+            startPosition = new Vector3(-22, 28, 0);
+        }
+        else if (SceneManager.GetActiveScene().name.Equals("Town") || SceneManager.GetActiveScene().name.Equals("MainMenu"))
+        {
+            startPosition = new Vector3(32, 21, 0);
+        }
+        Debug.Log(SceneManager.GetActiveScene().name);
+        character = Instantiate(_characterPrefabs[GameManager.Instance._playerGender], startPosition, Quaternion.identity);
     }
 
     // Update is called once per frame

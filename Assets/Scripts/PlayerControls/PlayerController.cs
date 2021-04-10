@@ -47,4 +47,18 @@ public class PlayerController : MonoBehaviour
         _animator.SetFloat(_animatorHeadingX, _heading.x);
         _animator.SetFloat(_animatorHeadingY, _heading.y);
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag.Equals("goToTown"))
+        {
+            GameManager.Instance.UnloadLevel("Farm");
+            GameManager.Instance.LoadLevel("Town");
+        }
+        else if (other.gameObject.tag.Equals("goToFarm"))
+        {
+            GameManager.Instance.UnloadLevel("Town");
+            GameManager.Instance.LoadLevel("Farm");
+        }
+    }
 }

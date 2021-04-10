@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3616362377812290560}
   - component: {fileID: 3616362377812290561}
   - component: {fileID: 3616362377812290575}
-  - component: {fileID: 4143175141019735240}
+  - component: {fileID: 3751314220665057734}
   m_Layer: 0
   m_Name: MalePlayer
   m_TagString: Player
@@ -139,8 +139,8 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!70 &4143175141019735240
-CapsuleCollider2D:
+--- !u!61 &3751314220665057734
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -149,9 +149,19 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.000000029802322, y: -0.5423722}
-  m_Size: {x: 0.9152555, y: 0.91525555}
-  m_Direction: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 2, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2}
+  m_EdgeRadius: 0
