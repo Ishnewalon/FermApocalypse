@@ -2,9 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fdd690f3-c303-4fe8-9848-dc4d2937c8a6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.FermApocalypse/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FermApocalypse/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.FermApocalypse/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FermApocalypse/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FermApocalypse/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FermApocalypse/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WorldManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WorldManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Farm.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Farm.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/BaseSprites/Materials/house.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/BaseSprites/Materials/house.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/BaseSprites/fence.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/BaseSprites/fence.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/BaseSprites/forest_tiles.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/BaseSprites/forest_tiles.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/BaseSprites/house.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/BaseSprites/house.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tiles/Palettes/TerrainPalette.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tiles/Palettes/TerrainPalette.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +99,7 @@
       <workItem from="1617912648118" duration="64000" />
       <workItem from="1617912963817" duration="1048000" />
       <workItem from="1617915770021" duration="1000" />
-      <workItem from="1618067021848" duration="1370000" />
+      <workItem from="1618067021848" duration="3245000" />
     </task>
     <servers />
   </component>
