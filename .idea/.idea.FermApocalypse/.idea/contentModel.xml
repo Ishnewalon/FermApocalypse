@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Jorda\AppData\Local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Jorda\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_FermApocalypse.-1943954964.00" t="ExcludeRecursive" />
-    <e p="V:\ecole\H21\Game Thing\Workspace\FermApocalypse" t="IncludeRecursive">
+    <e p="C:\Users\Ishne\AppData\Local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Ishne\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_FermApocalypse.-721782837.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Ishne\Documents\Technique_Info\Session_4\Vidgy\FermApocalypse" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">

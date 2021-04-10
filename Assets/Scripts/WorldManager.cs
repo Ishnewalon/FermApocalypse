@@ -14,29 +14,26 @@ public class WorldManager : MonoBehaviour
     private GameObject _nonBinaryPlayer;
 
     public GameObject character;
+
+    private Dictionary<string, GameObject> _characterPrefabs = new Dictionary<string, GameObject>();
     
     // Start is called before the first frame update
     void Start()
     {
+        _characterPrefabs["Male"] = _malePlayer;
+        _characterPrefabs["Female"] = _femalePlayer;
+        _characterPrefabs["Non-Binary"] = _nonBinaryPlayer;
         CharacterSpawning();
     }
 
     private void CharacterSpawning()
     {
-        if (GameManager.Instance._playerGender == "Male")
+        Debug.Log(GameManager.Instance._playerGender);
+        if (GameManager.Instance._playerGender == null)
         {
-            character = Instantiate(_malePlayer, Vector3.zero, Quaternion.identity);
+            GameManager.Instance.SetCharacterGender("Male");
         }
-
-        if (GameManager.Instance._playerGender.Equals("Non-Binary"))
-        {
-            character = Instantiate(_nonBinaryPlayer, Vector3.zero, Quaternion.identity);
-        }
-
-        if (GameManager.Instance._playerGender.Equals("Female"))
-        {
-            character = Instantiate(_femalePlayer, Vector3.zero, Quaternion.identity);
-        }
+        character = Instantiate(_characterPrefabs[GameManager.Instance._playerGender], Vector3.zero, Quaternion.identity);
     }
 
     // Update is called once per frame
