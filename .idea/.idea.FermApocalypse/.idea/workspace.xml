@@ -2,13 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fdd690f3-c303-4fe8-9848-dc4d2937c8a6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.FermApocalypse/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FermApocalypse/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FermApocalypse/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FermApocalypse/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/FemalePlayer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/FemalePlayer.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/MalePlayer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/MalePlayer.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Farm.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Farm.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Camera/CameraController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Camera/CameraController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/BaseSprites/Materials/Fences.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/BaseSprites/Materials/Fences.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/BaseSprites/Materials/Trees.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/BaseSprites/Materials/Trees.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/BaseSprites/fruit-trees.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/BaseSprites/fruit-trees.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Town.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Town.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerControls/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerControls/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WorldManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WorldManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -34,10 +35,10 @@
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Scripts/PlayerControls/PlayerMovement.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/MenuManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Camera/CameraController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/PlayerControls/PlayerController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/WorldManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Camera/CameraController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1qZqbTSrMImbzBprphDlRRN9LTq" />
@@ -98,6 +99,7 @@
       <workItem from="1617915770021" duration="1000" />
       <workItem from="1618067021848" duration="5090000" />
       <workItem from="1618146838849" duration="1330000" />
+      <workItem from="1618316787952" duration="5519000" />
     </task>
     <servers />
   </component>

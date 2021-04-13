@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using DefaultNamespace;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
@@ -12,6 +14,18 @@ public class GameManager : Singleton<GameManager>
         RUNNING,
         PAUSE
     }
+
+    public enum SpawnLocation
+    {
+        FARM,
+        TOWN
+    }
+    
+    private SpawnLocation _currentSpawnLocation = SpawnLocation.FARM;
+    public Vector3 _characterSpawnPoint = new Vector3(32, 21, 0);
+
+    public Boolean hasSpawned = false;
+        
     public Events.EventGameState onGameStateChanged;
     private List<AsyncOperation> _loadOperations = new List<AsyncOperation>();
     public GameObject[] systemPrefabs;
@@ -60,6 +74,14 @@ public class GameManager : Singleton<GameManager>
             if (_loadOperations.Count == 0)
             {
                 UpdateGameState(GameState.RUNNING);
+                
+                if (_currentLevelName.Equals("Farm"))
+                {
+                    UpdateSpawnLocation(SpawnLocation.FARM);
+                }else if (_currentLevelName.Equals("Town"))
+                {
+                    UpdateSpawnLocation(SpawnLocation.TOWN);
+                }
             }
         }
         print("load completed");
@@ -108,6 +130,26 @@ public class GameManager : Singleton<GameManager>
     {
         get => _currentGameState;
         private set => _currentGameState = value;
+    }
+    
+    void UpdateSpawnLocation(SpawnLocation newSpawnLocation)
+    {
+        _currentSpawnLocation = newSpawnLocation;
+        switch (_currentSpawnLocation)
+        {
+            case SpawnLocation.FARM:
+                _characterSpawnPoint = new Vector3(32, 21, 0);
+                break;
+            case SpawnLocation.TOWN:
+                _characterSpawnPoint = new Vector3(-26, 13, 0);
+                break;
+        }
+    }
+    
+    public SpawnLocation CurrentSpawnLocation
+    {
+        get => _currentSpawnLocation;
+        private set => _currentSpawnLocation = value;
     }
     
     public void StartGame()

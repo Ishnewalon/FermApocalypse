@@ -18,35 +18,41 @@ public class WorldManager : MonoBehaviour
 
     private Dictionary<string, GameObject> _characterPrefabs = new Dictionary<string, GameObject>();
     
+    
+    
     // Start is called before the first frame update
     void Start()
     {
         _characterPrefabs["Male"] = _malePlayer;
         _characterPrefabs["Female"] = _femalePlayer;
         _characterPrefabs["Non-Binary"] = _nonBinaryPlayer;
+        
         CharacterSpawning();
     }
 
     private void CharacterSpawning()
     {
-        Vector3 startPosition = Vector3.zero;
         Debug.Log(GameManager.Instance._playerGender);
+        
         if (GameManager.Instance._playerGender == null)
         {
             GameManager.Instance.SetCharacterGender("Male");
         }
 
-        if (SceneManager.GetActiveScene().name.Equals("Farm"))
+        if (!GameManager.Instance.hasSpawned)
         {
-            startPosition = new Vector3(-22, 28, 0);
+            character = Instantiate(_characterPrefabs[GameManager.Instance._playerGender], GameManager.Instance._characterSpawnPoint, Quaternion.identity);
+            GameManager.Instance.hasSpawned = true;
         }
-        else if (SceneManager.GetActiveScene().name.Equals("Town") || SceneManager.GetActiveScene().name.Equals("MainMenu"))
+        else
         {
-            startPosition = new Vector3(32, 21, 0);
+            character = GameObject.FindWithTag("Player");
+            character.transform.position = GameManager.Instance._characterSpawnPoint;
         }
+
         Debug.Log(SceneManager.GetActiveScene().name);
-        character = Instantiate(_characterPrefabs[GameManager.Instance._playerGender], startPosition, Quaternion.identity);
     }
+
 
     // Update is called once per frame
     void Update()

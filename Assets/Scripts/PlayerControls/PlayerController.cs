@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
         _animator.SetFloat(_animatorHeadingY, _heading.y);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.tag.Equals("goToTown"))
         {
