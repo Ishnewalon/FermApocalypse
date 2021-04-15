@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -60,7 +61,7 @@ public class TimeManager : MonoBehaviour
 
     public void UpdateDisplay()
     {
-        timeText.text = GameManager.Instance.hours + ":" + GameManager.Instance.minutes;
+        timeText.text = String.Format( "{0:00} : {1:00}"  , GameManager.Instance.hours, GameManager.Instance.minutes);
         dayText.text = "Day: " + (GameManager.Instance.day).ToString();
         monthText.text = "Month:" + (GameManager.Instance.month).ToString();
         yearText.text = "Year: " + (GameManager.Instance.year).ToString();
