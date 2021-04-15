@@ -10,21 +10,8 @@ public class TimeManager : MonoBehaviour
     [SerializeField] private Text dayText;
     [SerializeField] private Text monthText;
     [SerializeField] private Text yearText;
-
-    private double seconds;
-    private double minutes;
-    private double hours;
     
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        hours = 7;
-        minutes = 0;
-        seconds = 0;
-    }
-
-    // Update is called once per frame
+    
     void Update()
     {
         CalculateTime();
@@ -32,22 +19,22 @@ public class TimeManager : MonoBehaviour
 
     public void CalculateTime()
     {
-        seconds += Time.deltaTime * Timescale;
+        GameManager.Instance.seconds += Time.deltaTime * Timescale;
 
-        if (seconds >= 60)
+        if (GameManager.Instance.seconds >= 60)
         {
-            minutes++;
-            seconds = 0;
+            GameManager.Instance.minutes++;
+            GameManager.Instance.seconds = 0;
         }
-        else if (minutes >= 60)
+        else if (GameManager.Instance.minutes >= 60)
         {
-            hours++;
-            minutes = 0;
+            GameManager.Instance.hours++;
+            GameManager.Instance.minutes = 0;
         }
-        else if (hours >= 9)
+        else if (GameManager.Instance.hours >= 9)
         {
             GameManager.Instance.day++;
-            hours = 7;
+            GameManager.Instance.hours = 7;
             CalculateCalendar();
         }
         UpdateDisplay();
@@ -69,7 +56,7 @@ public class TimeManager : MonoBehaviour
 
     public void UpdateDisplay()
     {
-        timeText.text = hours + ":" + minutes;
+        timeText.text = GameManager.Instance.hours + ":" + GameManager.Instance.minutes;
         dayText.text = "Day: " + (GameManager.Instance.day).ToString();
         monthText.text = "Month:" + (GameManager.Instance.month).ToString();
         yearText.text = "Year: " + (GameManager.Instance.year).ToString();
