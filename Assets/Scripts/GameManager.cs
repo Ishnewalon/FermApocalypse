@@ -34,6 +34,9 @@ public class GameManager : Singleton<GameManager>
     private GameObject _menuCamera;
     private string _currentLevelName = string.Empty;
     public string _playerGender = string.Empty;
+    public double day;
+    public double month;
+    public double year;
     
     public void Start()
     {
@@ -156,6 +159,9 @@ public class GameManager : Singleton<GameManager>
     {
         _menuCamera.GetComponent<AudioListener>().enabled = false;
         LoadLevel("Farm");
+    day = 1;
+    month = 1;
+    year = 1;
     }
     
     public void TogglePause()
