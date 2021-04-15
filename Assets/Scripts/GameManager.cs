@@ -126,8 +126,6 @@ public class GameManager : Singleton<GameManager>
             case GameState.PAUSE:
                 Time.timeScale = 0;
                 break;
-            default:
-                break;
         }
     
         onGameStateChanged.Invoke(_currentGameState, previousGameState);
