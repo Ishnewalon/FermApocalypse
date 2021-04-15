@@ -64351,4 +64351,5 @@ MonoBehaviour:
   _malePlayer: {fileID: 3616362377812290564, guid: b15b4bb8811e4d14da56981b25a71fe1, type: 3}
   _femalePlayer: {fileID: 4008622151287038719, guid: e632d3c6e3865a84ebd3d07f6c6387d6, type: 3}
   _nonBinaryPlayer: {fileID: 0}
+  _gameUI: {fileID: 4534965518186970010, guid: f6d9566db85ad0d47a5e28e049b13a94, type: 3}
   character: {fileID: 0}

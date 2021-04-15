@@ -34,6 +34,7 @@ public class GameManager : Singleton<GameManager>
     private GameObject _menuCamera;
     private string _currentLevelName = string.Empty;
     public string _playerGender = string.Empty;
+    public bool hasGameUISpawned = false;
     public double seconds;
     public double minutes;
     public double hours;

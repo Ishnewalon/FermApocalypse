@@ -1,16 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class TimeManager : MonoBehaviour
 {
     private const int Timescale = 180; // 60 1 second irl = 1 ingame minute
-    [SerializeField] private Text timeText;
-    [SerializeField] private Text dayText;
-    [SerializeField] private Text monthText;
-    [SerializeField] private Text yearText;
+    [SerializeField] 
+    private Text timeText;
     
+    [SerializeField] 
+    private Text dayText;
+    
+    [SerializeField] 
+    private Text monthText;
+    
+    [SerializeField] 
+    private Text yearText;
     
     void Update()
     {

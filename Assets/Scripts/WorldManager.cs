@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -14,6 +13,9 @@ public class WorldManager : MonoBehaviour
     [SerializeField]
     private GameObject _nonBinaryPlayer;
 
+    [SerializeField] 
+    private GameObject _gameUI;
+    
     public GameObject character;
 
     private Dictionary<string, GameObject> _characterPrefabs = new Dictionary<string, GameObject>();
@@ -26,7 +28,7 @@ public class WorldManager : MonoBehaviour
         _characterPrefabs["Male"] = _malePlayer;
         _characterPrefabs["Female"] = _femalePlayer;
         _characterPrefabs["Non-Binary"] = _nonBinaryPlayer;
-        
+        SpawnGameUI();
         CharacterSpawning();
     }
 
@@ -53,10 +55,12 @@ public class WorldManager : MonoBehaviour
         Debug.Log(SceneManager.GetActiveScene().name);
     }
 
-
-    // Update is called once per frame
-    void Update()
+    public void SpawnGameUI()
     {
-        
+        if (!GameManager.Instance.hasGameUISpawned)
+        {
+            Instantiate(_gameUI, transform.position, transform.rotation);
+            GameManager.Instance.hasGameUISpawned = true;
+        }
     }
 }
