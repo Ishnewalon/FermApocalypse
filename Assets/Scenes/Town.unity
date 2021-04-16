@@ -175,7 +175,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 69a65aa85bf7e6f459114d053f2c134a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14853,7 +14853,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 69a65aa85bf7e6f459114d053f2c134a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -66039,7 +66039,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 69a65aa85bf7e6f459114d053f2c134a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -66238,4 +66238,5 @@ MonoBehaviour:
   _femalePlayer: {fileID: 4008622151287038719, guid: e632d3c6e3865a84ebd3d07f6c6387d6, type: 3}
   _nonBinaryPlayer: {fileID: 0}
   _gameUI: {fileID: 4534965518186970010, guid: f6d9566db85ad0d47a5e28e049b13a94, type: 3}
+  _globalLight: {fileID: 4177962325228149624, guid: 9bed8f19c62da4f499727aefc535145b, type: 3}
   character: {fileID: 0}

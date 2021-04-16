@@ -15,6 +15,9 @@ public class WorldManager : MonoBehaviour
 
     [SerializeField] 
     private GameObject _gameUI;
+
+    [SerializeField] 
+    private GameObject _globalLight;
     
     public GameObject character;
 
@@ -25,11 +28,21 @@ public class WorldManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SpawnLight();
         _characterPrefabs["Male"] = _malePlayer;
         _characterPrefabs["Female"] = _femalePlayer;
         _characterPrefabs["Non-Binary"] = _nonBinaryPlayer;
         SpawnGameUI();
         CharacterSpawning();
+        }
+
+    public void SpawnLight()
+    {
+        if (!GameManager.Instance.hasLightBeenSpawned)
+        {
+            Instantiate(_globalLight, transform.position, transform.rotation);
+            GameManager.Instance.hasLightBeenSpawned = true;
+        }
     }
 
     private void CharacterSpawning()

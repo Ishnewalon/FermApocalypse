@@ -41,7 +41,7 @@ public class GameManager : Singleton<GameManager>
     public double day;
     public double month;
     public double year;
-    
+    public bool hasLightBeenSpawned = false;
     public void Start()
     {
         DontDestroyOnLoad(this);
@@ -161,7 +161,7 @@ public class GameManager : Singleton<GameManager>
     {
         _menuCamera.GetComponent<AudioListener>().enabled = false;
         LoadLevel("Farm");
-        hours = 7;
+        hours = 15;
         minutes = 0;
         seconds = 0;
         day = 1;
