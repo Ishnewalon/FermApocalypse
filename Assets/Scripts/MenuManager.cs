@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
@@ -7,9 +8,21 @@ using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
-    [SerializeField] private GameObject _background;
-    [SerializeField] private GameObject _startMenu;
-    [SerializeField] private GameObject _pauseMenu;
+    [SerializeField] 
+    private GameObject _background;
+    
+    [SerializeField] 
+    private GameObject _startMenu;
+    
+    [SerializeField] 
+    private GameObject _pauseMenu;
+    
+    [SerializeField] 
+    private GameObject _endDayMenu;
+
+    [SerializeField]
+    private TextMeshPro _endDayTMP;
+    
     private string _playerGender;
     public void Start()
     {
@@ -28,7 +41,13 @@ public class MenuManager : MonoBehaviour
             _pauseMenu.gameObject.SetActive(true);
             _background.gameObject.SetActive(true);
         }
-        
+        else if (previousState == GameManager.GameState.RUNNING && currentState == GameManager.GameState.ENDDAY)
+        {
+            _endDayMenu.gameObject.SetActive(true);
+            _endDayTMP.text = "End of Day " + (GameManager.Instance.day - 1);
+            _background.gameObject.SetActive(true);
+        }
+
     }
     void Update()
     {
@@ -37,6 +56,10 @@ public class MenuManager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 GameManager.Instance.TogglePause();
+            }
+            else if (GameManager.Instance.hours == 24)
+            {
+                GameManager.Instance.ToggleNewDay();
             }
         }
 
@@ -68,6 +91,13 @@ public class MenuManager : MonoBehaviour
     public void Quit()
     {
         GameManager.Instance.QuitGame();
+    }
+
+    public void NextDay()
+    {
+        //Unload current scene
+        //Load House
+        GameManager.Instance.ToggleNewDay();
     }
 
 }

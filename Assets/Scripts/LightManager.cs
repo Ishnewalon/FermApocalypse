@@ -11,15 +11,25 @@ public class LightManager : MonoBehaviour
     {
         if ((GameManager.Instance.hours >= 17) && (GameManager.Instance.hours <= 19))
         {
-            ChangeLightIntensity();
+            DimLightIntensity();
+        }
+
+        if ((GameManager.Instance.hours >= 7) && (GameManager.Instance.hours < 17))
+        {
+            brigtenLightIntensity();
         }
     }
 
-    public void ChangeLightIntensity()
+    public void DimLightIntensity()
     {
         if (_globalLight.intensity >= 0.5)
         {
             _globalLight.intensity -= 0.0001f;
         }
+    }
+
+    public void brigtenLightIntensity()
+    {
+        _globalLight.intensity = 1;
     }
 }

@@ -12,7 +12,8 @@ public class GameManager : Singleton<GameManager>
     {
         PREGAME,
         RUNNING,
-        PAUSE
+        PAUSE,
+        ENDDAY
     }
 
     public enum SpawnLocation
@@ -126,6 +127,9 @@ public class GameManager : Singleton<GameManager>
             case GameState.PAUSE:
                 Time.timeScale = 0;
                 break;
+            case GameState.ENDDAY:
+                Time.timeScale = 0;
+                break;
         }
     
         onGameStateChanged.Invoke(_currentGameState, previousGameState);
@@ -183,5 +187,10 @@ public class GameManager : Singleton<GameManager>
     public void SetCharacterGender(string gender)
     {
         _playerGender = gender;
+    }
+    
+    public void ToggleNewDay()
+    {
+        UpdateGameState(_currentGameState == GameState.RUNNING ? GameState.ENDDAY : GameState.RUNNING);
     }
 }
