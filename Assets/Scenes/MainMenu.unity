@@ -235,11 +235,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2eb6615c16bacb4fa7b359e97e3658b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _characterSpawnPoint: {x: 32, y: 21, z: 0}
+  hasSpawned: 0
   onGameStateChanged:
     m_PersistentCalls:
       m_Calls: []
   systemPrefabs:
   - {fileID: 4725851922158784423, guid: eb552d16d405b3441ad910a5e11bacd5, type: 3}
+  _playerGender: 
+  hasGameUISpawned: 0
+  seconds: 0
+  minutes: 0
+  hours: 0
+  day: 0
+  month: 0
+  year: 0
+  hasLightBeenSpawned: 0
 --- !u!4 &149024204
 Transform:
   m_ObjectHideFlags: 0
