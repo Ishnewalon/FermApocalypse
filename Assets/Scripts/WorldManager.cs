@@ -34,7 +34,7 @@ public class WorldManager : MonoBehaviour
         _characterPrefabs["Non-Binary"] = _nonBinaryPlayer;
         SpawnGameUI();
         CharacterSpawning();
-        }
+    }
 
     public void SpawnLight()
     {
@@ -62,6 +62,7 @@ public class WorldManager : MonoBehaviour
         else
         {
             character = GameObject.FindWithTag("Player");
+            Debug.Log(GameManager.Instance._characterSpawnPoint);
             character.transform.position = GameManager.Instance._characterSpawnPoint;
         }
 

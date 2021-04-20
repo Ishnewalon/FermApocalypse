@@ -18,11 +18,13 @@ public class GameManager : Singleton<GameManager>
 
     public enum SpawnLocation
     {
-        FARM,
-        TOWN
+        FARMFROMTOWN,
+        TOWN,
+        HOUSE,
+        FARMFROMHOUSE
     }
     
-    private SpawnLocation _currentSpawnLocation = SpawnLocation.FARM;
+    private SpawnLocation _currentSpawnLocation = SpawnLocation.FARMFROMTOWN;
     public Vector3 _characterSpawnPoint = new Vector3(32, 21, 0);
 
     public Boolean hasSpawned = false;
@@ -82,13 +84,18 @@ public class GameManager : Singleton<GameManager>
             if (_loadOperations.Count == 0)
             {
                 UpdateGameState(GameState.RUNNING);
-                
-                if (_currentLevelName.Equals("Farm"))
+
+                switch (_currentLevelName)
                 {
-                    UpdateSpawnLocation(SpawnLocation.FARM);
-                }else if (_currentLevelName.Equals("Town"))
-                {
-                    UpdateSpawnLocation(SpawnLocation.TOWN);
+                    case "Farm":
+                        UpdateSpawnLocation(SpawnLocation.FARMFROMTOWN);
+                        break;
+                    case "Town":
+                        UpdateSpawnLocation(SpawnLocation.TOWN);
+                        break;
+                    case "FarmHouse":
+                        UpdateSpawnLocation(SpawnLocation.HOUSE);
+                        break;
                 }
             }
         }
@@ -146,11 +153,17 @@ public class GameManager : Singleton<GameManager>
         _currentSpawnLocation = newSpawnLocation;
         switch (_currentSpawnLocation)
         {
-            case SpawnLocation.FARM:
+            case SpawnLocation.FARMFROMTOWN:
                 _characterSpawnPoint = new Vector3(32, 21, 0);
                 break;
             case SpawnLocation.TOWN:
                 _characterSpawnPoint = new Vector3(-26, 13, 0);
+                break;
+            case SpawnLocation.HOUSE:
+                _characterSpawnPoint = new Vector3(-10, 14, 0);
+                break;
+            case SpawnLocation.FARMFROMHOUSE:
+                _characterSpawnPoint = new Vector3(9.5f, 5.5f, 0);
                 break;
         }
     }

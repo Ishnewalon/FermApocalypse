@@ -50,6 +50,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
+        Debug.Log(other.gameObject.tag);
         if (other.gameObject.tag.Equals("goToTown"))
         {
             GameManager.Instance.UnloadLevel("Farm");
@@ -58,6 +59,16 @@ public class PlayerController : MonoBehaviour
         else if (other.gameObject.tag.Equals("goToFarm"))
         {
             GameManager.Instance.UnloadLevel("Town");
+            GameManager.Instance.LoadLevel("Farm");
+        }
+        else if (other.gameObject.tag.Equals("enterHouse"))
+        {
+            GameManager.Instance.UnloadLevel("Farm");
+            GameManager.Instance.LoadLevel("FarmHouse");
+        }
+        else if (other.gameObject.tag.Equals("exitHouse"))
+        {
+            GameManager.Instance.UnloadLevel("FarmHouse");
             GameManager.Instance.LoadLevel("Farm");
         }
     }
