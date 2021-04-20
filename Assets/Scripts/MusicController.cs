@@ -36,12 +36,17 @@ public class MusicController : MonoBehaviour
         {
            SetNightMusic();
         }
+
+        if (GameManager.Instance.hours == 7 && GameManager.Instance.minutes == 0)
+        {
+            SetDayMusic();
+        }
     }
     
     public void SetDayMusic()
     {
         _audioSource.Stop();
-        int randomNumber = Random.Range(0, _audioClips.Count);
+        int randomNumber = Random.Range(0, _audioClips.Count - 1);
         _audioSource.clip = _audioClips[randomNumber];
         _audioSource.Play();
     }

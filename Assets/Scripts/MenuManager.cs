@@ -59,7 +59,7 @@ public class MenuManager : MonoBehaviour
             {
                 GameManager.Instance.TogglePause();
             }
-            else if (GameManager.Instance.hours == 24)
+            else if (GameManager.Instance.hours == 1)
             {
                 GameManager.Instance.ToggleNewDay();
             }

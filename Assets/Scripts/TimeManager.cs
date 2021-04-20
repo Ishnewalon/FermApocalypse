@@ -39,7 +39,7 @@ public class TimeManager : MonoBehaviour
         else if (GameManager.Instance.hours >= 24)
         {
             GameManager.Instance.day++;
-            GameManager.Instance.hours = 7;
+            GameManager.Instance.hours = 1;
             CalculateCalendar();
         }
         UpdateDisplay();

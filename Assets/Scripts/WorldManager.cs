@@ -18,6 +18,8 @@ public class WorldManager : MonoBehaviour
 
     [SerializeField] 
     private GameObject _globalLight;
+
+    [SerializeField] private GameObject _musicPlayer;
     
     public GameObject character;
 
@@ -33,6 +35,7 @@ public class WorldManager : MonoBehaviour
         _characterPrefabs["Female"] = _femalePlayer;
         _characterPrefabs["Non-Binary"] = _nonBinaryPlayer;
         SpawnGameUI();
+        SpawnMusicPlayer();
         CharacterSpawning();
     }
 
@@ -75,6 +78,15 @@ public class WorldManager : MonoBehaviour
         {
             Instantiate(_gameUI, transform.position, transform.rotation);
             GameManager.Instance.hasGameUISpawned = true;
+        }
+    }
+
+    public void SpawnMusicPlayer()
+    {
+        if (!GameManager.Instance.hasMusicPlayerSpawned)
+        {
+            Instantiate(_musicPlayer, transform.position, transform.rotation);
+            GameManager.Instance.hasMusicPlayerSpawned = true;
         }
     }
 }

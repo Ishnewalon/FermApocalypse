@@ -2599,6 +2599,7 @@ MonoBehaviour:
   _nonBinaryPlayer: {fileID: 2107477408744907372, guid: 72afd6a0ab7eabb4c8e1e2580b6973d8, type: 3}
   _gameUI: {fileID: 4534965518186970010, guid: f6d9566db85ad0d47a5e28e049b13a94, type: 3}
   _globalLight: {fileID: 4177962325228149624, guid: 9bed8f19c62da4f499727aefc535145b, type: 3}
+  _musicPlayer: {fileID: 8081334264218375524, guid: c535afdd059916e47848f3d7d9c9fe73, type: 3}
   character: {fileID: 0}
 --- !u!1 &1902135485
 GameObject:

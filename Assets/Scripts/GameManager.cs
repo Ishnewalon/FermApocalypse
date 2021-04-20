@@ -45,6 +45,7 @@ public class GameManager : Singleton<GameManager>
     public double month;
     public double year;
     public bool hasLightBeenSpawned = false;
+    public bool hasMusicPlayerSpawned = false;
     public void Start()
     {
         DontDestroyOnLoad(this);
@@ -211,6 +212,7 @@ public class GameManager : Singleton<GameManager>
     
     public void ToggleNewDay()
     {
+        hours = (hours == 1 ? 0 : 7) ;
         UpdateGameState(_currentGameState == GameState.RUNNING ? GameState.ENDDAY : GameState.RUNNING);
     }
 }
