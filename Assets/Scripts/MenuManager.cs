@@ -45,7 +45,7 @@ public class MenuManager : MonoBehaviour
         else if (previousState == GameManager.GameState.RUNNING && currentState == GameManager.GameState.ENDDAY)
         {
             _endDayMenu.gameObject.SetActive(true);
-            _endDayTMP.text = "End of Day " + (GameManager.Instance.day);
+            _endDayTMP.text = "End of Day " + (GameManager.Instance.day - 1);
             _background.gameObject.SetActive(true);
         }
 
