@@ -19,9 +19,10 @@ public class MenuManager : MonoBehaviour
     
     [SerializeField] 
     private GameObject _endDayMenu;
-
+    
     [SerializeField]
-    private TextMeshPro _endDayTMP;
+    private Text _endDayTMP;
+
     
     private string _playerGender;
     public void Start()
@@ -44,9 +45,10 @@ public class MenuManager : MonoBehaviour
         else if (previousState == GameManager.GameState.RUNNING && currentState == GameManager.GameState.ENDDAY)
         {
             _endDayMenu.gameObject.SetActive(true);
-            _endDayTMP.text = "End of Day " + (GameManager.Instance.day - 1);
+            _endDayTMP.text = "End of Day " + (GameManager.Instance.day);
             _background.gameObject.SetActive(true);
         }
+
 
     }
     void Update()
@@ -97,6 +99,8 @@ public class MenuManager : MonoBehaviour
     {
         //Unload current scene
         //Load House
+        _endDayMenu.gameObject.SetActive(false);
+        _background.gameObject.SetActive(false);
         GameManager.Instance.ToggleNewDay();
     }
 

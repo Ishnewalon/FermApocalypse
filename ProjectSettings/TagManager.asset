@@ -6,6 +6,7 @@ TagManager:
   tags:
   - goToTown
   - goToFarm
+  - endDay
   layers:
   - Default
   - TransparentFX
