@@ -88,7 +88,14 @@ public class GameManager : Singleton<GameManager>
                 switch (_currentLevelName)
                 {
                     case "Farm":
-                        UpdateSpawnLocation(SpawnLocation.FARMFROMTOWN);
+                        if (_currentSpawnLocation == SpawnLocation.HOUSE)
+                        {
+                            UpdateSpawnLocation(SpawnLocation.FARMFROMHOUSE);
+                        }
+                        else
+                        {
+                            UpdateSpawnLocation(SpawnLocation.FARMFROMTOWN);
+                        }
                         break;
                     case "Town":
                         UpdateSpawnLocation(SpawnLocation.TOWN);
@@ -163,7 +170,7 @@ public class GameManager : Singleton<GameManager>
                 _characterSpawnPoint = new Vector3(-10, 14, 0);
                 break;
             case SpawnLocation.FARMFROMHOUSE:
-                _characterSpawnPoint = new Vector3(9.5f, 5.5f, 0);
+                _characterSpawnPoint = new Vector3(9.5f, 5f, 0);
                 break;
         }
     }
