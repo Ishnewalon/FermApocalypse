@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = System.Random;
 
 public class PlayerController : MonoBehaviour
 {
@@ -17,10 +18,12 @@ public class PlayerController : MonoBehaviour
     private readonly int _animatorHeadingX = Animator.StringToHash("headingX");
     private readonly int _animatorHeadingY = Animator.StringToHash("headingY");
 
+
     private void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
+        
     }
     
     private void Update()
@@ -35,6 +38,8 @@ public class PlayerController : MonoBehaviour
 
         // idle vs walk
         _animator.SetFloat(_animatorVelocity, _rigidbody2D.velocity.sqrMagnitude);
+
+        
     }
 
     private void FixedUpdate()
@@ -72,4 +77,6 @@ public class PlayerController : MonoBehaviour
             GameManager.Instance.LoadLevel("Farm");
         }
     }
+
+
 }
