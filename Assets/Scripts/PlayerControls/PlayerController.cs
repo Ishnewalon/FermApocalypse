@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D _rigidbody2D;
 
     private Animator _animator;
+
+    private Inventory _inventory;
     
     private readonly int _animatorVelocity = Animator.StringToHash("velocity");
     private readonly int _animatorHeadingX = Animator.StringToHash("headingX");
@@ -26,7 +28,12 @@ public class PlayerController : MonoBehaviour
         _animator = GetComponent<Animator>();
         
     }
-    
+
+    private void Awake()
+    {
+        _inventory = new Inventory();
+    }
+
     private void Update()
     {
         _heading = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
