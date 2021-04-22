@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
     private Animator _animator;
 
     private Inventory _inventory;
+
+    [SerializeField] private UI_Inventory _uiInventory;
     
     private readonly int _animatorVelocity = Animator.StringToHash("velocity");
     private readonly int _animatorHeadingX = Animator.StringToHash("headingX");
