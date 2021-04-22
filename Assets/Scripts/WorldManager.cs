@@ -51,8 +51,7 @@ public class WorldManager : MonoBehaviour
 
     private void CharacterSpawning()
     {
-        Debug.Log(GameManager.Instance._playerGender);
-        
+
         if (GameManager.Instance._playerGender == null)
         {
             GameManager.Instance.SetCharacterGender("Male");
@@ -66,11 +65,8 @@ public class WorldManager : MonoBehaviour
         else
         {
             character = GameObject.FindWithTag("Player");
-            Debug.Log(GameManager.Instance._characterSpawnPoint);
             character.transform.position = GameManager.Instance._characterSpawnPoint;
         }
-
-        Debug.Log(SceneManager.GetActiveScene().name);
     }
 
     public void SpawnGameUI()

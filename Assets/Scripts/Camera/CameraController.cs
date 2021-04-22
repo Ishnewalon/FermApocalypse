@@ -13,7 +13,7 @@ public class CameraController : MonoBehaviour
 
     private const float MINCamSize = 3f;
 
-    private const float MAXCamSize = 15f;// was 6 before will change back
+    private const float MAXCamSize = 15f;//TODO was 6 before will change back
 
     private Camera _camera;
     
@@ -30,7 +30,6 @@ public class CameraController : MonoBehaviour
         
         if (_target != null)
         {
-            // Follow target
             transform.position = _target.transform.position + _cameraOffset;
         }
 
@@ -39,7 +38,6 @@ public class CameraController : MonoBehaviour
 
     private void LateUpdate()
     {
-        // Get player for cam following
         if (_target == null)
         {
             _target = GameObject.FindWithTag("Player");

@@ -70,7 +70,7 @@ public class GameManager : Singleton<GameManager>
         _currentLevelName = levelName;
         
         AsyncOperation loadSceneAsync = SceneManager.LoadSceneAsync(levelName, LoadSceneMode.Additive);
-        if (loadSceneAsync == null)  // La scene existe dans le build setting
+        if (loadSceneAsync == null)  
         {
             print("error loading scene : " + levelName);
             return;
@@ -201,7 +201,7 @@ public class GameManager : Singleton<GameManager>
     {
         _menuCamera.GetComponent<AudioListener>().enabled = false;
         LoadLevel("Farm");
-        hours = 15;
+        hours = 15;         //TODO Change back time to 7 for start of day
         minutes = 0;
         seconds = 0;
         day = 1;

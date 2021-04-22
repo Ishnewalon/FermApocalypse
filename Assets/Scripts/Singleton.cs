@@ -10,7 +10,6 @@ public class Singleton<T> : MonoBehaviour where T : Singleton<T>
     public static T Instance
     {
         get { return instance; }
-        // Pas de setter, donc ne peut setter de l'exterieur
     }
 
     public static bool IsInitialized

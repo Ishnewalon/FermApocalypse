@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class TimeManager : MonoBehaviour
 {
-    private const int Timescale = 600; //  1 second irl = 10 ingame minute (60): 1sec irl = 1 min ingame 
+    private const int Timescale = 600; //TODO  1 second irl = 10 ingame minute (60): 1sec irl = 1 min ingame 
     
     [SerializeField] 
     private Text timeText;
