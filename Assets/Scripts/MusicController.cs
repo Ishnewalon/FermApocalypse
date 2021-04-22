@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class MusicController : MonoBehaviour
 {
-    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] 
+    private AudioSource _audioSource;
     
     private List<AudioClip> _audioClips = new List<AudioClip>();
 

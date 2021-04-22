@@ -19,7 +19,8 @@ public class WorldManager : MonoBehaviour
     [SerializeField] 
     private GameObject _globalLight;
 
-    [SerializeField] private GameObject _musicPlayer;
+    [SerializeField] 
+    private GameObject _musicPlayer;
     
     public GameObject character;
 

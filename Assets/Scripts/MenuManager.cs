@@ -25,7 +25,6 @@ public class MenuManager : MonoBehaviour
 
     [SerializeField] 
     private GameObject _goToBed;
-
     
     private string _playerGender;
     public void Start()
@@ -100,7 +99,6 @@ public class MenuManager : MonoBehaviour
 
     public void CharacterSelection()
     {
-        Debug.Log("Hi");
         _playerGender = EventSystem.current.currentSelectedGameObject.name;
     }
 

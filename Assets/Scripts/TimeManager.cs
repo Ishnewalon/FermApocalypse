@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class TimeManager : MonoBehaviour
 {
     private const int Timescale = 600; //  1 second irl = 10 ingame minute (60): 1sec irl = 1 min ingame 
+    
     [SerializeField] 
     private Text timeText;
     
@@ -16,11 +17,7 @@ public class TimeManager : MonoBehaviour
     
     [SerializeField] 
     private Text yearText;
-
-    private void Start()
-    {
-        
-    }
+    
 
     void Update()
     {
@@ -53,12 +50,12 @@ public class TimeManager : MonoBehaviour
 
     public void CalculateCalendar()
     {
-        if (GameManager.Instance.day >= 28)
+        if (GameManager.Instance.day > 28)
         {
             GameManager.Instance.month++;
             GameManager.Instance.day = 1;
         }
-        else if (GameManager.Instance.month >= 4)
+        else if (GameManager.Instance.month > 4)
         {
             GameManager.Instance.year++;
             GameManager.Instance.month = 1;
