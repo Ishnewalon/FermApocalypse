@@ -69,6 +69,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 20
+  _uiInventory: {fileID: 6705026522756284436, guid: 717fd4d4469080a47a7438dd6c5650ae, type: 3}
 --- !u!212 &3616362377812290561
 SpriteRenderer:
   m_ObjectHideFlags: 0
