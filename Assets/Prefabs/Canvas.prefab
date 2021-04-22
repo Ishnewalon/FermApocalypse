@@ -196,6 +196,9 @@ MonoBehaviour:
   dayText: {fileID: 4534965519441079768}
   monthText: {fileID: 4534965519285106147}
   yearText: {fileID: 4534965518134623899}
+  _dialogImage: {fileID: 0}
+  _yesButton: {fileID: 0}
+  _noButton: {fileID: 0}
 --- !u!1 &4534965518569899656
 GameObject:
   m_ObjectHideFlags: 0
@@ -208,7 +211,7 @@ GameObject:
   - component: {fileID: 4534965518569899701}
   - component: {fileID: 4534965518569899658}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Clock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

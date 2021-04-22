@@ -13,7 +13,8 @@ public class GameManager : Singleton<GameManager>
         PREGAME,
         RUNNING,
         PAUSE,
-        ENDDAY
+        ENDDAY,
+        GOTOBED
     }
 
     public enum SpawnLocation
@@ -145,6 +146,9 @@ public class GameManager : Singleton<GameManager>
             case GameState.ENDDAY:
                 Time.timeScale = 0;
                 break;
+            case GameState.GOTOBED:
+                Time.timeScale = 0;
+                break;
         }
     
         onGameStateChanged.Invoke(_currentGameState, previousGameState);
@@ -213,6 +217,24 @@ public class GameManager : Singleton<GameManager>
     public void ToggleNewDay()
     {
         hours = (hours == 1 ? 0 : 7) ;
-        UpdateGameState(_currentGameState == GameState.RUNNING ? GameState.ENDDAY : GameState.RUNNING);
+        var tempState = GameState.RUNNING;
+        switch (_currentGameState)
+        {
+            case GameState.RUNNING:
+                tempState = GameState.ENDDAY;
+                break;
+            case GameState.ENDDAY:
+                tempState = GameState.RUNNING;
+                break;
+            case GameState.GOTOBED:
+                tempState = GameState.ENDDAY;
+                break;
+        }
+        UpdateGameState(tempState);
+    }
+
+    public void ToggleGoToBedDialog()
+    {
+        UpdateGameState(_currentGameState == GameState.RUNNING ? GameState.GOTOBED : GameState.RUNNING);
     }
 }

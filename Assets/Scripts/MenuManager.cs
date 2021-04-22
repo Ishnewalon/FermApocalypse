@@ -23,6 +23,9 @@ public class MenuManager : MonoBehaviour
     [SerializeField]
     private Text _endDayTMP;
 
+    [SerializeField] 
+    private GameObject _goToBed;
+
     
     private string _playerGender;
     public void Start()
@@ -47,6 +50,17 @@ public class MenuManager : MonoBehaviour
             _endDayMenu.gameObject.SetActive(true);
             _endDayTMP.text = "End of Day " + (GameManager.Instance.day - 1);
             _background.gameObject.SetActive(true);
+        }
+        else if (previousState == GameManager.GameState.GOTOBED && currentState == GameManager.GameState.ENDDAY)
+        {
+            _endDayMenu.gameObject.SetActive(true);
+            _endDayTMP.text = "End of Day " + (GameManager.Instance.day - 1) + " Month " 
+                + GameManager.Instance.month + " Year " + GameManager.Instance.year;
+            _background.gameObject.SetActive(true);
+        }
+        else if (previousState == GameManager.GameState.RUNNING && currentState == GameManager.GameState.GOTOBED)
+        {
+            _goToBed.gameObject.SetActive(true);
         }
 
 
@@ -104,4 +118,18 @@ public class MenuManager : MonoBehaviour
         GameManager.Instance.ToggleNewDay();
     }
 
+    public void CancelGoToBed()
+    {
+        _goToBed.gameObject.SetActive(false);
+        GameManager.Instance.ToggleGoToBedDialog();
+    }
+
+    public void GoToBed()
+    {
+        GameManager.Instance.minutes = 0;
+        GameManager.Instance.hours = 1;
+        GameManager.Instance.day++;
+        _goToBed.gameObject.SetActive(false);
+        GameManager.Instance.ToggleNewDay();
+    }
 }

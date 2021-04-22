@@ -16,10 +16,16 @@ public class TimeManager : MonoBehaviour
     
     [SerializeField] 
     private Text yearText;
-    
+
+    private void Start()
+    {
+        
+    }
+
     void Update()
     {
         CalculateTime();
+        CalculateCalendar();
     }
 
     public void CalculateTime()

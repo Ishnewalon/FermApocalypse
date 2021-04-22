@@ -76,6 +76,11 @@ public class PlayerController : MonoBehaviour
             GameManager.Instance.UnloadLevel("FarmHouse");
             GameManager.Instance.LoadLevel("Farm");
         }
+        else if (other.gameObject.tag.Equals("bed"))
+        {
+            gameObject.transform.position = gameObject.transform.position + new Vector3(0.5f, 0, 0);
+            GameManager.Instance.ToggleGoToBedDialog();
+        }
     }
 
 
