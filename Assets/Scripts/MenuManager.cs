@@ -111,8 +111,17 @@ public class MenuManager : MonoBehaviour
 
     public void NextDay()
     {
-        //Unload current scene
-        //Load House
+        if (GameManager.Instance._currentSpawnLocation == GameManager.SpawnLocation.FARMFROMTOWN
+            || GameManager.Instance._currentSpawnLocation == GameManager.SpawnLocation.FARMFROMHOUSE)
+        {
+            GameManager.Instance.UnloadLevel("Farm");
+            GameManager.Instance.LoadLevel("FarmHouse");
+        }
+        else if (GameManager.Instance._currentSpawnLocation == GameManager.SpawnLocation.TOWN)
+        {
+            GameManager.Instance.UnloadLevel("Town");
+            GameManager.Instance.LoadLevel("FarmHouse");
+        }
         _endDayMenu.gameObject.SetActive(false);
         _background.gameObject.SetActive(false);
         GameManager.Instance.ToggleNewDay();
