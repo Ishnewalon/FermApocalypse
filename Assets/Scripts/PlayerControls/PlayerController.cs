@@ -28,14 +28,13 @@ public class PlayerController : MonoBehaviour
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
-        _inventory = new Inventory();
-        _uiInventory.SetInventory(_inventory);
     }
 
     private void Awake()
     {
-        //_inventory = new Inventory();
-        //_uiInventory.SetInventory(_inventory);
+        _inventory = new Inventory();
+        
+        _uiInventory.SetInventory(_inventory);
     }
 
     private void Update()
