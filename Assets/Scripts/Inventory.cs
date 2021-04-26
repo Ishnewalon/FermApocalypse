@@ -12,6 +12,12 @@ public class Inventory
         itemList = new List<Item>();
         
         AddItem(new Item { itemType = Item.ItemType.Hoe, amount = 1 });
+        AddItem(new Item { itemType = Item.ItemType.Scythe, amount = 1 });
+        AddItem(new Item { itemType = Item.ItemType.WateringCan, amount = 1 });
+        AddItem(new Item { itemType = Item.ItemType.Plant, amount = 30 });
+        AddItem(new Item { itemType = Item.ItemType.Plant, amount = 30 });
+        AddItem(new Item { itemType = Item.ItemType.Plant, amount = 30 });
+        AddItem(new Item { itemType = Item.ItemType.Plant, amount = 30 });
         Debug.Log("inventory");
     }
 
@@ -20,4 +26,8 @@ public class Inventory
         itemList.Add(item);
     }
 
+    public List<Item> GetItemList()
+    {
+        return itemList;
+    }
 }

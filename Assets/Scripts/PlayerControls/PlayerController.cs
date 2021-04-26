@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
     private Animator _animator;
 
     private Inventory _inventory;
+
+    [SerializeField] private UI_Inventory _uiInventory;
     
     private readonly int _animatorVelocity = Animator.StringToHash("velocity");
     private readonly int _animatorHeadingX = Animator.StringToHash("headingX");
@@ -26,12 +28,13 @@ public class PlayerController : MonoBehaviour
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
-        
     }
 
     private void Awake()
     {
         _inventory = new Inventory();
+        
+        _uiInventory.SetInventory(_inventory);
     }
 
     private void Update()

@@ -92,8 +92,8 @@ public class MenuManager : MonoBehaviour
     
     public void ResumeGame()
      {
-         _pauseMenu.gameObject.SetActive(false);
-         _background.gameObject.SetActive(false);
+        _pauseMenu.gameObject.SetActive(false);
+        _background.gameObject.SetActive(false);
         GameManager.Instance.TogglePause();
      }
 
