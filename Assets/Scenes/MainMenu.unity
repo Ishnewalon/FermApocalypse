@@ -249,6 +249,7 @@ GameObject:
   m_Component:
   - component: {fileID: 149024204}
   - component: {fileID: 149024203}
+  - component: {fileID: 149024205}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -300,6 +301,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &149024205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 149024202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fedb92c2aab01747a248efa26e1ade7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoeSprite: {fileID: -3186262526813576740, guid: ba20d0d42ef13284b95c2000381e9918, type: 3}
+  scytheSprite: {fileID: -1368058182281286375, guid: ba20d0d42ef13284b95c2000381e9918, type: 3}
+  WaterBucketSprite: {fileID: 8624245271877955555, guid: 6379dccbfee466f4fb039f4c5e25feda, type: 3}
 --- !u!1 &616117446
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,6 +15,5 @@ public class ItemAssets : MonoBehaviour
 
     public Sprite hoeSprite;
     public Sprite scytheSprite;
-    public Sprite WateringCanSprite;
-    a
+    public Sprite WaterBucketSprite;
 }

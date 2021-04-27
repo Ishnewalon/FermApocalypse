@@ -9,7 +9,7 @@ public class Item
     {
         Hoe,
         Scythe,
-        WateringCan,
+        WaterBucket,
         Plant,
         Seed
     }
@@ -25,7 +25,7 @@ public class Item
             default: 
             case ItemType.Hoe: return ItemAssets.Instance.hoeSprite;
             case ItemType.Scythe: return ItemAssets.Instance.scytheSprite;
-            case ItemType.WateringCan: return ItemAssets.Instance.WateringCanSprite;
+            case ItemType.WaterBucket: return ItemAssets.Instance.WaterBucketSprite;
         }
     }
 }
