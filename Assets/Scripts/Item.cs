@@ -11,10 +11,21 @@ public class Item
         Scythe,
         WateringCan,
         Plant,
-        Coin
+        Seed
     }
 
     public ItemType itemType;
     public int amount;
 
+
+    public Sprite GetSprite()
+    {
+        switch (itemType)
+        {
+            default: 
+            case ItemType.Hoe: return ItemAssets.Instance.hoeSprite;
+            case ItemType.Scythe: return ItemAssets.Instance.scytheSprite;
+            case ItemType.WateringCan: return ItemAssets.Instance.WateringCanSprite;
+        }
+    }
 }
