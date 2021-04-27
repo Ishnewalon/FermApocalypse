@@ -35,6 +35,10 @@ public class PlayerController : MonoBehaviour
         _inventory = new Inventory();
         
         _uiInventory.SetInventory(_inventory);
+
+        ItemWorld.SpawnItemWorld(new Vector3(20, 20), new Item() {itemType = Item.ItemType.Hoe, amount = 1});
+        ItemWorld.SpawnItemWorld(new Vector3(20, 20), new Item() {itemType = Item.ItemType.Hoe, amount = 1});
+        ItemWorld.SpawnItemWorld(new Vector3(20, 20), new Item() {itemType = Item.ItemType.Hoe, amount = 1});
     }
 
     private void Update()

@@ -14,10 +14,8 @@ public class Inventory
         AddItem(new Item { itemType = Item.ItemType.Hoe, amount = 1 });
         AddItem(new Item { itemType = Item.ItemType.Scythe, amount = 1 });
         AddItem(new Item { itemType = Item.ItemType.WaterBucket, amount = 1 });
-        AddItem(new Item { itemType = Item.ItemType.Plant, amount = 30 });
-        AddItem(new Item { itemType = Item.ItemType.Plant, amount = 30 });
-        AddItem(new Item { itemType = Item.ItemType.Plant, amount = 30 });
-        AddItem(new Item { itemType = Item.ItemType.Plant, amount = 30 });
+        AddItem(new Item { itemType = Item.ItemType.Scythe, amount = 1 });
+        AddItem(new Item { itemType = Item.ItemType.WaterBucket, amount = 1 });
         Debug.Log("inventory");
     }
 

@@ -10,8 +10,8 @@ public class Item
         Hoe,
         Scythe,
         WaterBucket,
-        Plant,
-        Seed
+        WaterMelon,
+        WaterMelonSeed
     }
 
     public ItemType itemType;
