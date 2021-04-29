@@ -5,35 +5,48 @@ using UnityEngine;
 
 public class TerrainManager : MonoBehaviour
 {
+    [SerializeField]private Sprite _plantableSoil;
+    [SerializeField]private Sprite _tilledSoil;
+    [SerializeField]private Sprite _plant0;
 
-    private SpriteRenderer _renderer;
-
-    [SerializeField]private Sprite _beforeHoe;
-    [SerializeField]private Sprite _afterHoe;
+    private GameObject _plantGO;
     // Start is called before the first frame update
     void Start()
     {
-        
+        _plantGO = transform.Find("Plant").gameObject;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        /*if (Input.GetMouseButtonDown(0))
+        {
+            ChangeSprite();
+        }*/
     }
 
     private void OnMouseDown()
     {
-        _renderer = (SpriteRenderer)gameObject.GetComponent<SpriteRenderer>();
-        Debug.Log("Terrain has been clicked");
-        if (_renderer.sprite == _afterHoe)
+        if (GetComponent<SpriteRenderer>().sprite == _plantableSoil)
         {
-            _renderer.sprite = _beforeHoe;
+            GetComponent<SpriteRenderer>().sprite = _tilledSoil;
+            _plantGO.SetActive(true);
+            _plantGO.GetComponent<SpriteRenderer>().sprite = _plant0;
         }
         else
         {
-            _renderer.sprite = _afterHoe;
+            /*GetComponent<SpriteRenderer>().sprite = _afterHoe;*/
+
         }
     }
 
 }
+
+            /*Dictionary<String, List<Sprite>> _plantSprites = new Dictionary<string, List<Sprite>>();
+            List<Sprite> _eggplants = new List<Sprite>();
+            for (int i = 0; i < 4; i++)
+            {
+                _eggplants.Add((Sprite)Resources.Load("Sprites/Plants/bean" + i));
+            }*/
+
+
