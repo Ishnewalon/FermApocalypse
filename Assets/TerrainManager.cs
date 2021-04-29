@@ -8,21 +8,28 @@ public class TerrainManager : MonoBehaviour
     [SerializeField]private Sprite _plantableSoil;
     [SerializeField]private Sprite _tilledSoil;
     [SerializeField]private Sprite _plant0;
+    Dictionary<String, List<Sprite>> _plantSprites = new Dictionary<string, List<Sprite>>();
+    List<Sprite> _eggplants = new List<Sprite>();
 
-    private GameObject _plantGO;
-    // Start is called before the first frame update
-    void Start()
-    {
-        _plantGO = transform.Find("Plant").gameObject;
-    }
+private GameObject _plantGO;
+// Start is called before the first frame update
+void Start()
+{
+_plantGO = transform.Find("Plant").gameObject;
+for (int i = 0; i < 4; i++)
+{
+    _eggplants.Add((Sprite)Resources.Load("Sprites/Plants/bean" + i));
+}
+_plantSprites.Add(Item.ItemType.EggPlantSeed, _eggplants);
+}
 
-    // Update is called once per frame
-    void Update()
-    {
-        /*if (Input.GetMouseButtonDown(0))
-        {
-            ChangeSprite();
-        }*/
+// Update is called once per frame
+void Update()
+{
+/*if (Input.GetMouseButtonDown(0))
+{
+ChangeSprite();
+}*/
     }
 
     private void OnMouseDown()
@@ -42,11 +49,7 @@ public class TerrainManager : MonoBehaviour
 
 }
 
-            /*Dictionary<String, List<Sprite>> _plantSprites = new Dictionary<string, List<Sprite>>();
-            List<Sprite> _eggplants = new List<Sprite>();
-            for (int i = 0; i < 4; i++)
-            {
-                _eggplants.Add((Sprite)Resources.Load("Sprites/Plants/bean" + i));
-            }*/
+
+
 
 
