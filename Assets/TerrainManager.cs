@@ -16,13 +16,16 @@ public class TerrainManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        int j = 0;
         _allPlantSprites = Resources.LoadAll<Sprite>("Sprites/Plants/plants");
         
         print(_allPlantSprites.Length);
 
-        for (int i = 32; i < 36; i++)
+        for (int i = 28; i < 32; i++)
         {
-            print(_allPlantSprites[i]);
+            _eggplants.Add(_allPlantSprites[i]);
+            print(_eggplants[j]);
+            j++;
         }
         
         _plantGO = transform.Find("Plant").gameObject;
@@ -46,8 +49,7 @@ public class TerrainManager : MonoBehaviour
         {
             GetComponent<SpriteRenderer>().sprite = _tilledSoil;
             _plantGO.SetActive(true);
-            
-           // _plantGO.GetComponent<SpriteRenderer>().sprite = _plantSprites[Item.ItemType.EggPlantSeed][_currrentPlantSprite];
+            _plantGO.GetComponent<SpriteRenderer>().sprite = _plantSprites[Item.ItemType.EggPlantSeed][_currrentPlantSprite];
         }
         else if ((GetComponent<SpriteRenderer>().sprite == _tilledSoil) && (_currrentPlantSprite > 4) && (_currrentPlantSprite != 0))
         {
