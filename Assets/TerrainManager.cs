@@ -7,20 +7,23 @@ public class TerrainManager : MonoBehaviour
 {
     [SerializeField]private Sprite _plantableSoil;
     [SerializeField]private Sprite _tilledSoil;
-    [SerializeField]private Sprite _plant0;
     Dictionary<Enum, List<Sprite>> _plantSprites = new Dictionary<Enum, List<Sprite>>();
     List<Sprite> _eggplants = new List<Sprite>();
+    private int _currrentPlantSprite = 0;
+    private Sprite _allPlantSprites; 
 
 private GameObject _plantGO;
 // Start is called before the first frame update
 void Start()
 {
-_plantGO = transform.Find("Plant").gameObject;
-for (int i = 0; i < 4; i++)
+    _allPlantSprites = Resources.Load<Sprite>("Sprites/Plants/plants.png");
+    _plantGO = transform.Find("Plant").gameObject;
+    for (int i = 32; i < 36; i++)
 {
-    _eggplants.Add((Sprite)Resources.Load("Sprites/Plants/egg" + i));
+    _eggplants.Add(_allPlantSprites);
+    Debug.Log(_eggplants[i]);
 }
-_plantSprites.Add(Item.ItemType.EggPlantSeed, _eggplants);
+    _plantSprites.Add(Item.ItemType.EggPlantSeed, _eggplants);
 }
 
 // Update is called once per frame
@@ -38,12 +41,18 @@ ChangeSprite();
         {
             GetComponent<SpriteRenderer>().sprite = _tilledSoil;
             _plantGO.SetActive(true);
-            _plantGO.GetComponent<SpriteRenderer>().sprite = _plant0;
+            
+           // _plantGO.GetComponent<SpriteRenderer>().sprite = _plantSprites[Item.ItemType.EggPlantSeed][_currrentPlantSprite];
         }
-        else
+        else if ((GetComponent<SpriteRenderer>().sprite == _tilledSoil) && (_currrentPlantSprite > 4) && (_currrentPlantSprite != 0))
         {
-            /*GetComponent<SpriteRenderer>().sprite = _afterHoe;*/
-
+            _currrentPlantSprite++;
+            _plantGO.GetComponent<SpriteRenderer>().sprite = _plantSprites[Item.ItemType.EggPlantSeed][_currrentPlantSprite];
+        }
+        else if ((GetComponent<SpriteRenderer>().sprite == _tilledSoil) && (_currrentPlantSprite == 3))
+        {
+            _plantGO.SetActive(false);
+            GetComponent<SpriteRenderer>().sprite = _plantableSoil;
         }
     }
 
