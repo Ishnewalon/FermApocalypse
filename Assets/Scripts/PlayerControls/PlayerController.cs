@@ -54,7 +54,16 @@ public class PlayerController : MonoBehaviour
         // idle vs walk
         _animator.SetFloat(_animatorVelocity, _rigidbody2D.velocity.sqrMagnitude);
 
-        
+        // Toggle Inventory (tab)
+        if (Input.GetButtonDown("Inventory"))
+        {
+            ToggleInventory();
+        }
+    }
+
+    private void ToggleInventory()
+    {
+
     }
 
     private void FixedUpdate()
