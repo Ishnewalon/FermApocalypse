@@ -8,7 +8,7 @@ public class TerrainManager : MonoBehaviour
     [SerializeField]private Sprite _plantableSoil;
     [SerializeField]private Sprite _tilledSoil;
     [SerializeField]private Sprite _plant0;
-    Dictionary<String, List<Sprite>> _plantSprites = new Dictionary<string, List<Sprite>>();
+    Dictionary<Enum, List<Sprite>> _plantSprites = new Dictionary<Enum, List<Sprite>>();
     List<Sprite> _eggplants = new List<Sprite>();
 
 private GameObject _plantGO;
@@ -18,7 +18,7 @@ void Start()
 _plantGO = transform.Find("Plant").gameObject;
 for (int i = 0; i < 4; i++)
 {
-    _eggplants.Add((Sprite)Resources.Load("Sprites/Plants/bean" + i));
+    _eggplants.Add((Sprite)Resources.Load("Sprites/Plants/egg" + i));
 }
 _plantSprites.Add(Item.ItemType.EggPlantSeed, _eggplants);
 }
