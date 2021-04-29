@@ -10,29 +10,34 @@ public class TerrainManager : MonoBehaviour
     Dictionary<Enum, List<Sprite>> _plantSprites = new Dictionary<Enum, List<Sprite>>();
     List<Sprite> _eggplants = new List<Sprite>();
     private int _currrentPlantSprite = 0;
-    private Sprite _allPlantSprites; 
+    private Sprite[] _allPlantSprites; 
 
-private GameObject _plantGO;
-// Start is called before the first frame update
-void Start()
-{
-    _allPlantSprites = Resources.Load<Sprite>("Sprites/Plants/plants.png");
-    _plantGO = transform.Find("Plant").gameObject;
-    for (int i = 32; i < 36; i++)
-{
-    _eggplants.Add(_allPlantSprites);
-    Debug.Log(_eggplants[i]);
-}
-    _plantSprites.Add(Item.ItemType.EggPlantSeed, _eggplants);
-}
+    private GameObject _plantGO;
+    // Start is called before the first frame update
+    void Start()
+    {
+        _allPlantSprites = Resources.LoadAll<Sprite>("Sprites/Plants/plants");
+        
+        print(_allPlantSprites.Length);
 
-// Update is called once per frame
-void Update()
-{
-/*if (Input.GetMouseButtonDown(0))
-{
-ChangeSprite();
-}*/
+        for (int i = 32; i < 36; i++)
+        {
+            print(_allPlantSprites[i]);
+        }
+        
+        _plantGO = transform.Find("Plant").gameObject;
+        
+        
+        _plantSprites.Add(Item.ItemType.EggPlantSeed, _eggplants);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        /*if (Input.GetMouseButtonDown(0))
+        {
+            ChangeSprite();
+        }*/
     }
 
     private void OnMouseDown()
