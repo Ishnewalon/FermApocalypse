@@ -11,7 +11,8 @@ public class Item
         Scythe,
         WaterBucket,
         WaterMelon,
-        WaterMelonSeed
+        WaterMelonSeed,
+        EggPlantSeed
     }
 
     public ItemType itemType;
@@ -22,7 +23,7 @@ public class Item
     {
         switch (itemType)
         {
-            default: 
+            default: return ItemAssets.Instance.hoeSprite;
             case ItemType.Hoe: return ItemAssets.Instance.hoeSprite;
             case ItemType.Scythe: return ItemAssets.Instance.scytheSprite;
             case ItemType.WaterBucket: return ItemAssets.Instance.WaterBucketSprite;
