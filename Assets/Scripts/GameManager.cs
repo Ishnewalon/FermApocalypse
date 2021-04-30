@@ -258,41 +258,64 @@ public class GameManager : Singleton<GameManager>
 
     private void SetUpCropSprites()
     {
+        _plantNameToItemType.Add("bean", Item.ItemType.BeanSeed);
         _plantNameToItemType.Add("blueberry",Item.ItemType.BlueberrySeed);
+        _plantNameToItemType.Add("cabbage", Item.ItemType.CabbageSeed);
         _plantNameToItemType.Add("carrot", Item.ItemType.CarrotSeed);
+        _plantNameToItemType.Add("cauliflower", Item.ItemType.CauliflowerSeed);
+        _plantNameToItemType.Add("celery", Item.ItemType.CelerySeed);
+        _plantNameToItemType.Add("corn", Item.ItemType.CornSeed);
         _plantNameToItemType.Add("eggplant", Item.ItemType.EggplantSeed);
         _plantNameToItemType.Add("grape", Item.ItemType.GrapeSeed);
+        _plantNameToItemType.Add("leak", Item.ItemType.LeakSeed);
+        _plantNameToItemType.Add("onion", Item.ItemType.OnionSeed);
+        _plantNameToItemType.Add("pepper", Item.ItemType.PepperSeed);
+        _plantNameToItemType.Add("pumpkin", Item.ItemType.PumpkinSeed);
+        _plantNameToItemType.Add("rockmelon", Item.ItemType.RockmelonSeed);
+        _plantNameToItemType.Add("squash", Item.ItemType.SquashSeed);
+        _plantNameToItemType.Add("strawberry", Item.ItemType.StrawberrySeed);
         _plantNameToItemType.Add("tomato", Item.ItemType.TomatoSeed);
+        _plantNameToItemType.Add("turnip", Item.ItemType.TurnipSeed);
+        _plantNameToItemType.Add("watermelon", Item.ItemType.WatermelonSeed);
         
-        
+        List<Sprite> _bean = new List<Sprite>();
         List<Sprite> _blueberry = new List<Sprite>(); 
-        List<Sprite> _carrot = new List<Sprite>(); 
+        List<Sprite> _cabbage = new List<Sprite>();
+        List<Sprite> _carrot = new List<Sprite>();
+        List<Sprite> _cauliflower = new List<Sprite>();
+        List<Sprite> _celery = new List<Sprite>();
+        List<Sprite> _corn = new List<Sprite>();
         List<Sprite> _eggplant = new List<Sprite>(); 
         List<Sprite> _grape = new List<Sprite>();
-        List<Sprite> _tomato = new List<Sprite>();
-        
-        /*List<Sprite> _watermelon = new List<Sprite>();
-        List<Sprite> _pumpkin = new List<Sprite>();
-        List<Sprite> _cabbage = new List<Sprite>();
-        List<Sprite> _cauliflower = new List<Sprite>();
-        List<Sprite> _bean = new List<Sprite>();*/
-        
-        /*List<Sprite> _turnip = new List<Sprite>();
+        List<Sprite> _leak = new List<Sprite>();
         List<Sprite> _onion = new List<Sprite>();
         List<Sprite> _pepper = new List<Sprite>();
-        List<Sprite> _corn = new List<Sprite>();
-        List<Sprite> _celery = new List<Sprite>();
-        List<Sprite> _leak = new List<Sprite>();
+        List<Sprite> _pumpkin = new List<Sprite>();
+        List<Sprite> _rockmelon = new List<Sprite>();
         List<Sprite> _squash = new List<Sprite>();
-        List<Sprite> _zucchini = new List<Sprite>();
         List<Sprite> _strawberry = new List<Sprite>();
-        List<Sprite> _rockmelon = new List<Sprite>();*/
+        List<Sprite> _tomato = new List<Sprite>();
+        List<Sprite> _turnip = new List<Sprite>();
+        List<Sprite> _watermelon = new List<Sprite>();
         
+        _plantSprites.Add(Item.ItemType.BeanSeed, _bean );
         _plantSprites.Add(Item.ItemType.BlueberrySeed, _blueberry);
+        _plantSprites.Add(Item.ItemType.CabbageSeed, _cabbage);
         _plantSprites.Add(Item.ItemType.CarrotSeed, _carrot);
+        _plantSprites.Add(Item.ItemType.CauliflowerSeed, _cauliflower);
+        _plantSprites.Add(Item.ItemType.CelerySeed, _celery);
+        _plantSprites.Add(Item.ItemType.CornSeed, _corn);
         _plantSprites.Add(Item.ItemType.EggplantSeed, _eggplant);
         _plantSprites.Add(Item.ItemType.GrapeSeed, _grape);
+        _plantSprites.Add(Item.ItemType.LeakSeed, _leak);
+        _plantSprites.Add(Item.ItemType.OnionSeed, _onion);
+        _plantSprites.Add(Item.ItemType.PepperSeed, _pepper);
+        _plantSprites.Add(Item.ItemType.PumpkinSeed, _pumpkin);
+        _plantSprites.Add(Item.ItemType.RockmelonSeed, _rockmelon);
+        _plantSprites.Add(Item.ItemType.SquashSeed, _squash);
+        _plantSprites.Add(Item.ItemType.StrawberrySeed, _strawberry);
         _plantSprites.Add(Item.ItemType.TomatoSeed, _tomato);
+        _plantSprites.Add(Item.ItemType.WatermelonSeed, _watermelon);
         
         for (int i = 0; i < _allPlantSprites.Length; i++)
         {

@@ -10,13 +10,26 @@ public class Item
         Hoe,
         Scythe,
         WaterBucket,
-        WaterMelon,
-        WaterMelonSeed,
-        EggplantSeed,
+        Watermelon,
+        BeanSeed,
         BlueberrySeed,
+        CabbageSeed,
         CarrotSeed,
+        CauliflowerSeed,
+        CelerySeed,
+        CornSeed,
+        EggplantSeed,
         GrapeSeed,
-        TomatoSeed
+        LeakSeed,
+        OnionSeed,
+        PepperSeed,
+        PumpkinSeed,
+        RockmelonSeed,
+        SquashSeed,
+        StrawberrySeed,
+        TomatoSeed,        
+        TurnipSeed,
+        WatermelonSeed
     }
 
     public ItemType itemType;
