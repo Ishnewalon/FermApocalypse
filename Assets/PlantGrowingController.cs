@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,7 @@ using UnityEngine;
 public class PlantGrowingController : MonoBehaviour
 {
     private int _currrentPlantSprite = 0;
+    private Enum _plantType;
     
     // Start is called before the first frame update
     void Start()
@@ -17,7 +19,23 @@ public class PlantGrowingController : MonoBehaviour
     {
         if (gameObject.activeSelf == true && _currrentPlantSprite == 0)
         {
-            
+            _plantType = GameManager.Instance._currentHeldItem;
+            GetComponent<SpriteRenderer>().sprite =
+                GameManager.Instance._plantSprites[_plantType][_currrentPlantSprite];
+        }
+    }
+
+    private void OnMouseDown()
+    {
+        if ((_currrentPlantSprite > 4) && (_currrentPlantSprite >= 0))
+        {
+            _currrentPlantSprite++;
+            GetComponent<SpriteRenderer>().sprite =
+                GameManager.Instance._plantSprites[_plantType][_currrentPlantSprite];
+        }
+        else if (_currrentPlantSprite == 3)
+        {
+            gameObject.SetActive(false);
         }
     }
 }

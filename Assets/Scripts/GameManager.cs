@@ -49,14 +49,17 @@ public class GameManager : Singleton<GameManager>
     public bool hasLightBeenSpawned = false;
     public bool hasMusicPlayerSpawned = false;
     private Sprite[] _allPlantSprites;
-    Dictionary<Enum, List<Sprite>> _plantSprites = new Dictionary<Enum, List<Sprite>>();
-    Dictionary<String, Enum> _plantNameToItemType = new Dictionary<String, Enum>();
+    public Dictionary<Enum, List<Sprite>> _plantSprites = new Dictionary<Enum, List<Sprite>>();
+    private Dictionary<String, Enum> _plantNameToItemType = new Dictionary<String, Enum>();
+    public Enum _currentHeldItem = Item.ItemType.GrapeSeed;
+    
     public void Start()
     {
         DontDestroyOnLoad(this);
         InstanciateSystemPrefab();
         _menuCamera = GameObject.FindWithTag("MainCamera");
         _allPlantSprites = Resources.LoadAll<Sprite>("Sprites/Plants/plants");
+        SetUpCropSprites();
     }
     
     void InstanciateSystemPrefab()
@@ -255,12 +258,19 @@ public class GameManager : Singleton<GameManager>
 
     private void SetUpCropSprites()
     {
+        _plantNameToItemType.Add("blueberry",Item.ItemType.BlueberrySeed);
+        _plantNameToItemType.Add("carrot", Item.ItemType.CarrotSeed);
+        _plantNameToItemType.Add("eggplant", Item.ItemType.EggplantSeed);
+        _plantNameToItemType.Add("grape", Item.ItemType.GrapeSeed);
+        _plantNameToItemType.Add("tomato", Item.ItemType.TomatoSeed);
+        
+        
         List<Sprite> _blueberry = new List<Sprite>(); 
-        List<Sprite> _carrots = new List<Sprite>(); 
-        List<Sprite> _eggplants = new List<Sprite>(); 
-        List<Sprite> _grapes = new List<Sprite>();
-        List<Sprite> _tomatos = new List<Sprite>();
-        //_plantSprites.Add();
+        List<Sprite> _carrot = new List<Sprite>(); 
+        List<Sprite> _eggplant = new List<Sprite>(); 
+        List<Sprite> _grape = new List<Sprite>();
+        List<Sprite> _tomato = new List<Sprite>();
+        
         /*List<Sprite> _watermelon = new List<Sprite>();
         List<Sprite> _pumpkin = new List<Sprite>();
         List<Sprite> _cabbage = new List<Sprite>();
@@ -278,15 +288,16 @@ public class GameManager : Singleton<GameManager>
         List<Sprite> _strawberry = new List<Sprite>();
         List<Sprite> _rockmelon = new List<Sprite>();*/
         
+        _plantSprites.Add(Item.ItemType.BlueberrySeed, _blueberry);
+        _plantSprites.Add(Item.ItemType.CarrotSeed, _carrot);
+        _plantSprites.Add(Item.ItemType.EggplantSeed, _eggplant);
+        _plantSprites.Add(Item.ItemType.GrapeSeed, _grape);
+        _plantSprites.Add(Item.ItemType.TomatoSeed, _tomato);
+        
         for (int i = 0; i < _allPlantSprites.Length; i++)
         {
-            String spriteName = _allPlantSprites[i].name;
-            /*switch (spriteName)
-            {
-                case "blue"
-                    
-                    sprite["fdsfdsf"].Add[gfsdgfsd]
-            }*/
+            String spriteName = _allPlantSprites[i].name.Substring(0, _allPlantSprites[i].name.IndexOf("_") );
+            _plantSprites[_plantNameToItemType[spriteName]].Add(_allPlantSprites[i]);
         }
     }
 }
