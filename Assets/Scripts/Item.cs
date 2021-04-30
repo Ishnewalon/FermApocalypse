@@ -12,7 +12,11 @@ public class Item
         WaterBucket,
         WaterMelon,
         WaterMelonSeed,
-        EggPlantSeed
+        EggplantSeed,
+        BlueberrySeed,
+        CarrotSeed,
+        GrapeSeed,
+        TomatoSeed
     }
 
     public ItemType itemType;
@@ -42,7 +46,7 @@ public class Item
             case ItemType.WaterMelon : return new Color(255, 10, 10);
             
             case ItemType.WaterMelonSeed : return new Color(255, 255, 255);
-            case ItemType.EggPlantSeed : return new Color(255, 255, 255);
+            case ItemType.EggplantSeed : return new Color(255, 255, 255);
         }
     }
 }

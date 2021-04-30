@@ -22,7 +22,7 @@ TextureImporter:
     second: crops_5
   - first:
       213: 8299125880177946521
-    second: carrot0
+    second: carrot_0
   - first:
       213: 8243356241797845907
     second: crops_7
@@ -37,7 +37,7 @@ TextureImporter:
     second: crops_10
   - first:
       213: -6186672724252846097
-    second: nip0
+    second: turnip_0
   - first:
       213: -3358482244611400503
     second: crops_12
@@ -46,7 +46,7 @@ TextureImporter:
     second: crops_13
   - first:
       213: -352772484518174501
-    second: onion0
+    second: onion_0
   - first:
       213: 1487176316796785568
     second: crops_15
@@ -67,25 +67,25 @@ TextureImporter:
     second: crops_20
   - first:
       213: -8536239421030836411
-    second: pep0
+    second: pepper_0
   - first:
       213: 4980261937381015205
     second: crops_22
   - first:
       213: 529582307989611779
-    second: melon0
+    second: watermelon_0
   - first:
       213: -8463751307097313094
     second: crops_24
   - first:
       213: 4607337198982305649
-    second: rockMel0
+    second: rockmelon_0
   - first:
       213: 1706719739156716502
     second: crops_26
   - first:
       213: 6210366003001479116
-    second: pump0
+    second: pumpkin_0
   - first:
       213: 8096830100637197901
     second: crops_28
@@ -94,7 +94,7 @@ TextureImporter:
     second: crops_29
   - first:
       213: -720854568806814985
-    second: corn0
+    second: corn_0
   - first:
       213: -3824459963188315723
     second: crops_31
@@ -124,7 +124,7 @@ TextureImporter:
     second: crops_39
   - first:
       213: 352647812648205467
-    second: carrot1
+    second: carrot_1
   - first:
       213: -721364286714236821
     second: crops_41
@@ -139,7 +139,7 @@ TextureImporter:
     second: crops_44
   - first:
       213: 1623897466111502077
-    second: nip1
+    second: turnip_1
   - first:
       213: -2425579493439346394
     second: crops_46
@@ -148,7 +148,7 @@ TextureImporter:
     second: crops_47
   - first:
       213: 3945209669962335706
-    second: onion1
+    second: onion_1
   - first:
       213: 1050366613701125014
     second: crops_49
@@ -169,25 +169,25 @@ TextureImporter:
     second: crops_54
   - first:
       213: -3085945388132976002
-    second: pep1
+    second: pepper_1
   - first:
       213: -5552177675114556612
     second: crops_56
   - first:
       213: 406936385445148674
-    second: melon1
+    second: watermelon_1
   - first:
       213: 646407353341687259
     second: crops_58
   - first:
       213: -7017202247838496533
-    second: rockMel1
+    second: rockmelon_1
   - first:
       213: 3908536003752592963
     second: crops_60
   - first:
       213: 6960096479862379934
-    second: pump1
+    second: pumpkin_1
   - first:
       213: -2807027969274648962
     second: crops_62
@@ -196,7 +196,7 @@ TextureImporter:
     second: crops_63
   - first:
       213: -1316513940826341611
-    second: corn1
+    second: corn_1
   - first:
       213: -3223917617289630217
     second: crops_65
@@ -244,7 +244,7 @@ TextureImporter:
     second: crops_79
   - first:
       213: -5817916937641981149
-    second: carrot2
+    second: carrot_2
   - first:
       213: 3138840193266778034
     second: crops_81
@@ -259,7 +259,7 @@ TextureImporter:
     second: crops_84
   - first:
       213: -856827797827696121
-    second: nip2
+    second: turnip_2
   - first:
       213: -9188842104884477391
     second: crops_86
@@ -268,7 +268,7 @@ TextureImporter:
     second: crops_87
   - first:
       213: -4523157743827991911
-    second: onion2
+    second: onion_2
   - first:
       213: 5278841241615645797
     second: crops_89
@@ -289,25 +289,25 @@ TextureImporter:
     second: crops_94
   - first:
       213: -4769451408755731647
-    second: pep2
+    second: pepper_2
   - first:
       213: -1725113350622835758
     second: crops_96
   - first:
       213: -3505815044696747526
-    second: melon2
+    second: watermelon_2
   - first:
       213: -1211369225461403239
     second: crops_98
   - first:
       213: -1325689043919491311
-    second: rockMel2
+    second: rockmelon_2
   - first:
       213: 1336106381982949313
     second: crops_100
   - first:
       213: 1269318197135887549
-    second: pump2
+    second: pumpkin_2
   - first:
       213: 610886628634230302
     second: crops_102
@@ -316,7 +316,7 @@ TextureImporter:
     second: crops_103
   - first:
       213: -3444327985745663880
-    second: corn2
+    second: corn_2
   - first:
       213: -3710695327092020110
     second: crops_105
@@ -382,7 +382,7 @@ TextureImporter:
     second: crops_125
   - first:
       213: -6095174817787267085
-    second: carrot3
+    second: carrot_3
   - first:
       213: -8224065698937322091
     second: crops_127
@@ -397,7 +397,7 @@ TextureImporter:
     second: crops_130
   - first:
       213: 7859707947040345625
-    second: nip3
+    second: turnip_3
   - first:
       213: -6676958319384830377
     second: crops_132
@@ -406,7 +406,7 @@ TextureImporter:
     second: crops_133
   - first:
       213: 925899620219830298
-    second: onion3
+    second: onion_3
   - first:
       213: -1332928125302413264
     second: crops_135
@@ -427,25 +427,25 @@ TextureImporter:
     second: crops_140
   - first:
       213: 8749818150351518447
-    second: pep3
+    second: pepper_3
   - first:
       213: 1048477547254365039
     second: crops_142
   - first:
       213: 6814802133438683
-    second: melon3
+    second: watermelon_3
   - first:
       213: 8693206006890328292
     second: crops_144
   - first:
       213: 1864998684132649338
-    second: rockMel3
+    second: rockmelon_3
   - first:
       213: 2795830060088703044
     second: crops_146
   - first:
       213: -583514924770518727
-    second: pump3
+    second: pumpkin_3
   - first:
       213: 5497882885103753843
     second: crops_148
@@ -454,7 +454,7 @@ TextureImporter:
     second: crops_149
   - first:
       213: 8289712164287485884
-    second: corn3
+    second: corn_3
   - first:
       213: 1280881287140897439
     second: crops_151
@@ -595,13 +595,13 @@ TextureImporter:
     second: crops_196
   - first:
       213: -3151397293858658065
-    second: cab0
+    second: cabbage_0
   - first:
       213: -5773085282285237429
     second: crops_198
   - first:
       213: 4756933537193452882
-    second: celery0
+    second: celery_0
   - first:
       213: -374412051575295789
     second: crops_200
@@ -613,7 +613,7 @@ TextureImporter:
     second: crops_202
   - first:
       213: -2740545083264085238
-    second: caul0
+    second: cauliflower_0
   - first:
       213: -143983609351356287
     second: crops_204
@@ -622,25 +622,25 @@ TextureImporter:
     second: crops_205
   - first:
       213: 8601400953569308185
-    second: leak0
+    second: leak_0
   - first:
       213: -5649371496883800756
     second: crops_207
   - first:
       213: 7519021465560718109
-    second: egg0
+    second: eggplant_0
   - first:
       213: 4673997073069576222
     second: crops_209
   - first:
       213: -5388018704817399333
-    second: squash0
+    second: squash_0
   - first:
       213: -3238273839575486897
     second: zucc0
   - first:
       213: -4568182936169405915
-    second: straw0
+    second: strawberry_0
   - first:
       213: 2620515183342644627
     second: crops_213
@@ -649,10 +649,10 @@ TextureImporter:
     second: crops_214
   - first:
       213: -3340574621086024711
-    second: blue0
+    second: blueberry_0
   - first:
       213: 473276348246646460
-    second: grape0
+    second: grape_0
   - first:
       213: -1874348453352510714
     second: crops_217
@@ -664,7 +664,7 @@ TextureImporter:
     second: crops_219
   - first:
       213: -1003727749564244881
-    second: tomato0
+    second: tomato_0
   - first:
       213: -8652635625351713341
     second: crops_221
@@ -673,7 +673,7 @@ TextureImporter:
     second: crops_222
   - first:
       213: 7707526125539123490
-    second: bean0
+    second: bean_0
   - first:
       213: 3157771427409083121
     second: crops_224
@@ -694,13 +694,13 @@ TextureImporter:
     second: crops_229
   - first:
       213: -64831953140251823
-    second: cab1
+    second: cabbage_1
   - first:
       213: -4778526907378126208
     second: crops_231
   - first:
       213: 828733280683126411
-    second: celery1
+    second: celery_1
   - first:
       213: 579488057455518369
     second: crops_233
@@ -712,7 +712,7 @@ TextureImporter:
     second: crops_235
   - first:
       213: 679381683746382286
-    second: caul1
+    second: cauliflower_1
   - first:
       213: -7196828219463667836
     second: crops_237
@@ -721,25 +721,25 @@ TextureImporter:
     second: crops_238
   - first:
       213: 3269580127248071769
-    second: leak1
+    second: leak_1
   - first:
       213: 5808869252666709706
     second: crops_240
   - first:
       213: -3178327978068080885
-    second: egg1
+    second: eggplant_1
   - first:
       213: -6160935734607291867
     second: crops_242
   - first:
       213: 6565798522545314054
-    second: squash1
+    second: squash_1
   - first:
       213: -4124226550877941809
     second: zucc1
   - first:
       213: 3566356438213040338
-    second: straw1
+    second: strawberry_1
   - first:
       213: 8952239502831863964
     second: crops_246
@@ -748,10 +748,10 @@ TextureImporter:
     second: crops_247
   - first:
       213: -6567478624175301841
-    second: blue1
+    second: blueberry_1
   - first:
       213: 6604419437155268718
-    second: grape1
+    second: grape_1
   - first:
       213: 7161380542964457888
     second: crops_250
@@ -763,7 +763,7 @@ TextureImporter:
     second: crops_252
   - first:
       213: -3039098886462653186
-    second: tomato1
+    second: tomato_1
   - first:
       213: 545532931187373843
     second: crops_254
@@ -772,7 +772,7 @@ TextureImporter:
     second: crops_255
   - first:
       213: 2089342189837052921
-    second: bean1
+    second: bean_1
   - first:
       213: 5908055454347878233
     second: crops_257
@@ -808,13 +808,13 @@ TextureImporter:
     second: crops_267
   - first:
       213: 5529170504357419524
-    second: cab2
+    second: cabbage_2
   - first:
       213: 4582634370224467058
     second: crops_269
   - first:
       213: -5802136928175180378
-    second: celery2
+    second: celery_2
   - first:
       213: -7652076332135382777
     second: crops_271
@@ -826,7 +826,7 @@ TextureImporter:
     second: crops_273
   - first:
       213: 5952551379221341443
-    second: caul2
+    second: cauliflower_2
   - first:
       213: 3638087648498294303
     second: crops_275
@@ -835,25 +835,25 @@ TextureImporter:
     second: crops_276
   - first:
       213: -6860948364216230614
-    second: leak2
+    second: leak_2
   - first:
       213: -2925642178941236713
     second: crops_278
   - first:
       213: 7713437065039133689
-    second: egg2
+    second: eggplant_2
   - first:
       213: -1797229865066144478
     second: crops_280
   - first:
       213: 1335964572892761369
-    second: squash2
+    second: squash_2
   - first:
       213: -8534898318153651003
     second: zucc2
   - first:
       213: 5868022533994543220
-    second: straw2
+    second: strawberry_2
   - first:
       213: 7081585879107526012
     second: crops_284
@@ -862,10 +862,10 @@ TextureImporter:
     second: crops_285
   - first:
       213: 4917387199419735079
-    second: blue2
+    second: blueberry_2
   - first:
       213: 4402750510280530152
-    second: grape2
+    second: grape_2
   - first:
       213: -3172894162654648489
     second: crops_288
@@ -877,7 +877,7 @@ TextureImporter:
     second: crops_290
   - first:
       213: 6953199578642110320
-    second: tomato2
+    second: tomato_2
   - first:
       213: 1674314488056120467
     second: crops_292
@@ -886,7 +886,7 @@ TextureImporter:
     second: crops_293
   - first:
       213: -7327810869804698006
-    second: bean2
+    second: bean_2
   - first:
       213: 2105904688079780559
     second: crops_295
@@ -931,13 +931,13 @@ TextureImporter:
     second: crops_308
   - first:
       213: -5859810658904580203
-    second: cab3
+    second: cabbage_3
   - first:
       213: -7843126749981768692
     second: crops_310
   - first:
       213: 4621597369026666132
-    second: celery3
+    second: celery_3
   - first:
       213: 8600599237828772484
     second: crops_312
@@ -949,7 +949,7 @@ TextureImporter:
     second: crops_314
   - first:
       213: 2260352761398407056
-    second: caul3
+    second: cauliflower_3
   - first:
       213: -6528182753382111062
     second: crops_316
@@ -958,19 +958,19 @@ TextureImporter:
     second: crops_317
   - first:
       213: -7334787810553576437
-    second: leak3
+    second: leak_3
   - first:
       213: 6585129017495645877
     second: crops_319
   - first:
       213: 959369715422288246
-    second: egg3
+    second: eggplant_3
   - first:
       213: -1568158290894169523
     second: crops_321
   - first:
       213: 1447957414386815784
-    second: squash3
+    second: squash_3
   - first:
       213: 4406109525533373078
     second: zucc3
@@ -982,13 +982,13 @@ TextureImporter:
     second: crops_325
   - first:
       213: -820006767847193685
-    second: straw3
+    second: strawberry_3
   - first:
       213: 695160693137796786
-    second: blue3
+    second: blueberry_3
   - first:
       213: -8204574899544956830
-    second: grape3
+    second: grape_3
   - first:
       213: -5474564856716512123
     second: crops_329
@@ -1000,7 +1000,7 @@ TextureImporter:
     second: crops_331
   - first:
       213: -4981902888287147947
-    second: tomato3
+    second: tomato_3
   - first:
       213: -3147721631829876842
     second: crops_333
@@ -1009,7 +1009,7 @@ TextureImporter:
     second: crops_334
   - first:
       213: -4562159710989992817
-    second: bean3
+    second: bean_3
   - first:
       213: -3794399523777031202
     second: crops_336
@@ -1117,7 +1117,7 @@ TextureImporter:
     second: crops_370
   - first:
       213: 1547540476264204746
-    second: pine0
+    second: pineapple_0
   - first:
       213: -5541307628894838263
     second: crops_372
@@ -1132,7 +1132,7 @@ TextureImporter:
     second: crops_375
   - first:
       213: 659399541263684186
-    second: pine1
+    second: pineapple_1
   - first:
       213: -8206832135290511490
     second: crops_377
@@ -1147,7 +1147,7 @@ TextureImporter:
     second: crops_380
   - first:
       213: 3656958353906213676
-    second: pine2
+    second: pineapple_2
   - first:
       213: 5015716912009609642
     second: crops_382
@@ -1162,7 +1162,7 @@ TextureImporter:
     second: crops_385
   - first:
       213: -7700244294822768150
-    second: pine3
+    second: pineapple_3
   - first:
       213: -6358318061957287000
     second: crops_387
@@ -1270,11 +1270,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: carrot0
+      name: carrot_0
       rect:
         serializedVersion: 2
-        x: 192
-        y: 960
+        x: 190
+        y: 951
         width: 32
         height: 32
       alignment: 0
@@ -1291,7 +1291,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nip0
+      name: turnip_0
       rect:
         serializedVersion: 2
         x: 352
@@ -1312,7 +1312,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: onion0
+      name: onion_0
       rect:
         serializedVersion: 2
         x: 448
@@ -1333,7 +1333,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pep0
+      name: pepper_0
       rect:
         serializedVersion: 2
         x: 672
@@ -1354,7 +1354,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: melon0
+      name: watermelon_0
       rect:
         serializedVersion: 2
         x: 736
@@ -1375,7 +1375,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rockMel0
+      name: rockmelon_0
       rect:
         serializedVersion: 2
         x: 800
@@ -1396,7 +1396,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pump0
+      name: pumpkin_0
       rect:
         serializedVersion: 2
         x: 864
@@ -1417,7 +1417,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: corn0
+      name: corn_0
       rect:
         serializedVersion: 2
         x: 960
@@ -1438,11 +1438,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: carrot1
+      name: carrot_1
       rect:
         serializedVersion: 2
-        x: 192
-        y: 896
+        x: 189
+        y: 890
         width: 32
         height: 32
       alignment: 0
@@ -1459,7 +1459,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nip1
+      name: turnip_1
       rect:
         serializedVersion: 2
         x: 352
@@ -1480,7 +1480,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: onion1
+      name: onion_1
       rect:
         serializedVersion: 2
         x: 448
@@ -1501,7 +1501,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pep1
+      name: pepper_1
       rect:
         serializedVersion: 2
         x: 672
@@ -1522,7 +1522,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: melon1
+      name: watermelon_1
       rect:
         serializedVersion: 2
         x: 736
@@ -1543,7 +1543,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rockMel1
+      name: rockmelon_1
       rect:
         serializedVersion: 2
         x: 800
@@ -1564,7 +1564,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pump1
+      name: pumpkin_1
       rect:
         serializedVersion: 2
         x: 864
@@ -1585,7 +1585,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: corn1
+      name: corn_1
       rect:
         serializedVersion: 2
         x: 960
@@ -1606,11 +1606,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: carrot2
+      name: carrot_2
       rect:
         serializedVersion: 2
-        x: 193
-        y: 832
+        x: 192
+        y: 830
         width: 32
         height: 32
       alignment: 0
@@ -1627,7 +1627,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nip2
+      name: turnip_2
       rect:
         serializedVersion: 2
         x: 352
@@ -1648,7 +1648,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: onion2
+      name: onion_2
       rect:
         serializedVersion: 2
         x: 448
@@ -1669,7 +1669,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pep2
+      name: pepper_2
       rect:
         serializedVersion: 2
         x: 672
@@ -1690,7 +1690,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: melon2
+      name: watermelon_2
       rect:
         serializedVersion: 2
         x: 736
@@ -1711,7 +1711,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rockMel2
+      name: rockmelon_2
       rect:
         serializedVersion: 2
         x: 800
@@ -1732,7 +1732,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pump2
+      name: pumpkin_2
       rect:
         serializedVersion: 2
         x: 865
@@ -1753,7 +1753,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: corn2
+      name: corn_2
       rect:
         serializedVersion: 2
         x: 960
@@ -1774,7 +1774,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: carrot3
+      name: carrot_3
       rect:
         serializedVersion: 2
         x: 192
@@ -1795,7 +1795,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nip3
+      name: turnip_3
       rect:
         serializedVersion: 2
         x: 352
@@ -1816,7 +1816,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: onion3
+      name: onion_3
       rect:
         serializedVersion: 2
         x: 448
@@ -1837,7 +1837,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pep3
+      name: pepper_3
       rect:
         serializedVersion: 2
         x: 672
@@ -1858,7 +1858,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: melon3
+      name: watermelon_3
       rect:
         serializedVersion: 2
         x: 736
@@ -1879,7 +1879,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rockMel3
+      name: rockmelon_3
       rect:
         serializedVersion: 2
         x: 800
@@ -1900,7 +1900,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pump3
+      name: pumpkin_3
       rect:
         serializedVersion: 2
         x: 864
@@ -1921,7 +1921,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: corn3
+      name: corn_3
       rect:
         serializedVersion: 2
         x: 961
@@ -1942,7 +1942,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cab0
+      name: cabbage_0
       rect:
         serializedVersion: 2
         x: 160
@@ -1963,7 +1963,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: celery0
+      name: celery_0
       rect:
         serializedVersion: 2
         x: 224
@@ -1984,7 +1984,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: caul0
+      name: cauliflower_0
       rect:
         serializedVersion: 2
         x: 352
@@ -2005,7 +2005,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: leak0
+      name: leak_0
       rect:
         serializedVersion: 2
         x: 448
@@ -2026,7 +2026,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: egg0
+      name: eggplant_0
       rect:
         serializedVersion: 2
         x: 512
@@ -2047,7 +2047,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: squash0
+      name: squash_0
       rect:
         serializedVersion: 2
         x: 576
@@ -2068,28 +2068,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: zucc0
-      rect:
-        serializedVersion: 2
-        x: 608
-        y: 640
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f4ea9aa99175f03d0800000000000000
-      internalID: -3238273839575486897
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: straw0
+      name: strawberry_0
       rect:
         serializedVersion: 2
         x: 640
@@ -2110,7 +2089,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: blue0
+      name: blueberry_0
       rect:
         serializedVersion: 2
         x: 736
@@ -2131,7 +2110,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: grape0
+      name: grape_0
       rect:
         serializedVersion: 2
         x: 768
@@ -2152,7 +2131,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tomato0
+      name: tomato_0
       rect:
         serializedVersion: 2
         x: 896
@@ -2173,7 +2152,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bean0
+      name: bean_0
       rect:
         serializedVersion: 2
         x: 992
@@ -2194,7 +2173,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cab1
+      name: cabbage_1
       rect:
         serializedVersion: 2
         x: 160
@@ -2215,7 +2194,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: celery1
+      name: celery_1
       rect:
         serializedVersion: 2
         x: 224
@@ -2236,7 +2215,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: caul1
+      name: cauliflower_1
       rect:
         serializedVersion: 2
         x: 352
@@ -2257,7 +2236,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: leak1
+      name: leak_1
       rect:
         serializedVersion: 2
         x: 448
@@ -2278,7 +2257,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: egg1
+      name: eggplant_1
       rect:
         serializedVersion: 2
         x: 512
@@ -2299,7 +2278,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: squash1
+      name: squash_1
       rect:
         serializedVersion: 2
         x: 576
@@ -2320,28 +2299,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: zucc1
-      rect:
-        serializedVersion: 2
-        x: 608
-        y: 576
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fcf8fa59dcdc3c6c0800000000000000
-      internalID: -4124226550877941809
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: straw1
+      name: strawberry_1
       rect:
         serializedVersion: 2
         x: 640
@@ -2362,7 +2320,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: blue1
+      name: blueberry_1
       rect:
         serializedVersion: 2
         x: 736
@@ -2383,7 +2341,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: grape1
+      name: grape_1
       rect:
         serializedVersion: 2
         x: 768
@@ -2404,7 +2362,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tomato1
+      name: tomato_1
       rect:
         serializedVersion: 2
         x: 896
@@ -2425,7 +2383,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bean1
+      name: bean_1
       rect:
         serializedVersion: 2
         x: 992
@@ -2446,7 +2404,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cab2
+      name: cabbage_2
       rect:
         serializedVersion: 2
         x: 160
@@ -2467,7 +2425,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: celery2
+      name: celery_2
       rect:
         serializedVersion: 2
         x: 224
@@ -2488,7 +2446,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: caul2
+      name: cauliflower_2
       rect:
         serializedVersion: 2
         x: 353
@@ -2509,7 +2467,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: leak2
+      name: leak_2
       rect:
         serializedVersion: 2
         x: 448
@@ -2530,7 +2488,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: egg2
+      name: eggplant_2
       rect:
         serializedVersion: 2
         x: 512
@@ -2551,7 +2509,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: squash2
+      name: squash_2
       rect:
         serializedVersion: 2
         x: 576
@@ -2572,28 +2530,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: zucc2
-      rect:
-        serializedVersion: 2
-        x: 608
-        y: 512
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5cc6f501333fd8980800000000000000
-      internalID: -8534898318153651003
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: straw2
+      name: strawberry_2
       rect:
         serializedVersion: 2
         x: 640
@@ -2614,7 +2551,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: blue2
+      name: blueberry_2
       rect:
         serializedVersion: 2
         x: 736
@@ -2635,7 +2572,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: grape2
+      name: grape_2
       rect:
         serializedVersion: 2
         x: 768
@@ -2656,7 +2593,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tomato2
+      name: tomato_2
       rect:
         serializedVersion: 2
         x: 896
@@ -2677,7 +2614,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bean2
+      name: bean_2
       rect:
         serializedVersion: 2
         x: 992
@@ -2698,7 +2635,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cab3
+      name: cabbage_3
       rect:
         serializedVersion: 2
         x: 160
@@ -2719,7 +2656,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: celery3
+      name: celery_3
       rect:
         serializedVersion: 2
         x: 224
@@ -2740,7 +2677,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: caul3
+      name: cauliflower_3
       rect:
         serializedVersion: 2
         x: 352
@@ -2761,7 +2698,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: leak3
+      name: leak_3
       rect:
         serializedVersion: 2
         x: 448
@@ -2782,7 +2719,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: egg3
+      name: eggplant_3
       rect:
         serializedVersion: 2
         x: 512
@@ -2803,7 +2740,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: squash3
+      name: squash_3
       rect:
         serializedVersion: 2
         x: 576
@@ -2824,28 +2761,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: zucc3
-      rect:
-        serializedVersion: 2
-        x: 608
-        y: 448
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 692b1e6d445a52d30800000000000000
-      internalID: 4406109525533373078
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: straw3
+      name: strawberry_3
       rect:
         serializedVersion: 2
         x: 641
@@ -2866,7 +2782,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: blue3
+      name: blueberry_3
       rect:
         serializedVersion: 2
         x: 736
@@ -2887,7 +2803,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: grape3
+      name: grape_3
       rect:
         serializedVersion: 2
         x: 768
@@ -2908,7 +2824,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tomato3
+      name: tomato_3
       rect:
         serializedVersion: 2
         x: 896
@@ -2929,7 +2845,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bean3
+      name: bean_3
       rect:
         serializedVersion: 2
         x: 992
@@ -2950,7 +2866,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pine0
+      name: pineapple_0
       rect:
         serializedVersion: 2
         x: 960
@@ -2971,7 +2887,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pine1
+      name: pineapple_1
       rect:
         serializedVersion: 2
         x: 960
@@ -2992,7 +2908,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pine2
+      name: pineapple_2
       rect:
         serializedVersion: 2
         x: 960
@@ -3013,7 +2929,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pine3
+      name: pineapple_3
       rect:
         serializedVersion: 2
         x: 960

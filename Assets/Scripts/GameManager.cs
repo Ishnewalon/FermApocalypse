@@ -48,11 +48,15 @@ public class GameManager : Singleton<GameManager>
     public double year;
     public bool hasLightBeenSpawned = false;
     public bool hasMusicPlayerSpawned = false;
+    private Sprite[] _allPlantSprites;
+    Dictionary<Enum, List<Sprite>> _plantSprites = new Dictionary<Enum, List<Sprite>>();
+    Dictionary<String, Enum> _plantNameToItemType = new Dictionary<String, Enum>();
     public void Start()
     {
         DontDestroyOnLoad(this);
         InstanciateSystemPrefab();
         _menuCamera = GameObject.FindWithTag("MainCamera");
+        _allPlantSprites = Resources.LoadAll<Sprite>("Sprites/Plants/plants");
     }
     
     void InstanciateSystemPrefab()
@@ -247,5 +251,42 @@ public class GameManager : Singleton<GameManager>
     public void ToggleGoToBedDialog()
     {
         UpdateGameState(_currentGameState == GameState.RUNNING ? GameState.GOTOBED : GameState.RUNNING);
+    }
+
+    private void SetUpCropSprites()
+    {
+        List<Sprite> _blueberry = new List<Sprite>(); 
+        List<Sprite> _carrots = new List<Sprite>(); 
+        List<Sprite> _eggplants = new List<Sprite>(); 
+        List<Sprite> _grapes = new List<Sprite>();
+        List<Sprite> _tomatos = new List<Sprite>();
+        //_plantSprites.Add();
+        /*List<Sprite> _watermelon = new List<Sprite>();
+        List<Sprite> _pumpkin = new List<Sprite>();
+        List<Sprite> _cabbage = new List<Sprite>();
+        List<Sprite> _cauliflower = new List<Sprite>();
+        List<Sprite> _bean = new List<Sprite>();*/
+        
+        /*List<Sprite> _turnip = new List<Sprite>();
+        List<Sprite> _onion = new List<Sprite>();
+        List<Sprite> _pepper = new List<Sprite>();
+        List<Sprite> _corn = new List<Sprite>();
+        List<Sprite> _celery = new List<Sprite>();
+        List<Sprite> _leak = new List<Sprite>();
+        List<Sprite> _squash = new List<Sprite>();
+        List<Sprite> _zucchini = new List<Sprite>();
+        List<Sprite> _strawberry = new List<Sprite>();
+        List<Sprite> _rockmelon = new List<Sprite>();*/
+        
+        for (int i = 0; i < _allPlantSprites.Length; i++)
+        {
+            String spriteName = _allPlantSprites[i].name;
+            /*switch (spriteName)
+            {
+                case "blue"
+                    
+                    sprite["fdsfdsf"].Add[gfsdgfsd]
+            }*/
+        }
     }
 }

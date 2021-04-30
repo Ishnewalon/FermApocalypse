@@ -7,10 +7,10 @@ public class TerrainManager : MonoBehaviour
 {
     [SerializeField]private Sprite _plantableSoil;
     [SerializeField]private Sprite _tilledSoil;
-    Dictionary<Enum, List<Sprite>> _plantSprites = new Dictionary<Enum, List<Sprite>>();
-    List<Sprite> _eggplants = new List<Sprite>();
-    private int _currrentPlantSprite = 0;
-    private Sprite[] _allPlantSprites; 
+    
+    private Sprite[] _allPlantSprites;
+
+     
 
     private GameObject _plantGO;
     // Start is called before the first frame update
@@ -18,10 +18,13 @@ public class TerrainManager : MonoBehaviour
     {
         int j = 0;
         _allPlantSprites = Resources.LoadAll<Sprite>("Sprites/Plants/plants");
+        for (int i = 0; i < _allPlantSprites.Length; i++)
+        {
+            print(_allPlantSprites[i].name);
+        }
         
-        print(_allPlantSprites.Length);
-
-        for (int i = 28; i < 32; i++)
+        
+        /*for (int i = 28; i < 32; i++)
         {
             _eggplants.Add(_allPlantSprites[i]);
             print(_eggplants[j]);
@@ -31,19 +34,19 @@ public class TerrainManager : MonoBehaviour
         _plantGO = transform.Find("Plant").gameObject;
         
         
-        _plantSprites.Add(Item.ItemType.EggPlantSeed, _eggplants);
+        _plantSprites.Add(Item.ItemType.EggPlantSeed, _eggplants);*/
     }
 
     // Update is called once per frame
     void Update()
     {
-        /*if (Input.GetMouseButtonDown(0))
+        if (GetComponent<SpriteRenderer>().sprite == _tilledSoil && _plantGO.activeSelf == false)
         {
-            ChangeSprite();
-        }*/
+            GetComponent<SpriteRenderer>().sprite = _plantableSoil;
+        }
     }
 
-    private void OnMouseDown()
+    /*private void OnMouseDown()
     {
         if (GetComponent<SpriteRenderer>().sprite == _plantableSoil)
         {
@@ -61,7 +64,7 @@ public class TerrainManager : MonoBehaviour
             _plantGO.SetActive(false);
             GetComponent<SpriteRenderer>().sprite = _plantableSoil;
         }
-    }
+    }*/
 
 }
 
