@@ -270,6 +270,7 @@ public class GameManager : Singleton<GameManager>
         _plantNameToItemType.Add("leak", Item.ItemType.LeakSeed);
         _plantNameToItemType.Add("onion", Item.ItemType.OnionSeed);
         _plantNameToItemType.Add("pepper", Item.ItemType.PepperSeed);
+        _plantNameToItemType.Add("pineapple", Item.ItemType.PineappleSeed);
         _plantNameToItemType.Add("pumpkin", Item.ItemType.PumpkinSeed);
         _plantNameToItemType.Add("rockmelon", Item.ItemType.RockmelonSeed);
         _plantNameToItemType.Add("squash", Item.ItemType.SquashSeed);
@@ -290,6 +291,7 @@ public class GameManager : Singleton<GameManager>
         List<Sprite> _leak = new List<Sprite>();
         List<Sprite> _onion = new List<Sprite>();
         List<Sprite> _pepper = new List<Sprite>();
+        List<Sprite> _pineapple = new List<Sprite>();
         List<Sprite> _pumpkin = new List<Sprite>();
         List<Sprite> _rockmelon = new List<Sprite>();
         List<Sprite> _squash = new List<Sprite>();
@@ -310,16 +312,19 @@ public class GameManager : Singleton<GameManager>
         _plantSprites.Add(Item.ItemType.LeakSeed, _leak);
         _plantSprites.Add(Item.ItemType.OnionSeed, _onion);
         _plantSprites.Add(Item.ItemType.PepperSeed, _pepper);
+        _plantSprites.Add(Item.ItemType.PineappleSeed, _pineapple);
         _plantSprites.Add(Item.ItemType.PumpkinSeed, _pumpkin);
         _plantSprites.Add(Item.ItemType.RockmelonSeed, _rockmelon);
         _plantSprites.Add(Item.ItemType.SquashSeed, _squash);
         _plantSprites.Add(Item.ItemType.StrawberrySeed, _strawberry);
         _plantSprites.Add(Item.ItemType.TomatoSeed, _tomato);
+        _plantSprites.Add(Item.ItemType.TurnipSeed, _turnip);
         _plantSprites.Add(Item.ItemType.WatermelonSeed, _watermelon);
         
         for (int i = 0; i < _allPlantSprites.Length; i++)
         {
-            String spriteName = _allPlantSprites[i].name.Substring(0, _allPlantSprites[i].name.IndexOf("_") );
+            String spriteName = _allPlantSprites[i].name.Substring(0, _allPlantSprites[i].name.IndexOf("_"));
+            print(spriteName);
             _plantSprites[_plantNameToItemType[spriteName]].Add(_allPlantSprites[i]);
         }
     }

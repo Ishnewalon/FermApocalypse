@@ -23,6 +23,7 @@ public class Item
         LeakSeed,
         OnionSeed,
         PepperSeed,
+        PineappleSeed,
         PumpkinSeed,
         RockmelonSeed,
         SquashSeed,
