@@ -56,9 +56,9 @@ public class Item
             case ItemType.Scythe : return new Color(150, 100, 10);
             case ItemType.WaterBucket : return new Color(150, 100, 10);
             
-            case ItemType.WaterMelon : return new Color(255, 10, 10);
+            case ItemType.Watermelon : return new Color(255, 10, 10);
             
-            case ItemType.WaterMelonSeed : return new Color(255, 255, 255);
+            case ItemType.WatermelonSeed : return new Color(255, 255, 255);
             case ItemType.EggplantSeed : return new Color(255, 255, 255);
         }
     }
