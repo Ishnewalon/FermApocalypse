@@ -316,7 +316,27 @@ MonoBehaviour:
   itemWorld: {fileID: 7468462715683064662, guid: 7210e8a543276b642bba4b8007f959c9, type: 3}
   hoeSprite: {fileID: -3186262526813576740, guid: ba20d0d42ef13284b95c2000381e9918, type: 3}
   scytheSprite: {fileID: -1368058182281286375, guid: ba20d0d42ef13284b95c2000381e9918, type: 3}
-  WaterBucketSprite: {fileID: 8624245271877955555, guid: 6379dccbfee466f4fb039f4c5e25feda, type: 3}
+  waterBucketSprite: {fileID: 8624245271877955555, guid: 6379dccbfee466f4fb039f4c5e25feda, type: 3}
+  bean: {fileID: -2746354997011663302, guid: db1f5d20da085b744b6da2c97bb10ade, type: 3}
+  blueberry: {fileID: -3196038268417377934, guid: db1f5d20da085b744b6da2c97bb10ade, type: 3}
+  cabbage: {fileID: -458198559300568985, guid: db1f5d20da085b744b6da2c97bb10ade, type: 3}
+  carrot: {fileID: -3685991561390892270, guid: db1f5d20da085b744b6da2c97bb10ade, type: 3}
+  cauliflower: {fileID: 7131396861515025165, guid: db1f5d20da085b744b6da2c97bb10ade, type: 3}
+  celery: {fileID: 2106325965987121506, guid: db1f5d20da085b744b6da2c97bb10ade, type: 3}
+  corn: {fileID: 7554961574213515880, guid: db1f5d20da085b744b6da2c97bb10ade, type: 3}
+  eggplant: {fileID: -997492314874589975, guid: db1f5d20da085b744b6da2c97bb10ade, type: 3}
+  grape: {fileID: -5820455774684760088, guid: db1f5d20da085b744b6da2c97bb10ade, type: 3}
+  leak: {fileID: -4963184343007195599, guid: db1f5d20da085b744b6da2c97bb10ade, type: 3}
+  onion: {fileID: 6040182745019374522, guid: db1f5d20da085b744b6da2c97bb10ade, type: 3}
+  pepper: {fileID: -1549892904516488635, guid: db1f5d20da085b744b6da2c97bb10ade, type: 3}
+  pineapple: {fileID: -8182301212358448120, guid: db1f5d20da085b744b6da2c97bb10ade, type: 3}
+  pumpkin: {fileID: 1284913301216896148, guid: db1f5d20da085b744b6da2c97bb10ade, type: 3}
+  rockmelon: {fileID: -9092761112849181985, guid: db1f5d20da085b744b6da2c97bb10ade, type: 3}
+  squash: {fileID: 6208942660198506485, guid: db1f5d20da085b744b6da2c97bb10ade, type: 3}
+  strawberry: {fileID: 4649395622828572104, guid: db1f5d20da085b744b6da2c97bb10ade, type: 3}
+  tomato: {fileID: -2653411282353314666, guid: db1f5d20da085b744b6da2c97bb10ade, type: 3}
+  turnip: {fileID: -7086171013504260158, guid: db1f5d20da085b744b6da2c97bb10ade, type: 3}
+  watermelon: {fileID: -5543174254979483071, guid: db1f5d20da085b744b6da2c97bb10ade, type: 3}
 --- !u!1 &616117446
 GameObject:
   m_ObjectHideFlags: 0
