@@ -22,20 +22,23 @@ public class PlantGrowingController : MonoBehaviour
             _plantType = GameManager.Instance._currentHeldItem;
             GetComponent<SpriteRenderer>().sprite =
                 GameManager.Instance._plantSprites[_plantType][_currrentPlantSprite];
+                
         }
     }
 
     private void OnMouseDown()
     {
-        if ((_currrentPlantSprite > 4) && (_currrentPlantSprite >= 0))
+        _currrentPlantSprite++;
+        print(_currrentPlantSprite);
+        if ((_currrentPlantSprite < 4) && (_currrentPlantSprite >= 0))
         {
-            _currrentPlantSprite++;
             GetComponent<SpriteRenderer>().sprite =
                 GameManager.Instance._plantSprites[_plantType][_currrentPlantSprite];
         }
-        else if (_currrentPlantSprite == 3)
+        else if (_currrentPlantSprite >= 4)
         {
             gameObject.SetActive(false);
+            _currrentPlantSprite = 0;
         }
     }
 }
