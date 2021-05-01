@@ -15,6 +15,8 @@ public class UI_Inventory : MonoBehaviour
 
     private Transform _canvas;
 
+    public GameObject go;
+
     //[SerializeField] private GameObject _itemSlotContainer;
 
     private void Awake()
@@ -25,7 +27,7 @@ public class UI_Inventory : MonoBehaviour
     {
         _inventory = inventory;
         
-        GameObject go = Instantiate(gameObject);
+        go = Instantiate(gameObject);
         _canvas = go.transform.GetChild(0);
         itemSlotContainer = go.transform.GetChild(0).Find("itemSlotContainer");
         itemSlotTemplate = itemSlotContainer.Find("itemSlotTemplate");

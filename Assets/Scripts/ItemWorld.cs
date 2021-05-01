@@ -24,12 +24,12 @@ public class ItemWorld : MonoBehaviour
     private void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
-        _light2D = GetComponent<Light2D>();
+        _light2D = transform.Find("ItemGlow").GetComponent<Light2D>();
     }
 
     public void SetItem(Item item)
     {
-        this._item = item;
+        _item = item;
         _spriteRenderer.sprite = item.GetSprite();
         _light2D.color = item.GetColor();
     }

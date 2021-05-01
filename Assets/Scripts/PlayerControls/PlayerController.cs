@@ -63,7 +63,14 @@ public class PlayerController : MonoBehaviour
 
     private void ToggleInventory()
     {
-
+        if ( _uiInventory.go.activeInHierarchy)
+        {
+            _uiInventory.go.SetActive(false);
+        }
+        else
+        {
+            _uiInventory.go.SetActive(true);
+        }
     }
 
     private void FixedUpdate()

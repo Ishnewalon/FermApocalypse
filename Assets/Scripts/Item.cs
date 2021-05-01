@@ -41,10 +41,10 @@ public class Item
     {
         switch (itemType)
         {
-            default: 
             case ItemType.Hoe: return ItemAssets.Instance.hoeSprite;
             case ItemType.Scythe: return ItemAssets.Instance.scytheSprite;
             case ItemType.WaterBucket: return ItemAssets.Instance.WaterBucketSprite;
+            default: return ItemAssets.Instance.hoeSprite;
         }
     }
 
