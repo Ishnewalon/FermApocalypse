@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Schema;
 using DefaultNamespace;
 using UnityEngine;
 using UnityEngine.Events;
@@ -51,6 +52,7 @@ public class GameManager : Singleton<GameManager>
     private Sprite[] _allPlantSprites;
     public Dictionary<Enum, List<Sprite>> _plantSprites = new Dictionary<Enum, List<Sprite>>();
     private Dictionary<String, Enum> _plantNameToItemType = new Dictionary<String, Enum>();
+    public List<Enum> _cropSeedEnum = new List<Enum>(); 
     public Enum _currentHeldItem = Item.ItemType.GrapeSeed;
     
     public void Start()
@@ -258,6 +260,17 @@ public class GameManager : Singleton<GameManager>
 
     private void SetUpCropSprites()
     {
+        FillCropDictionaries();
+        for (int i = 0; i < _allPlantSprites.Length; i++)
+        {
+            String spriteName = _allPlantSprites[i].name.Substring(0, _allPlantSprites[i].name.IndexOf("_"));
+            print(spriteName);
+            _plantSprites[_plantNameToItemType[spriteName]].Add(_allPlantSprites[i]);
+        }
+    }
+
+    private void FillCropDictionaries()
+    {
         _plantNameToItemType.Add("bean", Item.ItemType.BeanSeed);
         _plantNameToItemType.Add("blueberry",Item.ItemType.BlueberrySeed);
         _plantNameToItemType.Add("cabbage", Item.ItemType.CabbageSeed);
@@ -278,6 +291,27 @@ public class GameManager : Singleton<GameManager>
         _plantNameToItemType.Add("tomato", Item.ItemType.TomatoSeed);
         _plantNameToItemType.Add("turnip", Item.ItemType.TurnipSeed);
         _plantNameToItemType.Add("watermelon", Item.ItemType.WatermelonSeed);
+        
+        _cropSeedEnum.Add(Item.ItemType.BeanSeed);
+        _cropSeedEnum.Add(Item.ItemType.BlueberrySeed);
+        _cropSeedEnum.Add(Item.ItemType.CabbageSeed);
+        _cropSeedEnum.Add(Item.ItemType.CarrotSeed);
+        _cropSeedEnum.Add(Item.ItemType.CauliflowerSeed);
+        _cropSeedEnum.Add(Item.ItemType.CelerySeed);
+        _cropSeedEnum.Add(Item.ItemType.CornSeed);
+        _cropSeedEnum.Add(Item.ItemType.EggplantSeed);
+        _cropSeedEnum.Add(Item.ItemType.GrapeSeed);
+        _cropSeedEnum.Add(Item.ItemType.LeakSeed);
+        _cropSeedEnum.Add(Item.ItemType.OnionSeed);
+        _cropSeedEnum.Add(Item.ItemType.PepperSeed);
+        _cropSeedEnum.Add(Item.ItemType.PineappleSeed);
+        _cropSeedEnum.Add(Item.ItemType.PumpkinSeed);
+        _cropSeedEnum.Add(Item.ItemType.RockmelonSeed);
+        _cropSeedEnum.Add(Item.ItemType.SquashSeed);
+        _cropSeedEnum.Add(Item.ItemType.StrawberrySeed);
+        _cropSeedEnum.Add(Item.ItemType.TomatoSeed);
+        _cropSeedEnum.Add(Item.ItemType.TurnipSeed);
+        _cropSeedEnum.Add(Item.ItemType.WatermelonSeed);
         
         List<Sprite> _bean = new List<Sprite>();
         List<Sprite> _blueberry = new List<Sprite>(); 
@@ -320,12 +354,5 @@ public class GameManager : Singleton<GameManager>
         _plantSprites.Add(Item.ItemType.TomatoSeed, _tomato);
         _plantSprites.Add(Item.ItemType.TurnipSeed, _turnip);
         _plantSprites.Add(Item.ItemType.WatermelonSeed, _watermelon);
-        
-        for (int i = 0; i < _allPlantSprites.Length; i++)
-        {
-            String spriteName = _allPlantSprites[i].name.Substring(0, _allPlantSprites[i].name.IndexOf("_"));
-            print(spriteName);
-            _plantSprites[_plantNameToItemType[spriteName]].Add(_allPlantSprites[i]);
-        }
     }
 }
