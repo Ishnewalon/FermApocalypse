@@ -34,6 +34,7 @@ public class UI_Inventory : MonoBehaviour
         itemSlotTemplate = itemSlotContainer.Find("itemSlotTemplate");
 
         inventory.OnItemListChanged += InventoryOnItemListChanged;
+        
         RefreshInventoryItems();
     }
 

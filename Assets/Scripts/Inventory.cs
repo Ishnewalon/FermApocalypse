@@ -23,6 +23,7 @@ public class Inventory
     public void AddItem(Item item)
     {
         itemList.Add(item);
+        
         OnItemListChanged?.Invoke(this, EventArgs.Empty); // question mark to avoid possible null pointer
     }
 
