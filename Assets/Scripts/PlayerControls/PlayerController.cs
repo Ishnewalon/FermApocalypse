@@ -36,9 +36,10 @@ public class PlayerController : MonoBehaviour
         
         _uiInventory.SetInventory(_inventory);
 
+        // todo : for debuggin remove later
         ItemWorld.SpawnItemWorld(new Vector3(20, 20), new Item() {itemType = Item.ItemType.Hoe, amount = 1});
-        ItemWorld.SpawnItemWorld(new Vector3(20, 20), new Item() {itemType = Item.ItemType.Hoe, amount = 1});
-        ItemWorld.SpawnItemWorld(new Vector3(20, 20), new Item() {itemType = Item.ItemType.Hoe, amount = 1});
+        ItemWorld.SpawnItemWorld(new Vector3(22, 20), new Item() {itemType = Item.ItemType.Hoe, amount = 1});
+        ItemWorld.SpawnItemWorld(new Vector3(24, 20), new Item() {itemType = Item.ItemType.Hoe, amount = 1});
     }
 
     private void Update()
@@ -63,7 +64,7 @@ public class PlayerController : MonoBehaviour
 
     private void ToggleInventory()
     {
-        if ( _uiInventory.go.activeInHierarchy)
+        if (_uiInventory.go.activeInHierarchy)
         {
             _uiInventory.go.SetActive(false);
         }
@@ -82,6 +83,16 @@ public class PlayerController : MonoBehaviour
     {
         _animator.SetFloat(_animatorHeadingX, _heading.x);
         _animator.SetFloat(_animatorHeadingY, _heading.y);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        ItemWorld itemWorld = other.GetComponent<ItemWorld>();
+        if (itemWorld != null)
+        {
+            _inventory.AddItem(itemWorld.GetItem());
+            itemWorld.DestroySelf();
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D other)

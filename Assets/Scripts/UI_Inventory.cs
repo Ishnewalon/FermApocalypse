@@ -29,14 +29,27 @@ public class UI_Inventory : MonoBehaviour
         
         go = Instantiate(gameObject);
         _canvas = go.transform.GetChild(0);
+        
         itemSlotContainer = go.transform.GetChild(0).Find("itemSlotContainer");
         itemSlotTemplate = itemSlotContainer.Find("itemSlotTemplate");
 
+        inventory.OnItemListChanged += InventoryOnItemListChanged;
+        RefreshInventoryItems();
+    }
+
+    private void InventoryOnItemListChanged(object sender, EventArgs e)
+    {
         RefreshInventoryItems();
     }
 
     private void RefreshInventoryItems()
     {
+        foreach (Transform child in itemSlotContainer)
+        {
+            if (child == itemSlotTemplate) continue;
+            Destroy(child.gameObject);
+        }
+        
         int x = -2;
         int y = 1;
         float itemSlotCellSize = 60f;

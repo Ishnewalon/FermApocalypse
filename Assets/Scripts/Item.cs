@@ -11,6 +11,7 @@ public class Item
         Scythe,
         WaterBucket,
         Watermelon,
+        //seeds
         BeanSeed,
         BlueberrySeed,
         CabbageSeed,
@@ -52,15 +53,15 @@ public class Item
     {
         switch (itemType)
         {
-            default:
-            case ItemType.Hoe : return new Color(150, 100, 10);
-            case ItemType.Scythe : return new Color(150, 100, 10);
-            case ItemType.WaterBucket : return new Color(150, 100, 10);
+            case ItemType.Hoe : return Color.yellow;
+            case ItemType.Scythe : return Color.yellow;
+            case ItemType.WaterBucket : return Color.yellow;
             
-            case ItemType.Watermelon : return new Color(255, 10, 10);
+            case ItemType.Watermelon : return Color.red;
             
-            case ItemType.WatermelonSeed : return new Color(255, 255, 255);
-            case ItemType.EggplantSeed : return new Color(255, 255, 255);
+            case ItemType.WatermelonSeed : return Color.green;
+            case ItemType.EggplantSeed : return Color.green;
+            default: return Color.yellow;
         }
     }
 }

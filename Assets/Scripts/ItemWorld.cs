@@ -12,7 +12,7 @@ public class ItemWorld : MonoBehaviour
         Transform transform = Instantiate(ItemAssets.Instance.itemWorld, position, Quaternion.identity);
 
         ItemWorld itemWorld = transform.GetComponent<ItemWorld>();
-        //itemWorld.SetItem(item);
+        itemWorld.SetItem(item);
         
         return itemWorld;
     }
@@ -32,6 +32,16 @@ public class ItemWorld : MonoBehaviour
         _item = item;
         _spriteRenderer.sprite = item.GetSprite();
         _light2D.color = item.GetColor();
+    }
+
+    public Item GetItem()
+    {
+        return _item;
+    }
+
+    public void DestroySelf()
+    {
+        Destroy(gameObject);
     }
 
 }
