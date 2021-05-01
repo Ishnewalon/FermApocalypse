@@ -17,7 +17,7 @@ public class PlantGrowingController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameObject.activeSelf == true && _currrentPlantSprite == 0)
+        if (gameObject.activeSelf == true && _currrentPlantSprite == 0 && GameManager.Instance._cropSeedEnum.Contains(GameManager.Instance._currentHeldItem))
         {
             _plantType = GameManager.Instance._currentHeldItem;
             GetComponent<SpriteRenderer>().sprite =
@@ -30,7 +30,7 @@ public class PlantGrowingController : MonoBehaviour
     {
         _currrentPlantSprite++;
         print(_currrentPlantSprite);
-        if ((_currrentPlantSprite < 4) && (_currrentPlantSprite >= 0))
+        if ((GameManager.Instance._cropSeedEnum.Contains(GameManager.Instance._currentHeldItem)) && (_currrentPlantSprite < 4) && (_currrentPlantSprite >= 0))
         {
             GetComponent<SpriteRenderer>().sprite =
                 GameManager.Instance._plantSprites[_plantType][_currrentPlantSprite];
