@@ -14,16 +14,35 @@ public class Inventory
     {
         itemList = new List<Item>();
         
-        AddItem(new Item { itemType = Item.ItemType.Hoe, amount = 1 });
-        AddItem(new Item { itemType = Item.ItemType.Scythe, amount = 1 });
-        AddItem(new Item { itemType = Item.ItemType.WaterBucket, amount = 1 });
-        Debug.Log("inventory");
+        AddItem(new Item { itemType = Item.ItemType.Hoe, itemClass = Item.ItemClass.Tools, amount = 1 });
+        AddItem(new Item { itemType = Item.ItemType.Scythe, itemClass = Item.ItemClass.Tools, amount = 1 });
+        AddItem(new Item { itemType = Item.ItemType.WaterBucket, itemClass = Item.ItemClass.Tools, amount = 1 });
     }
 
     public void AddItem(Item item)
     {
-        itemList.Add(item);
-        
+        if (item.IsStackable())
+        {
+            bool itemAlreadyInInventory = false;
+            foreach (Item inventoryItem in itemList)
+            {
+                if (inventoryItem.itemType == item.itemType)
+                {
+                    inventoryItem.amount += item.amount;
+                    itemAlreadyInInventory = true;
+                }
+            }
+
+            if (!itemAlreadyInInventory)
+            {
+                itemList.Add(item);
+            }
+        }
+        else
+        {
+            itemList.Add(item);
+        }
+
         OnItemListChanged?.Invoke(this, EventArgs.Empty); // question mark to avoid possible null pointer
     }
 

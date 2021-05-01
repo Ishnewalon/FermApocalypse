@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[Serializable]
 public class Item
 {
 
@@ -10,6 +12,7 @@ public class Item
         Hoe,
         Scythe,
         WaterBucket,
+        
         Watermelon,
         //seeds
         BeanSeed,
@@ -34,7 +37,15 @@ public class Item
         WatermelonSeed
     }
 
+    public enum ItemClass
+    {
+        Tools,
+        Produce,
+        Seeds
+    }
+
     public ItemType itemType;
+    public ItemClass itemClass;
     public int amount;
 
 
@@ -51,17 +62,24 @@ public class Item
 
     public Color GetColor()
     {
-        switch (itemType)
+        switch (itemClass)
         {
-            case ItemType.Hoe : return Color.yellow;
-            case ItemType.Scythe : return Color.yellow;
-            case ItemType.WaterBucket : return Color.yellow;
-            
-            case ItemType.Watermelon : return Color.red;
-            
-            case ItemType.WatermelonSeed : return Color.green;
-            case ItemType.EggplantSeed : return Color.green;
+            case ItemClass.Tools : return Color.yellow;
+            case ItemClass.Produce : return Color.magenta;
+            case ItemClass.Seeds : return Color.green;
             default: return Color.yellow;
+        }
+    }
+
+    public bool IsStackable()
+    {
+        switch (itemClass)
+        {
+            case ItemClass.Seeds:
+            case ItemClass.Produce:
+                return true;
+            default:
+                return false;
         }
     }
 }

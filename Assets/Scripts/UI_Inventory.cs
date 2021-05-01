@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -63,7 +64,17 @@ public class UI_Inventory : MonoBehaviour
             
             Image image = itemSlotRectTransform.Find("itemSlotTemplate").Find("Image").GetComponent<Image>();
             image.sprite = item.GetSprite();
-            
+
+            TextMeshProUGUI uiText = itemSlotRectTransform.Find("itemSlotTemplate").Find("AmountText").GetComponent<TextMeshProUGUI>();
+            if (item.amount > 1)
+            {
+                uiText.SetText(item.amount.ToString());
+            }
+            else
+            {
+                uiText.SetText("");
+            }
+
             x++;
             if (x > 1)
             {
