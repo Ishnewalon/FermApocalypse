@@ -20,10 +20,13 @@ public class UI_Inventory : MonoBehaviour
 
     public GameObject go;
 
-    private Dictionary<Transform, Item> _inventorySlots = new Dictionary<Transform, Item>();
+    Dictionary<Transform, Item> _inventorySlots = new Dictionary<Transform, Item>();
     
     float itemSlotCellSize = 60f;
-    float itemSlotOffset = 30f;
+    float itemSlotOffset = 98f;
+
+    private int x_start = 1000;
+    private int y_start = -280;
 
     //[SerializeField] private GameObject _itemSlotContainer;
 
@@ -31,51 +34,91 @@ public class UI_Inventory : MonoBehaviour
     {
     }
 
+    private void Update()
+    {
+        refreshInventory();
+    }
+
     public void SetInventory(Inventory inventory)
     {
         _inventory = inventory;
         
         go = Instantiate(gameObject);
-        CreateSlots();
 
-        itemSlotContainer = go.transform.GetChild(0).Find("itemSlotContainer");
+        itemSlotContainer = go.transform.Find("itemSlotContainer");
         itemSlotTemplate = itemSlotContainer.Find("itemSlotTemplate");
 
         inventory.OnItemListChanged += InventoryOnItemListChanged;
         
-        //RefreshInventoryItems();
+        CreateSlots();
     }
 
     private void InventoryOnItemListChanged(object sender, EventArgs e)
     {
-        //RefreshInventoryItems();
+        CreateSlots();
     }
 
     private void CreateSlots()
     {
-        for (int i = 0; i < 4; i++)
+        var index = 0;
+        var invList = _inventory.GetItemList();
+        _inventorySlots = new Dictionary<Transform, Item>();
+        
+        for (int i = 0; i < 3; i++)
         {
-            for (int j = 0; j < 8; j++)
+            for (int j = 0; j < 6; j++)
             {
                 var itemSlotObj = Instantiate(itemSlotTemplate, itemSlotContainer);
-                itemSlotObj.GetComponent<RectTransform>().anchoredPosition = new Vector2(j * itemSlotOffset, i * itemSlotOffset);
+                itemSlotObj.GetComponent<RectTransform>().anchoredPosition = new Vector2(x_start + j * itemSlotOffset, y_start + i * -itemSlotOffset);
                 
-                AddEvent(itemSlotObj, EventTriggerType.PointerEnter, delegate {OnPointerEnter(itemSlotObj);});
-                AddEvent(itemSlotObj, EventTriggerType.PointerExit, delegate {OnPointerExit(itemSlotObj);});
-                AddEvent(itemSlotObj, EventTriggerType.BeginDrag, delegate {OnDragStart(itemSlotObj);});
                 AddEvent(itemSlotObj, EventTriggerType.EndDrag, delegate {OnDragEnd(itemSlotObj);});
-                AddEvent(itemSlotObj, EventTriggerType.Drag, delegate {OnDrag(itemSlotObj);});
-                AddEvent(itemSlotObj, EventTriggerType.PointerClick, delegate {OnPointerClick(itemSlotObj);});
+
+                if (index < invList.Count)
+                {
+                    _inventorySlots.Add(itemSlotObj, invList[index]);
+                    print("Item added!");
+                }
+                else
+                {
+                    _inventorySlots.Add(itemSlotObj, null);
+                }
+                index++;
+            }
+        }
+    }
+
+    private void refreshInventory()
+    {
+        print(_inventorySlots.Count);
+        foreach (KeyValuePair<Transform, Item> _slot in _inventorySlots)
+        {
+            print("hello????");
+            if (_slot.Value != null)
+            {
+                print("not null");
+                _slot.Key.Find("Item").GetComponent<Image>().sprite = _slot.Value.GetSprite();
+                _slot.Key.Find("Item_Qty").GetComponent<TextMeshProUGUI>().SetText(
+                    _slot.Value.amount > 1 ? _slot.Value.amount.ToString() : "");
                 
-                _inventorySlots.Add(itemSlotObj, null);
+                _slot.Key.gameObject.SetActive(true);
+                
+                AddEvent(_slot.Key, EventTriggerType.PointerEnter, delegate {OnPointerEnter(_slot.Key);});
+                AddEvent(_slot.Key, EventTriggerType.PointerExit, delegate {OnPointerExit(_slot.Key);});
+                AddEvent(_slot.Key, EventTriggerType.BeginDrag, delegate {OnDragStart(_slot.Key);});
+                AddEvent(_slot.Key, EventTriggerType.Drag, delegate {OnDrag(_slot.Key);});
+                AddEvent(_slot.Key, EventTriggerType.PointerClick, delegate {OnPointerClick(_slot.Key);});
+            }
+            else
+            {
+                _slot.Key.gameObject.SetActive(false);
             }
         }
     }
     
     private void AddEvent(Transform slotTransform, EventTriggerType type, UnityAction<BaseEventData> action)
     {
-        EventTrigger trigger = slotTransform.GetComponent<EventTrigger>();
-        var eventTrigger = new EventTrigger.Entry();
+        EventTrigger trigger = slotTransform.gameObject.GetComponent<EventTrigger>();
+        EventTrigger.Entry eventTrigger = new EventTrigger.Entry();
         eventTrigger.eventID = type;
         eventTrigger.callback.AddListener(action);
         trigger.triggers.Add(eventTrigger);
@@ -131,14 +174,7 @@ public class UI_Inventory : MonoBehaviour
             image.sprite = item.GetSprite();
 
             TextMeshProUGUI uiText = itemSlotRectTransform.Find("itemSlotTemplate").Find("AmountText").GetComponent<TextMeshProUGUI>();
-            if (item.amount > 1)
-            {
-                uiText.SetText(item.amount.ToString());
-            }
-            else
-            {
-                uiText.SetText("");
-            }
+            uiText.SetText(item.amount > 1 ? item.amount.ToString() : "");
 
             x++;
             if (x > 1)

@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 20
-  _uiInventory: {fileID: 4888028479737186113, guid: bbcdba9898de2fe43b0bf0bee6b7b742, type: 3}
+  _uiInventory: {fileID: -471366738468419261, guid: 8bcec111625c865459d8cd14417fbaae, type: 3}
 --- !u!50 &2107477408744907369
 Rigidbody2D:
   serializedVersion: 4
