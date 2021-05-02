@@ -53,7 +53,7 @@ public class GameManager : Singleton<GameManager>
     public Dictionary<Enum, List<Sprite>> _plantSprites = new Dictionary<Enum, List<Sprite>>();
     private Dictionary<String, Enum> _plantNameToItemType = new Dictionary<String, Enum>();
     public List<Enum> _cropSeedEnum = new List<Enum>(); 
-    public Enum _currentHeldItem = Item.ItemType.GrapeSeed;
+    public Enum _currentHeldItem = Item.ItemType.PumpkinSeed;
     public List<PlantStateData> _allPlantStates = new List<PlantStateData>();
     
     public void Start()
@@ -381,6 +381,16 @@ public class GameManager : Singleton<GameManager>
             for (int i = 0; i < allFarmableTerrain.Length; i++)
             {
                 allFarmableTerrain[i].GetComponent<TerrainManager>().setStateData(_allPlantStates[i]);
+            }
+        }
+    }
+
+    public void IncrementGrowingPlant()
+    {
+        foreach (var plant in _allPlantStates)
+        {
+            if (plant.isPlanted && plant.plantGrowthStage < 3) { 
+                plant.plantGrowthStage++;
             }
         }
     }

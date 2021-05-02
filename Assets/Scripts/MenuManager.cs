@@ -120,6 +120,7 @@ public class MenuManager : MonoBehaviour
             GameManager.Instance.UnloadLevel("Town");
             GameManager.Instance.LoadLevel("FarmHouse");
         }
+        GameManager.Instance.IncrementGrowingPlant();
         _endDayMenu.gameObject.SetActive(false);
         _background.gameObject.SetActive(false);
         GameManager.Instance.ToggleNewDay();
