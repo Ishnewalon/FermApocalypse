@@ -54,6 +54,7 @@ public class GameManager : Singleton<GameManager>
     private Dictionary<String, Enum> _plantNameToItemType = new Dictionary<String, Enum>();
     public List<Enum> _cropSeedEnum = new List<Enum>(); 
     public Enum _currentHeldItem = Item.ItemType.GrapeSeed;
+    public List<PlantStateData> _allPlantStates = new List<PlantStateData>();
     
     public void Start()
     {
@@ -122,6 +123,7 @@ public class GameManager : Singleton<GameManager>
                         }
                         break;
                 }
+                LoadPlantStates();
                 UpdateGameState(GameState.RUNNING);
             }
         }
@@ -130,6 +132,10 @@ public class GameManager : Singleton<GameManager>
     
     public void UnloadLevel(string levelName)
     {
+        if (levelName.Equals("Farm"))
+        {
+            SavePlantStates();
+        }
         AsyncOperation unloadSceneAsync = SceneManager.UnloadSceneAsync(levelName);
         if (unloadSceneAsync == null)
         {
@@ -354,5 +360,28 @@ public class GameManager : Singleton<GameManager>
         _plantSprites.Add(Item.ItemType.TomatoSeed, _tomato);
         _plantSprites.Add(Item.ItemType.TurnipSeed, _turnip);
         _plantSprites.Add(Item.ItemType.WatermelonSeed, _watermelon);
+    }
+
+    public void SavePlantStates()
+    {
+        _allPlantStates.Clear();
+        GameObject[] allFarmableTerrain = GameObject.FindGameObjectsWithTag("farmable");
+        for (int i = 0; i < allFarmableTerrain.Length; i++)
+        {
+            print(allFarmableTerrain[i]);
+            _allPlantStates.Add(allFarmableTerrain[i].GetComponent<TerrainManager>().getStateData());
+        }
+    }
+
+    public void LoadPlantStates()
+    {
+        GameObject[] allFarmableTerrain = GameObject.FindGameObjectsWithTag("farmable");
+        if (_allPlantStates.Count > 0)
+        {
+            for (int i = 0; i < allFarmableTerrain.Length; i++)
+            {
+                allFarmableTerrain[i].GetComponent<TerrainManager>().setStateData(_allPlantStates[i]);
+            }
+        }
     }
 }

@@ -94,6 +94,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.tag.Equals("goToTown"))
         {
+           // GameManager.Instance.SavePlantStates();
             GameManager.Instance.UnloadLevel("Farm");
             GameManager.Instance.LoadLevel("Town");
         }
@@ -101,9 +102,11 @@ public class PlayerController : MonoBehaviour
         {
             GameManager.Instance.UnloadLevel("Town");
             GameManager.Instance.LoadLevel("Farm");
+            //GameManager.Instance.LoadPlantStates();
         }
         else if (other.gameObject.tag.Equals("enterHouse"))
         {
+            //GameManager.Instance.SavePlantStates();
             GameManager.Instance.UnloadLevel("Farm");
             GameManager.Instance.LoadLevel("FarmHouse");
         }
@@ -111,6 +114,7 @@ public class PlayerController : MonoBehaviour
         {
             GameManager.Instance.UnloadLevel("FarmHouse");
             GameManager.Instance.LoadLevel("Farm");
+            //GameManager.Instance.LoadPlantStates();
         }
         else if (other.gameObject.tag.Equals("bed"))
         {

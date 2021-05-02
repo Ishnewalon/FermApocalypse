@@ -33,6 +33,7 @@ public class TerrainManager : MonoBehaviour
     private void PlantASeed()
     {
         GetComponent<SpriteRenderer>().sprite = _tilledSoil;
+        _plantGO = gameObject.transform.GetChild(0).gameObject;
         _plantGO.SetActive(true);
     }
     
