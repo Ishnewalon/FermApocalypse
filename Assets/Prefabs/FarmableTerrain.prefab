@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2930654731907776262}
   m_Layer: 0
   m_Name: FarmableTerrain
-  m_TagString: Untagged
+  m_TagString: farmable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48,7 +48,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _plantableSoil: {fileID: -6106832963907484155, guid: 36fcc74c543b9e2469888e557e53f022, type: 3}
   _tilledSoil: {fileID: 7954866515672433448, guid: 36fcc74c543b9e2469888e557e53f022, type: 3}
-  _plant0: {fileID: 959369715422288246, guid: 2ea48d736271a1049ac919da769a200d, type: 3}
 --- !u!212 &2018072295564745548
 SpriteRenderer:
   m_ObjectHideFlags: 0

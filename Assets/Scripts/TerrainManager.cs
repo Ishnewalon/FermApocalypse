@@ -8,13 +8,12 @@ public class TerrainManager : MonoBehaviour
     [SerializeField]private Sprite _plantableSoil;
     [SerializeField]private Sprite _tilledSoil;
     private GameObject _plantGO;
-    // Start is called before the first frame update
+
     void Start()
     {
         _plantGO = gameObject.transform.GetChild(0).gameObject;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (GetComponent<SpriteRenderer>().sprite == _tilledSoil && _plantGO.activeSelf == false)
@@ -27,11 +26,33 @@ public class TerrainManager : MonoBehaviour
     {
         if (GetComponent<SpriteRenderer>().sprite == _plantableSoil)
         {
-            GetComponent<SpriteRenderer>().sprite = _tilledSoil;
-            _plantGO.SetActive(true);
+            PlantASeed();
         }
     }
 
+    private void PlantASeed()
+    {
+        GetComponent<SpriteRenderer>().sprite = _tilledSoil;
+        _plantGO.SetActive(true);
+    }
+    
+    public PlantStateData getStateData()
+    {
+        if (_plantGO.activeSelf)
+        {
+            return _plantGO.GetComponent<PlantGrowingController>().getStateData();
+        }
+        return new PlantStateData();
+    }
+
+    public void setStateData(PlantStateData plantStateData)
+    {
+        if (plantStateData.isPlanted)
+        {
+            PlantASeed();
+            _plantGO.GetComponent<PlantGrowingController>().setStateData(plantStateData.plantGrowthStage, plantStateData.plantType);
+        }
+    }
 }
 
 
