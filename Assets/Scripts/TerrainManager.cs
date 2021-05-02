@@ -11,7 +11,6 @@ public class TerrainManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //DontDestroyOnLoad(this.gameObject);
         _plantGO = gameObject.transform.GetChild(0).gameObject;
     }
 
