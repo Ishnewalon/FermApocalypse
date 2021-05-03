@@ -7,6 +7,7 @@ public class PlantGrowingController : MonoBehaviour
 {
     private int _currrentGrowthStage = 0;
     private Enum _plantType;
+    private bool isPlantWatered;
     private const int _DaysNeededForMaxGrowth = 4;
     
     void Update()
@@ -18,13 +19,17 @@ public class PlantGrowingController : MonoBehaviour
         }
     }
 
-    /*private void OnMouseDown()
+    private void OnMouseDown()
     {
         if (!GameManager.Instance._cropSeedEnum.Contains(GameManager.Instance._currentHeldItem))
         {
-            
+            if (GameManager.Instance._currentHeldItem.Equals(Item.ItemType.WaterBucket) && gameObject.activeSelf == true)
+            {
+                isPlantWatered = true;
+                gameObject.transform.parent.GetComponent<TerrainManager>().TerrainWatered();
+            }
         }
-    }*/
+    }
 
     private void PlantASeed()
     {
@@ -40,13 +45,14 @@ public class PlantGrowingController : MonoBehaviour
 
     public PlantStateData getStateData()
     {
-        return new PlantStateData(_currrentGrowthStage, _plantType);
+        return new PlantStateData(_currrentGrowthStage, _plantType, isPlantWatered);
     }
 
-    public void setStateData(int plantGrowthStage, Enum plantType)
+    public void setStateData(int plantGrowthStage, Enum plantType, bool isWatered)
     {
         this._currrentGrowthStage = plantGrowthStage;
         this._plantType = plantType;
+        this.isPlantWatered = isWatered;
         PlantASeed();
     }
 }

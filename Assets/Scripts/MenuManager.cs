@@ -80,7 +80,6 @@ public class MenuManager : MonoBehaviour
 
         if (GameManager.Instance.CurrentGameState == GameManager.GameState.PREGAME)
         {
-           
             GameManager.Instance.SetCharacterGender(_playerGender);
         }
     }

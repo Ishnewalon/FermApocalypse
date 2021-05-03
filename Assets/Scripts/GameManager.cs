@@ -27,6 +27,7 @@ public class GameManager : Singleton<GameManager>
         NEARBED
     }
     
+    
     public SpawnLocation _currentSpawnLocation = SpawnLocation.FARMFROMTOWN;
     public Vector3 _characterSpawnPoint = new Vector3(32, 21, 0);
 
@@ -389,9 +390,11 @@ public class GameManager : Singleton<GameManager>
     {
         foreach (var plant in _allPlantStates)
         {
-            if (plant.isPlanted && plant.plantGrowthStage < 3) { 
+            if (plant.isPlanted && plant.plantGrowthStage < 3) {  //TODO ADD ISWATERED = TRUE ON CONDITION FOR GROWTH
                 plant.plantGrowthStage++;
             }
         }
     }
+    
+    
 }

@@ -51,8 +51,28 @@ public class TerrainManager : MonoBehaviour
         if (plantStateData.isPlanted)
         {
             PlantASeed();
-            _plantGO.GetComponent<PlantGrowingController>().setStateData(plantStateData.plantGrowthStage, plantStateData.plantType);
+            if (plantStateData.isWatered)
+            {
+                TerrainWatered();
+            }
+            else
+            {
+                TerrainDry();
+            }
+            _plantGO.GetComponent<PlantGrowingController>().setStateData(plantStateData.plantGrowthStage, 
+                                                                        plantStateData.plantType,
+                                                                        plantStateData.isWatered);
         }
+    }
+
+    public void TerrainWatered()
+    {
+        GetComponent<SpriteRenderer>().color = new Color(111f, 104f, 104f);
+    }
+
+    public void TerrainDry()
+    {
+        GetComponent<SpriteRenderer>().color = new Color(255f, 255f, 255f);
     }
 }
 
