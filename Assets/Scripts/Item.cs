@@ -34,6 +34,18 @@ public class Item
         }
     }
     
+    public bool IsEquipable()
+    {
+        switch (itemClass)
+        {
+            case ItemClass.Seeds:
+            case ItemClass.Tools:
+                return true;
+            default:
+                return false;
+        }
+    }
+    
     public Sprite GetSprite()
     {
         switch (itemType)
