@@ -12,22 +12,25 @@ public class PlantGrowingController : MonoBehaviour
     
     void Update()
     {
+        /*
         if (gameObject.activeSelf == true && _currrentGrowthStage == 0 && GameManager.Instance._cropSeedEnum.Contains(GameManager.Instance._currentHeldItem))
         {
             _plantType = GameManager.Instance._currentHeldItem;
             PlantASeed();
-        }
+        }*/
     }
 
     private void OnMouseDown()
     {
-        if (!GameManager.Instance._cropSeedEnum.Contains(GameManager.Instance._currentHeldItem))
+        if (GameManager.Instance._currentHeldItem.itemType == Item.ItemType.WaterBucket && gameObject.activeSelf)
         {
-            if (GameManager.Instance._currentHeldItem.Equals(Item.ItemType.WaterBucket) && gameObject.activeSelf == true)
-            {
-                isPlantWatered = true;
-                gameObject.transform.parent.GetComponent<TerrainManager>().TerrainWatered();
-            }
+            isPlantWatered = true;
+            gameObject.transform.parent.GetComponent<TerrainManager>().TerrainWatered();
+        }
+        if (GameManager.Instance._currentHeldItem.itemClass == Item.ItemClass.Seeds && gameObject.activeSelf)
+        {
+            _plantType = GameManager.Instance._currentHeldItem.itemType;
+            PlantASeed();
         }
     }
 

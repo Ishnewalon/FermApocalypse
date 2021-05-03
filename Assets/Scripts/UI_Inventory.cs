@@ -99,7 +99,7 @@ public class UI_Inventory : MonoBehaviour
     {
         if (item.IsEquipable())
         {
-            GameManager.Instance._currentHeldItem = item.itemType;
+            GameManager.Instance._currentHeldItem = item;
             equipedItem = item;
         }
         RefreshInventory();

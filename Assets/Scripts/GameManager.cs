@@ -54,7 +54,7 @@ public class GameManager : Singleton<GameManager>
     public Dictionary<Enum, List<Sprite>> _plantSprites = new Dictionary<Enum, List<Sprite>>();
     private Dictionary<String, Enum> _plantNameToItemType = new Dictionary<String, Enum>();
     public List<Enum> _cropSeedEnum = new List<Enum>(); 
-    public Enum _currentHeldItem = Item.ItemType.PumpkinSeed;
+    public Item _currentHeldItem;
     public List<PlantStateData> _allPlantStates = new List<PlantStateData>();
     
     public void Start()
