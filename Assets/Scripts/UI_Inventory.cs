@@ -70,7 +70,7 @@ public class UI_Inventory : MonoBehaviour
             }
 
             AddEvent(itemSlotObj, EventTriggerType.PointerClick, delegate {OnPointerClick(item);});
-            
+
             itemSlotObj.Find("Item").GetComponent<Image>().sprite = item.GetSprite();
             itemSlotObj.Find("Item_Qty").GetComponent<TextMeshProUGUI>().SetText(
                 item.amount > 1 ? item.amount.ToString() : "");
@@ -78,7 +78,7 @@ public class UI_Inventory : MonoBehaviour
             itemSlotObj.gameObject.SetActive(true);
             
             column++;
-            if (column > 6)
+            if (column > 5)
             {
                 column = 0;
                 row++;
