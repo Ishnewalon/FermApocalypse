@@ -96,6 +96,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _item:
-    itemType: 0
-    itemClass: 0
-    amount: 0
+    itemType: 13
+    itemClass: 1
+    amount: 33

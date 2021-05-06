@@ -57,7 +57,7 @@ public class Inventory
             itemList.Add(item);
         }
 
-        if (itemList.Count > 15)
+        if (itemList.Count > 17)
         {
             isFull = true;
         }
