@@ -16,15 +16,19 @@ public class TerrainManager : MonoBehaviour
 
     void Update()
     {
-        if (GetComponent<SpriteRenderer>().sprite == _tilledSoil && _plantGO.activeSelf == false)
+        if (GameManager.Instance._currentHeldItem != null)
         {
-            GetComponent<SpriteRenderer>().sprite = _plantableSoil;
+            if (GetComponent<SpriteRenderer>().sprite == _tilledSoil && _plantGO.activeSelf == false)
+            {
+                GetComponent<SpriteRenderer>().sprite = _plantableSoil;
+            }
         }
+
     }
 
     private void OnMouseDown()
     {
-        if (GetComponent<SpriteRenderer>().sprite == _plantableSoil)
+        if (GetComponent<SpriteRenderer>().sprite == _plantableSoil && GameManager.Instance._currentHeldItem.Equals(Item.ItemType.Hoe))
         {
             PlantASeed();
         }
