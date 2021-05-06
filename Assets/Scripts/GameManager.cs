@@ -390,8 +390,9 @@ public class GameManager : Singleton<GameManager>
     {
         foreach (var plant in _allPlantStates)
         {
-            if (plant.isPlanted && plant.plantGrowthStage < 3) {  //TODO ADD ISWATERED = TRUE ON CONDITION FOR GROWTH
+            if (plant.isPlanted && plant.plantGrowthStage < 3 && plant.isWatered) { 
                 plant.plantGrowthStage++;
+                plant.isWatered = false;
             }
         }
     }
