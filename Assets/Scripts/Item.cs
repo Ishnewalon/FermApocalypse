@@ -45,6 +45,23 @@ public class Item
                 return false;
         }
     }
+
+    public String GetDesc()
+    {
+        
+        switch (itemType)
+        {
+            case ItemType.Hoe: return "Un outils ";
+            case ItemType.Scythe: return "ItemAssets.Instance.scytheSprite";
+            case ItemType.WaterBucket: return "ItemAssets.Instance.waterBucketSprite";
+        }
+        switch (itemClass)
+        {
+            case ItemClass.Seeds: return "Des semences";
+            case ItemClass.Produce: return "Le fruit de vos efforts";
+            default: return "Where did you find this?";
+        }
+    }
     
     public Sprite GetSprite()
     {

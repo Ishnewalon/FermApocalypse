@@ -20,13 +20,12 @@ public class Inventory
         AddItem(new Item { itemType = Item.ItemType.BlueberrySeed, itemClass = Item.ItemClass.Seeds, amount = 33 });
         AddItem(new Item { itemType = Item.ItemType.RockmelonSeed, itemClass = Item.ItemClass.Seeds, amount = 33 });
         AddItem(new Item { itemType = Item.ItemType.CornSeed, itemClass = Item.ItemClass.Seeds, amount = 33 });
-        AddItem(new Item { itemType = Item.ItemType.Pineapple, itemClass = Item.ItemClass.Seeds, amount = 33 });
-        AddItem(new Item { itemType = Item.ItemType.Pepper, itemClass = Item.ItemClass.Seeds, amount = 33 });
-        AddItem(new Item { itemType = Item.ItemType.Leak, itemClass = Item.ItemClass.Seeds, amount = 33 });
-        AddItem(new Item { itemType = Item.ItemType.Leak, itemClass = Item.ItemClass.Seeds, amount = 33 });
-        AddItem(new Item { itemType = Item.ItemType.Eggplant, itemClass = Item.ItemClass.Seeds, amount = 33 });
-        AddItem(new Item { itemType = Item.ItemType.Bean, itemClass = Item.ItemClass.Seeds, amount = 33 });
-        AddItem(new Item { itemType = Item.ItemType.Blueberry, itemClass = Item.ItemClass.Seeds, amount = 33 });
+        AddItem(new Item { itemType = Item.ItemType.PineappleSeed, itemClass = Item.ItemClass.Seeds, amount = 33 });
+        AddItem(new Item { itemType = Item.ItemType.PepperSeed, itemClass = Item.ItemClass.Seeds, amount = 33 });
+        AddItem(new Item { itemType = Item.ItemType.LeakSeed, itemClass = Item.ItemClass.Seeds, amount = 33 });
+        AddItem(new Item { itemType = Item.ItemType.LeakSeed, itemClass = Item.ItemClass.Seeds, amount = 33 });
+        AddItem(new Item { itemType = Item.ItemType.EggplantSeed, itemClass = Item.ItemClass.Seeds, amount = 33 });
+        AddItem(new Item { itemType = Item.ItemType.BeanSeed, itemClass = Item.ItemClass.Seeds, amount = 33 });
     }
 
     public void AddItem(Item item)

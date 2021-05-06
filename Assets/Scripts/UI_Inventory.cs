@@ -70,6 +70,8 @@ public class UI_Inventory : MonoBehaviour
             }
 
             AddEvent(itemSlotObj, EventTriggerType.PointerClick, delegate {OnPointerClick(item);});
+            AddEvent(itemSlotObj, EventTriggerType.PointerEnter, delegate {OnPointerEnter(item, itemSlotObj);});
+            AddEvent(itemSlotObj, EventTriggerType.PointerExit, delegate {OnPointerExit(itemSlotObj);});
 
             itemSlotObj.Find("Item").GetComponent<Image>().sprite = item.GetSprite();
             itemSlotObj.Find("Item_Qty").GetComponent<TextMeshProUGUI>().SetText(
@@ -105,28 +107,15 @@ public class UI_Inventory : MonoBehaviour
         RefreshInventory();
     }
 
-    private void OnPointerEnter(Transform slotTransform)
+    private void OnPointerEnter(Item item, Transform itemSlotObj)
     {
-        throw new NotImplementedException();
+        var text = itemSlotObj.Find("Item_Name");
+        text.GetComponent<TextMeshProUGUI>().SetText(item.itemType.ToString());
+        text.gameObject.SetActive(true);
     }
 
-    private void OnPointerExit(Transform slotTransform)
+    private void OnPointerExit(Transform itemSlotObj)
     {
-        
-    }
-
-    private void OnDragStart(Transform slotTransform)
-    {
-        
-    }
-    
-    private void OnDragEnd(Transform slotTransform)
-    {
-        
-    }
-    
-    private void OnDrag(Transform slotTransform)
-    {
-        
+        itemSlotObj.Find("Item_Name").gameObject.SetActive(false);
     }
 }
