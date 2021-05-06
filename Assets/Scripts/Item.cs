@@ -108,6 +108,7 @@ public class Item
     
     public enum ItemType
     {
+        EmptyHand,
         Hoe,
         Scythe,
         WaterBucket,

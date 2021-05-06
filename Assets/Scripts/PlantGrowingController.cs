@@ -12,16 +12,16 @@ public class PlantGrowingController : MonoBehaviour
     
     void Update()
     {
-        if (gameObject.activeSelf == true && _currrentGrowthStage == 0 && GameManager.Instance._cropSeedEnum.Contains(GameManager.Instance._currentHeldItem))
+        if (gameObject.activeSelf == true && _currrentGrowthStage == 0 && GameManager.Instance._currentHeldItem.itemClass == Item.ItemClass.Seeds)
         {
-            _plantType = GameManager.Instance._currentHeldItem;
+            _plantType = GameManager.Instance._currentHeldItem.itemType;
             PlantASeed();
         }
     }
 
     private void OnMouseDown()
     {
-        if (!GameManager.Instance._cropSeedEnum.Contains(GameManager.Instance._currentHeldItem))
+        if (GameManager.Instance._currentHeldItem.itemClass == Item.ItemClass.Tools)
         {
             
             if (GameManager.Instance._currentHeldItem.Equals(Item.ItemType.WaterBucket) && gameObject.activeSelf == true)
