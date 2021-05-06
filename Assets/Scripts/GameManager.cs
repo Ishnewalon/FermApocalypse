@@ -51,9 +51,9 @@ public class GameManager : Singleton<GameManager>
     public bool hasLightBeenSpawned = false;
     public bool hasMusicPlayerSpawned = false;
     private Sprite[] _allPlantSprites;
-    public Dictionary<Enum, List<Sprite>> _plantSprites = new Dictionary<Enum, List<Sprite>>();
-    private Dictionary<String, Enum> _plantNameToItemType = new Dictionary<String, Enum>();
-    public List<Enum> _cropSeedEnum = new List<Enum>(); 
+    public Dictionary<Item.ItemType, List<Sprite>> _plantSprites = new Dictionary<Item.ItemType, List<Sprite>>();
+    private Dictionary<String, Item.ItemType> _plantNameToItemType = new Dictionary<String, Item.ItemType>();
+    public List<Item.ItemType> _cropSeedEnum = new List<Item.ItemType>(); 
     public Item _currentHeldItem = new Item { itemType = Item.ItemType.EmptyHand, itemClass = Item.ItemClass.Tools, amount = 1 };
     public List<PlantStateData> _allPlantStates = new List<PlantStateData>();
     

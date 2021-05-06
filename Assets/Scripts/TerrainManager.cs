@@ -14,29 +14,24 @@ public class TerrainManager : MonoBehaviour
         _plantGO = gameObject.transform.GetChild(0).gameObject;
     }
 
-    void Update()
-    {
-        if (GameManager.Instance._currentHeldItem != null)
-        {
-            if (GetComponent<SpriteRenderer>().sprite == _tilledSoil && _plantGO.activeSelf == false)
-            {
-                GetComponent<SpriteRenderer>().sprite = _plantableSoil;
-            }
-        }
-
-    }
-
     private void OnMouseDown()
     {
-        if (GetComponent<SpriteRenderer>().sprite == _plantableSoil && GameManager.Instance._currentHeldItem.Equals(Item.ItemType.Hoe))
+        if (GetComponent<SpriteRenderer>().sprite == _plantableSoil && GameManager.Instance._currentHeldItem.itemType == Item.ItemType.Hoe)
+        {
+            TillTheSoil();
+        }
+
+        if (GetComponent<SpriteRenderer>().sprite == _tilledSoil &&
+            GameManager.Instance._currentHeldItem.itemClass == Item.ItemClass.Seeds)
         {
             PlantASeed();
+            _plantGO.GetComponent<PlantGrowingController>()
+                .setStateData(0, GameManager.Instance._currentHeldItem.itemType, false);
         }
     }
 
     private void PlantASeed()
     {
-        GetComponent<SpriteRenderer>().sprite = _tilledSoil;
         _plantGO = gameObject.transform.GetChild(0).gameObject;
         _plantGO.SetActive(true);
     }
@@ -54,6 +49,7 @@ public class TerrainManager : MonoBehaviour
     {
         if (plantStateData.isPlanted)
         {
+            TillTheSoil();
             PlantASeed();
             if (plantStateData.isWatered)
             {
@@ -77,6 +73,15 @@ public class TerrainManager : MonoBehaviour
     public void TerrainDry()
     {
         GetComponent<SpriteRenderer>().color = new Color(255f, 255f, 255f);
+    }
+
+    public void TillTheSoil()
+    {
+        GetComponent<SpriteRenderer>().sprite = _tilledSoil;
+    }
+    public void PlantHasBeenHarvested()
+    {
+        GetComponent<SpriteRenderer>().sprite = _plantableSoil;
     }
 }
 

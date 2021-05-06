@@ -7,7 +7,7 @@ public class PlantStateData
 {
     public bool isPlanted;
     public int plantGrowthStage;
-    public Enum plantType;
+    public Item.ItemType plantType;
     public bool isWatered;
 
     public PlantStateData()
@@ -15,7 +15,7 @@ public class PlantStateData
         this.isPlanted = false;
     }
 
-    public PlantStateData(int plantGrowthStage, Enum plantType, bool isWatered)
+    public PlantStateData(int plantGrowthStage, Item.ItemType plantType, bool isWatered)
     {
         this.isPlanted = true;
         this.plantGrowthStage = plantGrowthStage;
