@@ -1,12 +1,13 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+using System.Linq;
 
 public class Inventory
 {
 
     public event EventHandler OnItemListChanged;
+
+    public Boolean isFull = false;
     
     private List<Item> itemList;
 
@@ -23,13 +24,17 @@ public class Inventory
         AddItem(new Item { itemType = Item.ItemType.PineappleSeed, itemClass = Item.ItemClass.Seeds, amount = 33 });
         AddItem(new Item { itemType = Item.ItemType.PepperSeed, itemClass = Item.ItemClass.Seeds, amount = 33 });
         AddItem(new Item { itemType = Item.ItemType.LeakSeed, itemClass = Item.ItemClass.Seeds, amount = 33 });
-        AddItem(new Item { itemType = Item.ItemType.LeakSeed, itemClass = Item.ItemClass.Seeds, amount = 33 });
         AddItem(new Item { itemType = Item.ItemType.EggplantSeed, itemClass = Item.ItemClass.Seeds, amount = 33 });
         AddItem(new Item { itemType = Item.ItemType.BeanSeed, itemClass = Item.ItemClass.Seeds, amount = 33 });
     }
 
     public void AddItem(Item item)
     {
+        if (isFull)
+        {
+            return;
+        }
+        
         if (item.IsStackable())
         {
             bool itemAlreadyInInventory = false;
@@ -52,7 +57,16 @@ public class Inventory
             itemList.Add(item);
         }
 
-        OnItemListChanged?.Invoke(this, EventArgs.Empty); // question mark to avoid possible null pointer
+        if (itemList.Count > 15)
+        {
+            isFull = true;
+        }
+        else
+        {
+            isFull = false;
+        }
+        
+        OnItemListChanged?.Invoke(this, EventArgs.Empty);
     }
 
     public List<Item> GetItemList()
