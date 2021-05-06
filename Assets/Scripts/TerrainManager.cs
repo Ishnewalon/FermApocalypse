@@ -8,6 +8,7 @@ public class TerrainManager : MonoBehaviour
     [SerializeField]private Sprite _plantableSoil;
     [SerializeField]private Sprite _tilledSoil;
     private GameObject _plantGO;
+    private int _colorDivider = 255;
 
     void Start()
     {
@@ -67,12 +68,12 @@ public class TerrainManager : MonoBehaviour
 
     public void TerrainWatered()
     {
-        GetComponent<SpriteRenderer>().color = new Color(111f, 104f, 104f);
+        GetComponent<SpriteRenderer>().color = new Color(111f/_colorDivider, 104f/_colorDivider, 104f/_colorDivider);
     }
 
     public void TerrainDry()
     {
-        GetComponent<SpriteRenderer>().color = new Color(255f, 255f, 255f);
+        GetComponent<SpriteRenderer>().color = new Color(255f/_colorDivider, 255f/_colorDivider, 255f/_colorDivider);
     }
 
     public void TillTheSoil()

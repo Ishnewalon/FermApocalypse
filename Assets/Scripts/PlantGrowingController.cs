@@ -21,6 +21,7 @@ public class PlantGrowingController : MonoBehaviour
             else if (GameManager.Instance._currentHeldItem.itemType == Item.ItemType.Scythe &&
                      _currrentGrowthStage == 3)
             {
+                gameObject.transform.parent.GetComponent<TerrainManager>().PlantHasBeenHarvested();
                 gameObject.SetActive(false);
                 ItemWorld.SpawnItemWorld(new Vector3(transform.position.x,
                         transform.position.y + 1, transform.position.z),
