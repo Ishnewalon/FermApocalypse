@@ -287,6 +287,11 @@ MonoBehaviour:
   year: 0
   hasLightBeenSpawned: 0
   hasMusicPlayerSpawned: 0
+  _cropSeedEnum: 
+  _currentHeldItem:
+    itemType: 0
+    itemClass: 0
+    amount: 1
 --- !u!4 &149024204
 Transform:
   m_ObjectHideFlags: 0
@@ -337,6 +342,26 @@ MonoBehaviour:
   tomato: {fileID: -2653411282353314666, guid: db1f5d20da085b744b6da2c97bb10ade, type: 3}
   turnip: {fileID: -7086171013504260158, guid: db1f5d20da085b744b6da2c97bb10ade, type: 3}
   watermelon: {fileID: -5543174254979483071, guid: db1f5d20da085b744b6da2c97bb10ade, type: 3}
+  beanSeeds: {fileID: 21300000, guid: 3bd34bc3ff88db94abe596427b45199b, type: 3}
+  blueberrySeeds: {fileID: 21300000, guid: 6077d3763bb963a47a29b862f8c21216, type: 3}
+  cabbageSeeds: {fileID: 21300000, guid: fb825d9543e323047a8d2c6c28bc263f, type: 3}
+  carrotSeeds: {fileID: 21300000, guid: 300eaa07a65595542bba1fac835b6547, type: 3}
+  cauliflowerSeeds: {fileID: 21300000, guid: db7726f5a59bdc248a8489702c21dc22, type: 3}
+  celerySeeds: {fileID: 21300000, guid: ddfedf912f41da7489e3b3e3db53f012, type: 3}
+  cornSeeds: {fileID: 21300000, guid: 875e9677fdde5324e97e7c8929a32bfa, type: 3}
+  eggplantSeeds: {fileID: 21300000, guid: 248c952edf7555e49b50de593f70915b, type: 3}
+  grapeSeeds: {fileID: 21300000, guid: 4a81896b4510a1541b2e072c6b2f34a5, type: 3}
+  leakSeeds: {fileID: 21300000, guid: bc87af731b91c6c46a5915f0c4b611d5, type: 3}
+  onionSeeds: {fileID: 21300000, guid: 07642cb225d5850459aeb8f58be16edf, type: 3}
+  pepperSeeds: {fileID: 21300000, guid: 1ad7d3d67bcfe10458796152863b51c2, type: 3}
+  pineappleSeeds: {fileID: 21300000, guid: d461384527c71e14281f6550cd660124, type: 3}
+  pumpkinSeeds: {fileID: 21300000, guid: 5e65d5a84e374974bbec8168071d62eb, type: 3}
+  rockmelonSeeds: {fileID: 21300000, guid: ab06fcbf7d7f27249a64b2b83f0d1b13, type: 3}
+  squashSeeds: {fileID: 21300000, guid: 8b2e9e5afc810634496b292a13e294bf, type: 3}
+  strawberrySeeds: {fileID: 21300000, guid: 183509e33fdf1d94492c633711dd72a8, type: 3}
+  tomatoSeeds: {fileID: 21300000, guid: cdc94404419e62e419476468645d782d, type: 3}
+  turnipSeeds: {fileID: 21300000, guid: 32577ba4e4b76ac4f917776b8b0d1cd7, type: 3}
+  watermelonSeeds: {fileID: 21300000, guid: 888c36292b06ab34bb0f32190476cccd, type: 3}
 --- !u!1 &616117446
 GameObject:
   m_ObjectHideFlags: 0

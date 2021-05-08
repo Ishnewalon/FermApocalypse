@@ -65,8 +65,36 @@ public class Item
     
     public Sprite GetSprite()
     {
+        if (itemClass == ItemClass.Produce)
+        {
+            switch (itemType)
+            {
+                case ItemType.Bean: return ItemAssets.Instance.bean;
+                case ItemType.Blueberry: return ItemAssets.Instance.blueberry;
+                case ItemType.Cabbage: return ItemAssets.Instance.cabbage;
+                case ItemType.Carrot: return ItemAssets.Instance.carrot;
+                case ItemType.Cauliflower: return ItemAssets.Instance.cauliflower;
+                case ItemType.Celery: return ItemAssets.Instance.celery;
+                case ItemType.Corn: return ItemAssets.Instance.corn;
+                case ItemType.Eggplant: return ItemAssets.Instance.eggplant;
+                case ItemType.Grape: return ItemAssets.Instance.grape;
+                case ItemType.Leak: return ItemAssets.Instance.leak;
+                case ItemType.Onion: return ItemAssets.Instance.onion;
+                case ItemType.Pepper: return ItemAssets.Instance.pepper;
+                case ItemType.Pineapple: return ItemAssets.Instance.pineapple;
+                case ItemType.Pumpkin: return ItemAssets.Instance.pumpkin;
+                case ItemType.Rockmelon: return ItemAssets.Instance.rockmelon;
+                case ItemType.Squash: return ItemAssets.Instance.squash;
+                case ItemType.Strawberry: return ItemAssets.Instance.strawberry;
+                case ItemType.Tomato: return ItemAssets.Instance.tomato;
+                case ItemType.Turnip: return ItemAssets.Instance.turnip;
+                case ItemType.Watermelon: return ItemAssets.Instance.watermelon;
+                default: return ItemAssets.Instance.bean;
+            }
+        }
         switch (itemType)
         {
+
             case ItemType.Hoe: return ItemAssets.Instance.hoeSprite;
             case ItemType.Scythe: return ItemAssets.Instance.scytheSprite;
             case ItemType.WaterBucket: return ItemAssets.Instance.waterBucketSprite;
@@ -125,6 +153,7 @@ public class Item
     
     public enum ItemType
     {
+        NewSeed,
         EmptyHand,
         Hoe,
         Scythe,

@@ -39,4 +39,25 @@ public class ItemAssets : MonoBehaviour
     public Sprite tomato;
     public Sprite turnip;
     public Sprite watermelon;
+
+    public Sprite beanSeeds;
+    public Sprite blueberrySeeds;
+    public Sprite cabbageSeeds;
+    public Sprite carrotSeeds;
+    public Sprite cauliflowerSeeds;
+    public Sprite celerySeeds;
+    public Sprite cornSeeds;
+    public Sprite eggplantSeeds;
+    public Sprite grapeSeeds;
+    public Sprite leakSeeds;
+    public Sprite onionSeeds;
+    public Sprite pepperSeeds;
+    public Sprite pineappleSeeds;
+    public Sprite pumpkinSeeds;
+    public Sprite rockmelonSeeds;
+    public Sprite squashSeeds;
+    public Sprite strawberrySeeds;
+    public Sprite tomatoSeeds;
+    public Sprite turnipSeeds;
+    public Sprite watermelonSeeds;
 }
