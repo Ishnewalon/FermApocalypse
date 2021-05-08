@@ -57,8 +57,8 @@ public class Item
         }
         switch (itemClass)
         {
-            case ItemClass.Seeds: return "Des semences";
-            case ItemClass.Produce: return "Le fruit de vos efforts";
+            case ItemClass.Seeds: return "Des semences de " + itemType;
+            case ItemClass.Produce: return "Le fruit de vos efforts!";
             default: return "Where did you find this?";
         }
     }
@@ -69,79 +69,64 @@ public class Item
         {
             switch (itemType)
             {
-                case ItemType.Bean: return ItemAssets.Instance.bean;
-                case ItemType.Blueberry: return ItemAssets.Instance.blueberry;
-                case ItemType.Cabbage: return ItemAssets.Instance.cabbage;
-                case ItemType.Carrot: return ItemAssets.Instance.carrot;
-                case ItemType.Cauliflower: return ItemAssets.Instance.cauliflower;
-                case ItemType.Celery: return ItemAssets.Instance.celery;
-                case ItemType.Corn: return ItemAssets.Instance.corn;
-                case ItemType.Eggplant: return ItemAssets.Instance.eggplant;
-                case ItemType.Grape: return ItemAssets.Instance.grape;
-                case ItemType.Leak: return ItemAssets.Instance.leak;
-                case ItemType.Onion: return ItemAssets.Instance.onion;
-                case ItemType.Pepper: return ItemAssets.Instance.pepper;
-                case ItemType.Pineapple: return ItemAssets.Instance.pineapple;
-                case ItemType.Pumpkin: return ItemAssets.Instance.pumpkin;
+                case ItemType.Haricot: return ItemAssets.Instance.bean;
+                case ItemType.Myrtille: return ItemAssets.Instance.blueberry;
+                case ItemType.Chou: return ItemAssets.Instance.cabbage;
+                case ItemType.Carotte: return ItemAssets.Instance.carrot;
+                case ItemType.Choufleur: return ItemAssets.Instance.cauliflower;
+                case ItemType.Celeri: return ItemAssets.Instance.celery;
+                case ItemType.Mais: return ItemAssets.Instance.corn;
+                case ItemType.Aubergine: return ItemAssets.Instance.eggplant;
+                case ItemType.Raisin: return ItemAssets.Instance.grape;
+                case ItemType.Poireau: return ItemAssets.Instance.leak;
+                case ItemType.Oignon: return ItemAssets.Instance.onion;
+                case ItemType.Poivron: return ItemAssets.Instance.pepper;
+                case ItemType.Ananas: return ItemAssets.Instance.pineapple;
+                case ItemType.Citrouille: return ItemAssets.Instance.pumpkin;
                 case ItemType.Rockmelon: return ItemAssets.Instance.rockmelon;
-                case ItemType.Squash: return ItemAssets.Instance.squash;
-                case ItemType.Strawberry: return ItemAssets.Instance.strawberry;
-                case ItemType.Tomato: return ItemAssets.Instance.tomato;
-                case ItemType.Turnip: return ItemAssets.Instance.turnip;
-                case ItemType.Watermelon: return ItemAssets.Instance.watermelon;
-                default: return ItemAssets.Instance.bean;
+                case ItemType.Courge: return ItemAssets.Instance.squash;
+                case ItemType.Fraise: return ItemAssets.Instance.strawberry;
+                case ItemType.Tomate: return ItemAssets.Instance.tomato;
+                case ItemType.Navet: return ItemAssets.Instance.turnip;
+                case ItemType.Pasteque: return ItemAssets.Instance.watermelon;
             }
         }
-        switch (itemType)
+        if (itemClass == ItemClass.Seeds)
         {
-
-            case ItemType.Hoe: return ItemAssets.Instance.hoeSprite;
-            case ItemType.Scythe: return ItemAssets.Instance.scytheSprite;
-            case ItemType.WaterBucket: return ItemAssets.Instance.waterBucketSprite;
-            
-            case ItemType.Bean: return ItemAssets.Instance.bean;
-            case ItemType.Blueberry: return ItemAssets.Instance.blueberry;
-            case ItemType.Cabbage: return ItemAssets.Instance.cabbage;
-            case ItemType.Carrot: return ItemAssets.Instance.carrot;
-            case ItemType.Cauliflower: return ItemAssets.Instance.cauliflower;
-            case ItemType.Celery: return ItemAssets.Instance.celery;
-            case ItemType.Corn: return ItemAssets.Instance.corn;
-            case ItemType.Eggplant: return ItemAssets.Instance.eggplant;
-            case ItemType.Grape: return ItemAssets.Instance.grape;
-            case ItemType.Leak: return ItemAssets.Instance.leak;
-            case ItemType.Onion: return ItemAssets.Instance.onion;
-            case ItemType.Pepper: return ItemAssets.Instance.pepper;
-            case ItemType.Pineapple: return ItemAssets.Instance.pineapple;
-            case ItemType.Pumpkin: return ItemAssets.Instance.pumpkin;
-            case ItemType.Rockmelon: return ItemAssets.Instance.rockmelon;
-            case ItemType.Squash: return ItemAssets.Instance.squash;
-            case ItemType.Strawberry: return ItemAssets.Instance.strawberry;
-            case ItemType.Tomato: return ItemAssets.Instance.tomato;
-            case ItemType.Turnip: return ItemAssets.Instance.turnip;
-            case ItemType.Watermelon: return ItemAssets.Instance.watermelon;
-            
-            case ItemType.BeanSeed: return ItemAssets.Instance.bean;
-            case ItemType.BlueberrySeed: return ItemAssets.Instance.blueberry;
-            case ItemType.CabbageSeed: return ItemAssets.Instance.cabbage;
-            case ItemType.CarrotSeed: return ItemAssets.Instance.carrot;
-            case ItemType.CauliflowerSeed: return ItemAssets.Instance.cauliflower;
-            case ItemType.CelerySeed: return ItemAssets.Instance.celery;
-            case ItemType.CornSeed: return ItemAssets.Instance.corn;
-            case ItemType.EggplantSeed: return ItemAssets.Instance.eggplant;
-            case ItemType.GrapeSeed: return ItemAssets.Instance.grape;
-            case ItemType.LeakSeed: return ItemAssets.Instance.leak;
-            case ItemType.OnionSeed: return ItemAssets.Instance.onion;
-            case ItemType.PepperSeed: return ItemAssets.Instance.pepper;
-            case ItemType.PineappleSeed: return ItemAssets.Instance.pineapple;
-            case ItemType.PumpkinSeed: return ItemAssets.Instance.pumpkin;
-            case ItemType.RockmelonSeed: return ItemAssets.Instance.rockmelon;
-            case ItemType.SquashSeed: return ItemAssets.Instance.squash;
-            case ItemType.StrawberrySeed: return ItemAssets.Instance.strawberry;
-            case ItemType.TomatoSeed: return ItemAssets.Instance.tomato;
-            case ItemType.TurnipSeed: return ItemAssets.Instance.turnip;
-            case ItemType.WatermelonSeed: return ItemAssets.Instance.watermelon;
-            default: return ItemAssets.Instance.hoeSprite;
+            switch (itemType)
+            {
+                case ItemType.Haricot: return ItemAssets.Instance.beanSeeds;
+                case ItemType.Myrtille: return ItemAssets.Instance.blueberrySeeds;
+                case ItemType.Chou: return ItemAssets.Instance.cabbageSeeds;
+                case ItemType.Carotte: return ItemAssets.Instance.carrotSeeds;
+                case ItemType.Choufleur: return ItemAssets.Instance.cauliflowerSeeds;
+                case ItemType.Celeri: return ItemAssets.Instance.celerySeeds;
+                case ItemType.Mais: return ItemAssets.Instance.cornSeeds;
+                case ItemType.Aubergine: return ItemAssets.Instance.eggplantSeeds;
+                case ItemType.Raisin: return ItemAssets.Instance.grapeSeeds;
+                case ItemType.Poireau: return ItemAssets.Instance.leakSeeds;
+                case ItemType.Oignon: return ItemAssets.Instance.onionSeeds;
+                case ItemType.Poivron: return ItemAssets.Instance.pepperSeeds;
+                case ItemType.Ananas: return ItemAssets.Instance.pineappleSeeds;
+                case ItemType.Citrouille: return ItemAssets.Instance.pumpkinSeeds;
+                case ItemType.Rockmelon: return ItemAssets.Instance.rockmelonSeeds;
+                case ItemType.Courge: return ItemAssets.Instance.squashSeeds;
+                case ItemType.Fraise: return ItemAssets.Instance.strawberrySeeds;
+                case ItemType.Tomate: return ItemAssets.Instance.tomatoSeeds;
+                case ItemType.Navet: return ItemAssets.Instance.turnipSeeds;
+                case ItemType.Pasteque: return ItemAssets.Instance.watermelonSeeds;
+            }
         }
+        if (itemClass == ItemClass.Tools)
+        {
+            switch (itemType)
+            {
+                case ItemType.Scythe: return ItemAssets.Instance.scytheSprite;
+                case ItemType.Hoe: return ItemAssets.Instance.hoeSprite;
+                case ItemType.WaterBucket: return ItemAssets.Instance.waterBucketSprite;
+            }
+        }
+        return ItemAssets.Instance.bean;
     }
     
     public enum ItemClass
@@ -153,52 +138,30 @@ public class Item
     
     public enum ItemType
     {
-        NewSeed,
         EmptyHand,
         Hoe,
         Scythe,
         WaterBucket,
-        //produce
-        Bean,
-        Blueberry,
-        Cabbage,
-        Carrot,
-        Cauliflower,
-        Celery,
-        Corn,
-        Eggplant,
-        Grape,
-        Leak,
-        Onion,
-        Pepper,
-        Pineapple,
-        Pumpkin,
+        
+        Haricot,
+        Myrtille,
+        Chou,
+        Carotte,
+        Choufleur,
+        Celeri,
+        Mais,
+        Aubergine,
+        Raisin,
+        Poireau,
+        Oignon,
+        Poivron,
+        Ananas,
+        Citrouille,
         Rockmelon,
-        Squash,
-        Strawberry,
-        Tomato,
-        Turnip,
-        Watermelon,
-        //seeds
-        BeanSeed,
-        BlueberrySeed,
-        CabbageSeed,
-        CarrotSeed,
-        CauliflowerSeed,
-        CelerySeed,
-        CornSeed,
-        EggplantSeed,
-        GrapeSeed,
-        LeakSeed,
-        OnionSeed,
-        PepperSeed,
-        PineappleSeed,
-        PumpkinSeed,
-        RockmelonSeed,
-        SquashSeed,
-        StrawberrySeed,
-        TomatoSeed,        
-        TurnipSeed,
-        WatermelonSeed
+        Courge,
+        Fraise,
+        Tomate,
+        Navet,
+        Pasteque,
     }
 }

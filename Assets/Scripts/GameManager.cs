@@ -53,7 +53,7 @@ public class GameManager : Singleton<GameManager>
     private Sprite[] _allPlantSprites;
     public Dictionary<Item.ItemType, List<Sprite>> _plantSprites = new Dictionary<Item.ItemType, List<Sprite>>();
     private Dictionary<String, Item.ItemType> _plantNameToItemType = new Dictionary<String, Item.ItemType>();
-    public List<Item.ItemType> _cropSeedEnum = new List<Item.ItemType>(); 
+    public List<Item.ItemType> _cropSeedEnum = new List<Item.ItemType>(); // unused?
     public Item _currentHeldItem = new Item { itemType = Item.ItemType.EmptyHand, itemClass = Item.ItemClass.Tools, amount = 1 };
     public List<PlantStateData> _allPlantStates = new List<PlantStateData>();
     
@@ -278,47 +278,26 @@ public class GameManager : Singleton<GameManager>
 
     private void FillCropDictionaries()
     {
-        _plantNameToItemType.Add("bean", Item.ItemType.BeanSeed);
-        _plantNameToItemType.Add("blueberry",Item.ItemType.BlueberrySeed);
-        _plantNameToItemType.Add("cabbage", Item.ItemType.CabbageSeed);
-        _plantNameToItemType.Add("carrot", Item.ItemType.CarrotSeed);
-        _plantNameToItemType.Add("cauliflower", Item.ItemType.CauliflowerSeed);
-        _plantNameToItemType.Add("celery", Item.ItemType.CelerySeed);
-        _plantNameToItemType.Add("corn", Item.ItemType.CornSeed);
-        _plantNameToItemType.Add("eggplant", Item.ItemType.EggplantSeed);
-        _plantNameToItemType.Add("grape", Item.ItemType.GrapeSeed);
-        _plantNameToItemType.Add("leak", Item.ItemType.LeakSeed);
-        _plantNameToItemType.Add("onion", Item.ItemType.OnionSeed);
-        _plantNameToItemType.Add("pepper", Item.ItemType.PepperSeed);
-        _plantNameToItemType.Add("pineapple", Item.ItemType.PineappleSeed);
-        _plantNameToItemType.Add("pumpkin", Item.ItemType.PumpkinSeed);
-        _plantNameToItemType.Add("rockmelon", Item.ItemType.RockmelonSeed);
-        _plantNameToItemType.Add("squash", Item.ItemType.SquashSeed);
-        _plantNameToItemType.Add("strawberry", Item.ItemType.StrawberrySeed);
-        _plantNameToItemType.Add("tomato", Item.ItemType.TomatoSeed);
-        _plantNameToItemType.Add("turnip", Item.ItemType.TurnipSeed);
-        _plantNameToItemType.Add("watermelon", Item.ItemType.WatermelonSeed);
-        
-        _cropSeedEnum.Add(Item.ItemType.BeanSeed);
-        _cropSeedEnum.Add(Item.ItemType.BlueberrySeed);
-        _cropSeedEnum.Add(Item.ItemType.CabbageSeed);
-        _cropSeedEnum.Add(Item.ItemType.CarrotSeed);
-        _cropSeedEnum.Add(Item.ItemType.CauliflowerSeed);
-        _cropSeedEnum.Add(Item.ItemType.CelerySeed);
-        _cropSeedEnum.Add(Item.ItemType.CornSeed);
-        _cropSeedEnum.Add(Item.ItemType.EggplantSeed);
-        _cropSeedEnum.Add(Item.ItemType.GrapeSeed);
-        _cropSeedEnum.Add(Item.ItemType.LeakSeed);
-        _cropSeedEnum.Add(Item.ItemType.OnionSeed);
-        _cropSeedEnum.Add(Item.ItemType.PepperSeed);
-        _cropSeedEnum.Add(Item.ItemType.PineappleSeed);
-        _cropSeedEnum.Add(Item.ItemType.PumpkinSeed);
-        _cropSeedEnum.Add(Item.ItemType.RockmelonSeed);
-        _cropSeedEnum.Add(Item.ItemType.SquashSeed);
-        _cropSeedEnum.Add(Item.ItemType.StrawberrySeed);
-        _cropSeedEnum.Add(Item.ItemType.TomatoSeed);
-        _cropSeedEnum.Add(Item.ItemType.TurnipSeed);
-        _cropSeedEnum.Add(Item.ItemType.WatermelonSeed);
+        _plantNameToItemType.Add("bean", Item.ItemType.Haricot); // changed item types to new format
+        _plantNameToItemType.Add("blueberry",Item.ItemType.Myrtille);
+        _plantNameToItemType.Add("cabbage", Item.ItemType.Chou);
+        _plantNameToItemType.Add("carrot", Item.ItemType.Carotte);
+        _plantNameToItemType.Add("cauliflower", Item.ItemType.Choufleur);
+        _plantNameToItemType.Add("celery", Item.ItemType.Celeri);
+        _plantNameToItemType.Add("corn", Item.ItemType.Mais);
+        _plantNameToItemType.Add("eggplant", Item.ItemType.Aubergine);
+        _plantNameToItemType.Add("grape", Item.ItemType.Raisin);
+        _plantNameToItemType.Add("leak", Item.ItemType.Poireau);
+        _plantNameToItemType.Add("onion", Item.ItemType.Oignon);
+        _plantNameToItemType.Add("pepper", Item.ItemType.Poivron);
+        _plantNameToItemType.Add("pineapple", Item.ItemType.Ananas);
+        _plantNameToItemType.Add("pumpkin", Item.ItemType.Citrouille);
+        _plantNameToItemType.Add("rockmelon", Item.ItemType.Rockmelon);
+        _plantNameToItemType.Add("squash", Item.ItemType.Courge);
+        _plantNameToItemType.Add("strawberry", Item.ItemType.Fraise);
+        _plantNameToItemType.Add("tomato", Item.ItemType.Tomate);
+        _plantNameToItemType.Add("turnip", Item.ItemType.Navet);
+        _plantNameToItemType.Add("watermelon", Item.ItemType.Pasteque);
         
         List<Sprite> _bean = new List<Sprite>();
         List<Sprite> _blueberry = new List<Sprite>(); 
@@ -341,26 +320,26 @@ public class GameManager : Singleton<GameManager>
         List<Sprite> _turnip = new List<Sprite>();
         List<Sprite> _watermelon = new List<Sprite>();
         
-        _plantSprites.Add(Item.ItemType.BeanSeed, _bean );
-        _plantSprites.Add(Item.ItemType.BlueberrySeed, _blueberry);
-        _plantSprites.Add(Item.ItemType.CabbageSeed, _cabbage);
-        _plantSprites.Add(Item.ItemType.CarrotSeed, _carrot);
-        _plantSprites.Add(Item.ItemType.CauliflowerSeed, _cauliflower);
-        _plantSprites.Add(Item.ItemType.CelerySeed, _celery);
-        _plantSprites.Add(Item.ItemType.CornSeed, _corn);
-        _plantSprites.Add(Item.ItemType.EggplantSeed, _eggplant);
-        _plantSprites.Add(Item.ItemType.GrapeSeed, _grape);
-        _plantSprites.Add(Item.ItemType.LeakSeed, _leak);
-        _plantSprites.Add(Item.ItemType.OnionSeed, _onion);
-        _plantSprites.Add(Item.ItemType.PepperSeed, _pepper);
-        _plantSprites.Add(Item.ItemType.PineappleSeed, _pineapple);
-        _plantSprites.Add(Item.ItemType.PumpkinSeed, _pumpkin);
-        _plantSprites.Add(Item.ItemType.RockmelonSeed, _rockmelon);
-        _plantSprites.Add(Item.ItemType.SquashSeed, _squash);
-        _plantSprites.Add(Item.ItemType.StrawberrySeed, _strawberry);
-        _plantSprites.Add(Item.ItemType.TomatoSeed, _tomato);
-        _plantSprites.Add(Item.ItemType.TurnipSeed, _turnip);
-        _plantSprites.Add(Item.ItemType.WatermelonSeed, _watermelon);
+        _plantSprites.Add(Item.ItemType.Haricot, _bean ); // changed item types to new format
+        _plantSprites.Add(Item.ItemType.Myrtille, _blueberry);
+        _plantSprites.Add(Item.ItemType.Chou, _cabbage);
+        _plantSprites.Add(Item.ItemType.Carotte, _carrot);
+        _plantSprites.Add(Item.ItemType.Choufleur, _cauliflower);
+        _plantSprites.Add(Item.ItemType.Celeri, _celery);
+        _plantSprites.Add(Item.ItemType.Mais, _corn);
+        _plantSprites.Add(Item.ItemType.Aubergine, _eggplant);
+        _plantSprites.Add(Item.ItemType.Raisin, _grape);
+        _plantSprites.Add(Item.ItemType.Poireau, _leak);
+        _plantSprites.Add(Item.ItemType.Oignon, _onion);
+        _plantSprites.Add(Item.ItemType.Poivron, _pepper);
+        _plantSprites.Add(Item.ItemType.Ananas, _pineapple);
+        _plantSprites.Add(Item.ItemType.Citrouille, _pumpkin);
+        _plantSprites.Add(Item.ItemType.Rockmelon, _rockmelon);
+        _plantSprites.Add(Item.ItemType.Courge, _squash);
+        _plantSprites.Add(Item.ItemType.Fraise, _strawberry);
+        _plantSprites.Add(Item.ItemType.Tomate, _tomato);
+        _plantSprites.Add(Item.ItemType.Navet, _turnip);
+        _plantSprites.Add(Item.ItemType.Pasteque, _watermelon);
     }
 
     public void SavePlantStates()
