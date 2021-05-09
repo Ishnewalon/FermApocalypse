@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
     {
         _inventory = new Inventory();
         
-        _uiInventory.SetInventory(_inventory);
+        _uiInventory.SetInventory(_inventory, transform);
     }
 
     private void Update()

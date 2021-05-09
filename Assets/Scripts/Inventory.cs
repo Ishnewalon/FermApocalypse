@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 
 public class Inventory
 {
@@ -25,7 +26,15 @@ public class Inventory
         AddItem(new Item { itemType = Item.ItemType.Ananas, itemClass = Item.ItemClass.Produce, amount = 5 });
         AddItem(new Item { itemType = Item.ItemType.Citrouille, itemClass = Item.ItemClass.Produce, amount = 5 });
         AddItem(new Item { itemType = Item.ItemType.Raisin, itemClass = Item.ItemClass.Produce, amount = 5 });
-        AddItem(new Item { itemType = Item.ItemType.Fraise, itemClass = Item.ItemClass.Produce, amount = 5 });
+    }
+
+    public void DropItem(Item item, Vector3 position)
+    {
+        if (itemList.Remove(item))
+        {
+            ItemWorld.SpawnItemWorld(new Vector3(position.x + 1, position.y, position.z), item);
+            Debug.Log(itemList.Count);
+        }
     }
 
     public void AddItem(Item item)

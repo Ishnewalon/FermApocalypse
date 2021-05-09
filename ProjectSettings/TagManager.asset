@@ -11,6 +11,7 @@ TagManager:
   - bed
   - endDay
   - farmable
+  - slot
   layers:
   - Default
   - TransparentFX

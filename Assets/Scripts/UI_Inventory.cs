@@ -12,6 +12,8 @@ public class UI_Inventory : MonoBehaviour
 
     private Inventory _inventory;
 
+    private Transform playerPos;
+
     private Transform itemSlotContainer;
     
     private Transform itemSlotTemplate;
@@ -27,8 +29,8 @@ public class UI_Inventory : MonoBehaviour
     float itemSlotCellSize = 60f;
     float itemSlotOffset = 98f;
 
-    private int x_start = 1000;
-    private int y_start = -280;
+    private float x_start = 1150;
+    private float y_start = -280;
 
     //[SerializeField] private GameObject _itemSlotContainer;
 
@@ -36,9 +38,11 @@ public class UI_Inventory : MonoBehaviour
     {
     }
     
-    public void SetInventory(Inventory inventory)
+    public void SetInventory(Inventory inventory, Transform player)
     {
         _inventory = inventory;
+
+        playerPos = player;
         
         go = Instantiate(gameObject);
 
@@ -57,6 +61,8 @@ public class UI_Inventory : MonoBehaviour
 
     private void RefreshInventory()
     {
+        ClearInventory();
+        
         var column = 0;
         var row = 0;
         foreach (var item in _inventory.GetItemList())
@@ -88,6 +94,17 @@ public class UI_Inventory : MonoBehaviour
         }
     }
 
+    private void ClearInventory()
+    {
+        foreach (Transform child in itemSlotContainer.transform)
+        {
+            if (child != itemSlotTemplate && child.tag.Equals("slot"))
+            {
+                Destroy(child.gameObject);
+            }
+        }
+    }
+
     private void AddEvent(Transform slotTransform, EventTriggerType type, UnityAction<BaseEventData> action)
     {
         EventTrigger trigger = slotTransform.gameObject.GetComponent<EventTrigger>();
@@ -99,7 +116,10 @@ public class UI_Inventory : MonoBehaviour
 
     private void OnPointerClick(Item item)
     {
-        if (item.IsEquipable())
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            _inventory.DropItem(item, playerPos.position);
+        }else if (item.IsEquipable())
         {
             GameManager.Instance._currentHeldItem = item;
             equipedItem = item;
