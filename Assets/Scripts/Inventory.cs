@@ -28,6 +28,19 @@ public class Inventory
         AddItem(new Item { itemType = Item.ItemType.Raisin, itemClass = Item.ItemClass.Produce, amount = 5 });
     }
 
+    public void UseItem(Item searchItem)
+    {
+        var usedItem = itemList.Find(item =>
+            item.itemType == searchItem.itemType && item.itemClass == searchItem.itemClass); // weird
+        usedItem.amount--;
+        if (usedItem.amount == 1)
+        {
+            GameManager.Instance._currentHeldItem = new Item { itemType = Item.ItemType.EmptyHand, itemClass = Item.ItemClass.Tools, amount = 1 };
+            itemList.Remove(usedItem);
+        }
+        OnItemListChanged?.Invoke(this, EventArgs.Empty);
+    }
+
     public void DropItem(Item item, Vector3 position)
     {
         if (itemList.Remove(item))
@@ -35,6 +48,7 @@ public class Inventory
             ItemWorld.SpawnItemWorld(new Vector3(position.x + 1, position.y, position.z), item);
             Debug.Log(itemList.Count);
         }
+        OnItemListChanged?.Invoke(this, EventArgs.Empty);
     }
 
     public void AddItem(Item item)

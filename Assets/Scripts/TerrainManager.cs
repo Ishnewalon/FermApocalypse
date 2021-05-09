@@ -33,6 +33,7 @@ public class TerrainManager : MonoBehaviour
 
     private void PlantASeed()
     {
+        //GameManager.Instance.PlayerInventory.UseItem(GameManager.Instance._currentHeldItem); throws null somthing when hand is empty or somthing help
         _plantGO = gameObject.transform.GetChild(0).gameObject;
         _plantGO.SetActive(true);
     }

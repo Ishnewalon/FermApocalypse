@@ -250,6 +250,7 @@ GameObject:
   - component: {fileID: 149024204}
   - component: {fileID: 149024203}
   - component: {fileID: 149024205}
+  - component: {fileID: 149024206}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -362,6 +363,19 @@ MonoBehaviour:
   tomatoSeeds: {fileID: 21300000, guid: cdc94404419e62e419476468645d782d, type: 3}
   turnipSeeds: {fileID: 21300000, guid: 32577ba4e4b76ac4f917776b8b0d1cd7, type: 3}
   watermelonSeeds: {fileID: 21300000, guid: 888c36292b06ab34bb0f32190476cccd, type: 3}
+--- !u!114 &149024206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 149024202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a33da7dfff4cbe46b5102c0eed0ab8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorTexture: {fileID: 2800000, guid: d834aa296ac8c244bad58e3d931abca0, type: 3}
 --- !u!1 &616117446
 GameObject:
   m_ObjectHideFlags: 0

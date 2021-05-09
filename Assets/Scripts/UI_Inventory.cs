@@ -119,10 +119,14 @@ public class UI_Inventory : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift))
         {
             _inventory.DropItem(item, playerPos.position);
-        }else if (item.IsEquipable())
+        }else if (item.IsEquipable() && item != equipedItem)
         {
             GameManager.Instance._currentHeldItem = item;
             equipedItem = item;
+        }else if (item == equipedItem)
+        {
+            GameManager.Instance._currentHeldItem = new Item { itemType = Item.ItemType.EmptyHand, itemClass = Item.ItemClass.Tools, amount = 1 };
+            equipedItem = null;
         }
         RefreshInventory();
     }

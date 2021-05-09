@@ -56,6 +56,8 @@ public class GameManager : Singleton<GameManager>
     public List<Item.ItemType> _cropSeedEnum = new List<Item.ItemType>(); // unused?
     public Item _currentHeldItem = new Item { itemType = Item.ItemType.EmptyHand, itemClass = Item.ItemClass.Tools, amount = 1 };
     public List<PlantStateData> _allPlantStates = new List<PlantStateData>();
+
+    public Inventory PlayerInventory;
     
     public void Start()
     {
@@ -271,7 +273,7 @@ public class GameManager : Singleton<GameManager>
         for (int i = 0; i < _allPlantSprites.Length; i++)
         {
             String spriteName = _allPlantSprites[i].name.Substring(0, _allPlantSprites[i].name.IndexOf("_"));
-            print(spriteName);
+            //todo print(spriteName); muted cuz stop the spamm reeeee left for debug
             _plantSprites[_plantNameToItemType[spriteName]].Add(_allPlantSprites[i]);
         }
     }
