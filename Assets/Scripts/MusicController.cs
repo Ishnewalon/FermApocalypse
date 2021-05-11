@@ -30,6 +30,10 @@ public class MusicController : MonoBehaviour
         {
             SetDayMusic();
         }
+        else if (previousState == GameManager.GameState.RUNNING && currentState == GameManager.GameState.ENDDAY)
+        {
+            SetNightMusic();
+        }
     }
     void Update()
     {

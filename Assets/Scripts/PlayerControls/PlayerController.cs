@@ -7,17 +7,21 @@ using Random = System.Random;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] 
-    private float walkSpeed = 20f;
+    private float walkSpeed = 10f;
 
     private Vector2 _heading;
     
     private Rigidbody2D _rigidbody2D;
 
     private Animator _animator;
+    
+    private AudioSource _audioSource;
 
     private Inventory _inventory;
 
     [SerializeField] private UI_Inventory _uiInventory;
+    
+    private List<AudioClip> _audioClips = new List<AudioClip>();
     
     private readonly int _animatorVelocity = Animator.StringToHash("velocity");
     private readonly int _animatorHeadingX = Animator.StringToHash("headingX");
@@ -28,6 +32,9 @@ public class PlayerController : MonoBehaviour
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
+        _audioSource = GetComponent<AudioSource>();
+        _audioClips.Add((AudioClip)Resources.Load("Audio/FootSteps/StepsLoop/grass/walking/walking-5"));
+        _audioClips.Add((AudioClip)Resources.Load("Audio/PickUpItem/blop"));
     }
 
     private void Awake()
@@ -47,6 +54,19 @@ public class PlayerController : MonoBehaviour
         if (!_heading.sqrMagnitude.Equals(0f))
         {
             SetAnimationHeading();
+        }
+
+        if (_rigidbody2D.velocity != Vector2.zero)
+        {
+            _audioSource.clip = _audioClips[0];
+            if (!_audioSource.isPlaying)
+            {
+                _audioSource.Play();
+            }
+        }
+        else
+        {
+            _audioSource.Stop();
         }
 
         // idle vs walk
@@ -87,6 +107,7 @@ public class PlayerController : MonoBehaviour
         ItemWorld itemWorld = other.GetComponent<ItemWorld>();
         if (itemWorld != null)
         {
+            _audioSource.PlayOneShot(_audioClips[1], 1);
             _inventory.AddItem(itemWorld.GetItem());
             itemWorld.DestroySelf();
         }
