@@ -19,13 +19,14 @@ public class Inventory
         AddItem(new Item { itemType = Item.ItemType.Hoe, itemClass = Item.ItemClass.Tools, amount = 1 });
         AddItem(new Item { itemType = Item.ItemType.Scythe, itemClass = Item.ItemClass.Tools, amount = 1 });
         AddItem(new Item { itemType = Item.ItemType.WaterBucket, itemClass = Item.ItemClass.Tools, amount = 1 });
-        AddItem(new Item { itemType = Item.ItemType.Ananas, itemClass = Item.ItemClass.Seeds, amount = 5 });
-        AddItem(new Item { itemType = Item.ItemType.Citrouille, itemClass = Item.ItemClass.Seeds, amount = 5 });
-        AddItem(new Item { itemType = Item.ItemType.Raisin, itemClass = Item.ItemClass.Seeds, amount = 5 });
-        AddItem(new Item { itemType = Item.ItemType.Fraise, itemClass = Item.ItemClass.Seeds, amount = 5 });
-        AddItem(new Item { itemType = Item.ItemType.Ananas, itemClass = Item.ItemClass.Produce, amount = 5 });
-        AddItem(new Item { itemType = Item.ItemType.Citrouille, itemClass = Item.ItemClass.Produce, amount = 5 });
-        AddItem(new Item { itemType = Item.ItemType.Raisin, itemClass = Item.ItemClass.Produce, amount = 5 });
+        AddItem(new Item { itemType = Item.ItemType.Ananas, itemClass = Item.ItemClass.Seeds, amount = 50 });
+        AddItem(new Item { itemType = Item.ItemType.Citrouille, itemClass = Item.ItemClass.Seeds, amount = 50 });
+        AddItem(new Item { itemType = Item.ItemType.Raisin, itemClass = Item.ItemClass.Seeds, amount = 50 });
+        AddItem(new Item { itemType = Item.ItemType.Fraise, itemClass = Item.ItemClass.Seeds, amount = 50 });
+        AddItem(new Item { itemType = Item.ItemType.Ananas, itemClass = Item.ItemClass.Seeds, amount = 50 });
+        AddItem(new Item { itemType = Item.ItemType.Mais, itemClass = Item.ItemClass.Seeds, amount = 50 });
+        AddItem(new Item { itemType = Item.ItemType.Citrouille, itemClass = Item.ItemClass.Seeds, amount = 50 });
+        AddItem(new Item { itemType = Item.ItemType.Raisin, itemClass = Item.ItemClass.Seeds, amount = 50 });
     }
 
     public void UseItem(Item searchItem)
