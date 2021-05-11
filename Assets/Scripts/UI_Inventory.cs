@@ -26,7 +26,6 @@ public class UI_Inventory : MonoBehaviour
 
     Dictionary<Transform, Item> _inventorySlots = new Dictionary<Transform, Item>();
     
-    float itemSlotCellSize = 60f;
     float itemSlotOffset = 98f;
 
     private float x_start = 1150;
