@@ -15,6 +15,9 @@ public class MenuManager : MonoBehaviour
     private GameObject _startMenu;
     
     [SerializeField] 
+    private GameObject _tutorialMenu;
+    
+    [SerializeField] 
     private GameObject _pauseMenu;
     
     [SerializeField] 
@@ -37,7 +40,7 @@ public class MenuManager : MonoBehaviour
         if (previousState == GameManager.GameState.PREGAME && currentState == GameManager.GameState.RUNNING)
         {
             _background.gameObject.SetActive(false);
-            _startMenu.gameObject.SetActive(false);
+            _tutorialMenu.gameObject.SetActive(false);
         }
         else if (previousState == GameManager.GameState.RUNNING && currentState == GameManager.GameState.PAUSE)
         {
@@ -47,22 +50,21 @@ public class MenuManager : MonoBehaviour
         else if (previousState == GameManager.GameState.RUNNING && currentState == GameManager.GameState.ENDDAY)
         {
             _endDayMenu.gameObject.SetActive(true);
-            _endDayTMP.text = "End of Day " + (GameManager.Instance.day - 1);
+            _endDayTMP.text = "Fin de la Journée " + (GameManager.Instance.day - 1) + " Mois " 
+                              + GameManager.Instance.month + " Année " + GameManager.Instance.year;;
             _background.gameObject.SetActive(true);
         }
         else if (previousState == GameManager.GameState.GOTOBED && currentState == GameManager.GameState.ENDDAY)
         {
             _endDayMenu.gameObject.SetActive(true);
-            _endDayTMP.text = "End of Day " + (GameManager.Instance.day - 1) + " Month " 
-                + GameManager.Instance.month + " Year " + GameManager.Instance.year;
+            _endDayTMP.text = "Fin de la Journée " + (GameManager.Instance.day - 1) + " Mois " 
+                + GameManager.Instance.month + " Année " + GameManager.Instance.year;
             _background.gameObject.SetActive(true);
         }
         else if (previousState == GameManager.GameState.RUNNING && currentState == GameManager.GameState.GOTOBED)
         {
             _goToBed.gameObject.SetActive(true);
         }
-
-
     }
     void Update()
     {
@@ -88,7 +90,13 @@ public class MenuManager : MonoBehaviour
     {
         GameManager.Instance.StartGame();
     }
-    
+
+    public void ToTutorial()
+    {
+        _startMenu.SetActive(false);
+        _tutorialMenu.SetActive(true);
+    }
+
     public void ResumeGame()
      {
         _pauseMenu.gameObject.SetActive(false);
