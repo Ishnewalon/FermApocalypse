@@ -23,7 +23,8 @@ public class TerrainManager : MonoBehaviour
         }
 
         if (GetComponent<SpriteRenderer>().sprite == _tilledSoil &&
-            GameManager.Instance._currentHeldItem.itemClass == Item.ItemClass.Seeds)
+            GameManager.Instance._currentHeldItem.itemClass == Item.ItemClass.Seeds &&
+            _plantGO.activeSelf == false)
         {
             PlantASeed();
             _plantGO.GetComponent<PlantGrowingController>()
@@ -83,6 +84,7 @@ public class TerrainManager : MonoBehaviour
     }
     public void PlantHasBeenHarvested()
     {
+        TerrainDry();
         GetComponent<SpriteRenderer>().sprite = _plantableSoil;
     }
 }
