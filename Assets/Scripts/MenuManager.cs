@@ -15,6 +15,9 @@ public class MenuManager : MonoBehaviour
     private GameObject _startMenu;
     
     [SerializeField] 
+    private GameObject _tutorialMenu;
+    
+    [SerializeField] 
     private GameObject _pauseMenu;
     
     [SerializeField] 
@@ -37,7 +40,7 @@ public class MenuManager : MonoBehaviour
         if (previousState == GameManager.GameState.PREGAME && currentState == GameManager.GameState.RUNNING)
         {
             _background.gameObject.SetActive(false);
-            _startMenu.gameObject.SetActive(false);
+            _tutorialMenu.gameObject.SetActive(false);
         }
         else if (previousState == GameManager.GameState.RUNNING && currentState == GameManager.GameState.PAUSE)
         {
@@ -88,7 +91,13 @@ public class MenuManager : MonoBehaviour
     {
         GameManager.Instance.StartGame();
     }
-    
+
+    public void ToTutorial()
+    {
+        _startMenu.SetActive(false);
+        _tutorialMenu.SetActive(true);
+    }
+
     public void ResumeGame()
      {
         _pauseMenu.gameObject.SetActive(false);
