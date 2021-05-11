@@ -62,6 +62,34 @@ public class Item
         }
     }
 
+    public int GetCost()
+    {
+        if (itemClass == ItemClass.Produce)
+        {
+            return 10;
+        }
+        if (itemClass == ItemClass.Seeds)
+        {
+            return 2;
+        }
+        if (itemClass == ItemClass.Tools)
+        {
+            switch (itemType)
+            {
+                case ItemType.Scythe: return 10;
+                case ItemType.Hoe: return 10;
+                case ItemType.WaterBucket: return 10;
+                case ItemType.GoldenHoe: return 300;
+                case ItemType.GoldenScythe: return 300;
+                case ItemType.GoldenBucket: return 300;
+                case ItemType.CandyHoe: return 1000;
+                case ItemType.LimeScythe: return 1000;
+                case ItemType.FireBucket: return 1000;
+            }
+        }
+        return 0;
+    }
+
     public Texture2D GetTexture2D()
     {
         switch (itemType)

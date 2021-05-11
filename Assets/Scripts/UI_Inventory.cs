@@ -31,8 +31,6 @@ public class UI_Inventory : MonoBehaviour
     private float x_start = 1150;
     private float y_start = -280;
 
-    //[SerializeField] private GameObject _itemSlotContainer;
-
     private void Awake()
     {
     }
