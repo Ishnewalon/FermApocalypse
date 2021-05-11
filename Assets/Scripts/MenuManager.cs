@@ -50,22 +50,21 @@ public class MenuManager : MonoBehaviour
         else if (previousState == GameManager.GameState.RUNNING && currentState == GameManager.GameState.ENDDAY)
         {
             _endDayMenu.gameObject.SetActive(true);
-            _endDayTMP.text = "End of Day " + (GameManager.Instance.day - 1);
+            _endDayTMP.text = "Fin de la Journée " + (GameManager.Instance.day - 1) + " Mois " 
+                              + GameManager.Instance.month + " Année " + GameManager.Instance.year;;
             _background.gameObject.SetActive(true);
         }
         else if (previousState == GameManager.GameState.GOTOBED && currentState == GameManager.GameState.ENDDAY)
         {
             _endDayMenu.gameObject.SetActive(true);
-            _endDayTMP.text = "End of Day " + (GameManager.Instance.day - 1) + " Month " 
-                + GameManager.Instance.month + " Year " + GameManager.Instance.year;
+            _endDayTMP.text = "Fin de la Journée " + (GameManager.Instance.day - 1) + " Mois " 
+                + GameManager.Instance.month + " Année " + GameManager.Instance.year;
             _background.gameObject.SetActive(true);
         }
         else if (previousState == GameManager.GameState.RUNNING && currentState == GameManager.GameState.GOTOBED)
         {
             _goToBed.gameObject.SetActive(true);
         }
-
-
     }
     void Update()
     {
