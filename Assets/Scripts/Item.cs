@@ -48,19 +48,36 @@ public class Item
 
     public String GetDesc()
     {
-        
         switch (itemType)
         {
-            case ItemType.Hoe: return "Un outils ";
-            case ItemType.Scythe: return "ItemAssets.Instance.scytheSprite";
-            case ItemType.WaterBucket: return "ItemAssets.Instance.waterBucketSprite";
+            case ItemType.Hoe: return "Une houe pour labourer la terre";
+            case ItemType.Scythe: return "Une faux pour faire la recolte";
+            case ItemType.WaterBucket: return "Un seau d'eau"; //todo add desc for new items!!!!!!!!!!!
         }
         switch (itemClass)
         {
             case ItemClass.Seeds: return "Des semences de " + itemType;
-            case ItemClass.Produce: return "Le fruit de vos efforts!";
+            case ItemClass.Produce: return "Le fruit de vos efforts";
             default: return "Where did you find this?";
         }
+    }
+
+    public Texture2D GetTexture2D()
+    {
+        switch (itemType)
+        {
+            case ItemType.Hoe: return ItemAssets.Instance.basicHoe;
+            case ItemType.Scythe: return ItemAssets.Instance.basicScythe;
+            case ItemType.WaterBucket: return ItemAssets.Instance.basicBucket;
+            case ItemType.GoldenHoe: return ItemAssets.Instance.goldenHoe;
+            case ItemType.GoldenScythe: return ItemAssets.Instance.goldenScythe;
+            case ItemType.GoldenBucket: return ItemAssets.Instance.goldenBucket;
+            case ItemType.CandyHoe: return ItemAssets.Instance.candyHoe;
+            case ItemType.LimeScythe: return ItemAssets.Instance.limeScythe;
+            case ItemType.FireBucket: return ItemAssets.Instance.fireBucket;
+        }
+
+        return null;
     }
     
     public Sprite GetSprite()
@@ -124,6 +141,12 @@ public class Item
                 case ItemType.Scythe: return ItemAssets.Instance.scytheSprite;
                 case ItemType.Hoe: return ItemAssets.Instance.hoeSprite;
                 case ItemType.WaterBucket: return ItemAssets.Instance.waterBucketSprite;
+                case ItemType.GoldenHoe: return ItemAssets.Instance.GoldenHoeSprite;
+                case ItemType.GoldenScythe: return ItemAssets.Instance.GoldenScytheSprite;
+                case ItemType.GoldenBucket: return ItemAssets.Instance.GoldenBucketSprite;
+                case ItemType.CandyHoe: return ItemAssets.Instance.CandyHoeSprite;
+                case ItemType.LimeScythe: return ItemAssets.Instance.LimeScytheSprite;
+                case ItemType.FireBucket: return ItemAssets.Instance.FireBucketSprite;
             }
         }
         return ItemAssets.Instance.bean;
@@ -139,9 +162,16 @@ public class Item
     public enum ItemType
     {
         EmptyHand,
+        
         Hoe,
         Scythe,
         WaterBucket,
+        GoldenHoe,
+        GoldenScythe,
+        GoldenBucket,
+        CandyHoe,
+        LimeScythe,
+        FireBucket,
         
         Haricot,
         Bleuet,

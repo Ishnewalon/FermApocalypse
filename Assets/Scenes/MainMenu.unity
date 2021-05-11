@@ -323,6 +323,12 @@ MonoBehaviour:
   hoeSprite: {fileID: -3186262526813576740, guid: ba20d0d42ef13284b95c2000381e9918, type: 3}
   scytheSprite: {fileID: -1368058182281286375, guid: ba20d0d42ef13284b95c2000381e9918, type: 3}
   waterBucketSprite: {fileID: 8624245271877955555, guid: 6379dccbfee466f4fb039f4c5e25feda, type: 3}
+  GoldenBucketSprite: {fileID: 21300000, guid: 96f32b7925d6e1b40a41e66cb1f4f07a, type: 3}
+  GoldenHoeSprite: {fileID: 21300000, guid: 42f5d2c79acdee14e8870831c3289e98, type: 3}
+  GoldenScytheSprite: {fileID: 21300000, guid: 3069e9859213f9b40992241bc4f09d02, type: 3}
+  LimeScytheSprite: {fileID: 21300000, guid: 6d0d591a59c6ad14a87ce3646c64241c, type: 3}
+  CandyHoeSprite: {fileID: 21300000, guid: 8219e57281231ab468beec51a8315f2c, type: 3}
+  FireBucketSprite: {fileID: 21300000, guid: 6e1987b114fdb4447862db70143a85dd, type: 3}
   bean: {fileID: -2746354997011663302, guid: db1f5d20da085b744b6da2c97bb10ade, type: 3}
   blueberry: {fileID: -3196038268417377934, guid: db1f5d20da085b744b6da2c97bb10ade, type: 3}
   cabbage: {fileID: -458198559300568985, guid: db1f5d20da085b744b6da2c97bb10ade, type: 3}
@@ -363,6 +369,15 @@ MonoBehaviour:
   tomatoSeeds: {fileID: 21300000, guid: cdc94404419e62e419476468645d782d, type: 3}
   turnipSeeds: {fileID: 21300000, guid: 32577ba4e4b76ac4f917776b8b0d1cd7, type: 3}
   watermelonSeeds: {fileID: 21300000, guid: 888c36292b06ab34bb0f32190476cccd, type: 3}
+  basicHoe: {fileID: 2800000, guid: 34252ff932b14be43872382a8ba5a04f, type: 3}
+  basicScythe: {fileID: 2800000, guid: d834aa296ac8c244bad58e3d931abca0, type: 3}
+  basicBucket: {fileID: 2800000, guid: 2be9f7b070088c645b99b20f7cadc31f, type: 3}
+  goldenBucket: {fileID: 2800000, guid: 96f32b7925d6e1b40a41e66cb1f4f07a, type: 3}
+  goldenHoe: {fileID: 2800000, guid: 42f5d2c79acdee14e8870831c3289e98, type: 3}
+  goldenScythe: {fileID: 2800000, guid: 3069e9859213f9b40992241bc4f09d02, type: 3}
+  limeScythe: {fileID: 0}
+  candyHoe: {fileID: 2800000, guid: 8219e57281231ab468beec51a8315f2c, type: 3}
+  fireBucket: {fileID: 2800000, guid: 6e1987b114fdb4447862db70143a85dd, type: 3}
 --- !u!114 &149024206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -375,7 +390,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a33da7dfff4cbe46b5102c0eed0ab8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cursorTexture: {fileID: 2800000, guid: d834aa296ac8c244bad58e3d931abca0, type: 3}
 --- !u!1 &616117446
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,4 +455,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1960309759
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1960309760}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1960309760
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1960309759}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -13.2092085, y: 3.2607946, z: -22.189512}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

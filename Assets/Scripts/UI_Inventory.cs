@@ -133,7 +133,7 @@ public class UI_Inventory : MonoBehaviour
     private void OnPointerEnter(Item item, Transform itemSlotObj)
     {
         var text = itemSlotObj.Find("Item_Name");
-        text.GetComponent<TextMeshProUGUI>().SetText(item.itemType.ToString());
+        text.GetComponent<TextMeshProUGUI>().SetText(item.GetDesc());
         text.gameObject.SetActive(true);
     }
 

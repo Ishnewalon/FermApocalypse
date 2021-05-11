@@ -20,7 +20,7 @@ public class Cursor : MonoBehaviour
         {
             switch (_activeItem.itemType)
             {
-                case Item.ItemType.Hoe: UnityEngine.Cursor.SetCursor(_cursorList[2], _hotspot, _cursorMode);
+                case Item.ItemType.Hoe: UnityEngine.Cursor.SetCursor(ItemAssets.Instance.basicHoe, _hotspot, _cursorMode);
                     break;
                 case Item.ItemType.WaterBucket: UnityEngine.Cursor.SetCursor(_cursorList[1], _hotspot, _cursorMode);
                     break;

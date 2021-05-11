@@ -6,7 +6,7 @@ using UnityEngine;
 public class ItemAssets : MonoBehaviour
 {
     
-    public static ItemAssets Instance { get; private set; }// todo : aske teach about static dont yell at me bruh!
+    public static ItemAssets Instance { get; private set; }
 
     private void Awake()
     {
@@ -18,6 +18,12 @@ public class ItemAssets : MonoBehaviour
     public Sprite hoeSprite;
     public Sprite scytheSprite;
     public Sprite waterBucketSprite;
+    public Sprite GoldenBucketSprite;
+    public Sprite GoldenHoeSprite;
+    public Sprite GoldenScytheSprite;
+    public Sprite LimeScytheSprite;
+    public Sprite CandyHoeSprite;
+    public Sprite FireBucketSprite;
     
     public Sprite bean;
     public Sprite blueberry;
@@ -60,4 +66,14 @@ public class ItemAssets : MonoBehaviour
     public Sprite tomatoSeeds;
     public Sprite turnipSeeds;
     public Sprite watermelonSeeds;
+
+    public Texture2D basicHoe;
+    public Texture2D basicScythe;
+    public Texture2D basicBucket;
+    public Texture2D goldenBucket;
+    public Texture2D goldenHoe;
+    public Texture2D goldenScythe;
+    public Texture2D limeScythe;
+    public Texture2D candyHoe;
+    public Texture2D fireBucket;
 }
