@@ -65,8 +65,8 @@ public class TimeManager : MonoBehaviour
     public void UpdateDisplay()
     {
         timeText.text = String.Format( "{0:00} : {1:00}"  , GameManager.Instance.hours, GameManager.Instance.minutes);
-        dayText.text = "Day: " + (GameManager.Instance.day).ToString();
-        monthText.text = "Month:" + (GameManager.Instance.month).ToString();
-        yearText.text = "Year: " + (GameManager.Instance.year).ToString();
+        dayText.text = "Jour: " + (GameManager.Instance.day).ToString();
+        monthText.text = "Mois:" + (GameManager.Instance.month).ToString();
+        yearText.text = "Année: " + (GameManager.Instance.year).ToString();
     }
 }
