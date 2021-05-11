@@ -32,6 +32,7 @@ public class PlantGrowingController : MonoBehaviour
 
     private void MakePlantGrow()
     {
+        print(_plantType);
         GetComponent<SpriteRenderer>().sprite =
             GameManager.Instance._plantSprites[_plantType][_currrentGrowthStage];
     }

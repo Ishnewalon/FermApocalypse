@@ -33,7 +33,7 @@ public class Inventory
         var usedItem = itemList.Find(item =>
             item.itemType == searchItem.itemType && item.itemClass == searchItem.itemClass);
         usedItem.amount--;
-        if (usedItem.amount == 1)
+        if (usedItem.amount < 1)
         {
             GameManager.Instance._currentHeldItem = new Item { itemType = Item.ItemType.EmptyHand, itemClass = Item.ItemClass.Tools, amount = 1 };
             itemList.Remove(usedItem);

@@ -25,10 +25,10 @@ public class TerrainManager : MonoBehaviour
         if (GetComponent<SpriteRenderer>().sprite == _tilledSoil &&
             GameManager.Instance._currentHeldItem.itemClass == Item.ItemClass.Seeds)
         {
-            GameManager.Instance.PlayerInventory.UseItem(GameManager.Instance._currentHeldItem);
             PlantASeed();
             _plantGO.GetComponent<PlantGrowingController>()
                 .setStateData(0, GameManager.Instance._currentHeldItem.itemType, false);
+            GameManager.Instance.PlayerInventory.UseItem(GameManager.Instance._currentHeldItem);
         }
     }
 
