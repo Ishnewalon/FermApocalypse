@@ -107,8 +107,7 @@ public class PlayerController : MonoBehaviour
         ItemWorld itemWorld = other.GetComponent<ItemWorld>();
         if (itemWorld != null)
         {
-            //_audioSource.clip = _audioSource.clip = _audioClips[1];
-            //_audioSource.Play();
+            _audioSource.PlayOneShot(_audioClips[1], 1);
             _inventory.AddItem(itemWorld.GetItem());
             itemWorld.DestroySelf();
         }
