@@ -70,7 +70,7 @@ public class Item
             switch (itemType)
             {
                 case ItemType.Haricot: return ItemAssets.Instance.bean;
-                case ItemType.Myrtille: return ItemAssets.Instance.blueberry;
+                case ItemType.Bleuet: return ItemAssets.Instance.blueberry;
                 case ItemType.Chou: return ItemAssets.Instance.cabbage;
                 case ItemType.Carotte: return ItemAssets.Instance.carrot;
                 case ItemType.Choufleur: return ItemAssets.Instance.cauliflower;
@@ -96,7 +96,7 @@ public class Item
             switch (itemType)
             {
                 case ItemType.Haricot: return ItemAssets.Instance.beanSeeds;
-                case ItemType.Myrtille: return ItemAssets.Instance.blueberrySeeds;
+                case ItemType.Bleuet: return ItemAssets.Instance.blueberrySeeds;
                 case ItemType.Chou: return ItemAssets.Instance.cabbageSeeds;
                 case ItemType.Carotte: return ItemAssets.Instance.carrotSeeds;
                 case ItemType.Choufleur: return ItemAssets.Instance.cauliflowerSeeds;
@@ -144,7 +144,7 @@ public class Item
         WaterBucket,
         
         Haricot,
-        Myrtille,
+        Bleuet,
         Chou,
         Carotte,
         Choufleur,

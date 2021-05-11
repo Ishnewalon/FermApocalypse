@@ -281,7 +281,7 @@ public class GameManager : Singleton<GameManager>
     private void FillCropDictionaries()
     {
         _plantNameToItemType.Add("bean", Item.ItemType.Haricot); // changed item types to new format
-        _plantNameToItemType.Add("blueberry",Item.ItemType.Myrtille);
+        _plantNameToItemType.Add("blueberry",Item.ItemType.Bleuet);
         _plantNameToItemType.Add("cabbage", Item.ItemType.Chou);
         _plantNameToItemType.Add("carrot", Item.ItemType.Carotte);
         _plantNameToItemType.Add("cauliflower", Item.ItemType.Choufleur);
@@ -323,7 +323,7 @@ public class GameManager : Singleton<GameManager>
         List<Sprite> _watermelon = new List<Sprite>();
         
         _plantSprites.Add(Item.ItemType.Haricot, _bean ); // changed item types to new format
-        _plantSprites.Add(Item.ItemType.Myrtille, _blueberry);
+        _plantSprites.Add(Item.ItemType.Bleuet, _blueberry);
         _plantSprites.Add(Item.ItemType.Chou, _cabbage);
         _plantSprites.Add(Item.ItemType.Carotte, _carrot);
         _plantSprites.Add(Item.ItemType.Choufleur, _cauliflower);

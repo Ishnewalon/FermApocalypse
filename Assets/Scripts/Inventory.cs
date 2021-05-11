@@ -31,7 +31,7 @@ public class Inventory
     public void UseItem(Item searchItem)
     {
         var usedItem = itemList.Find(item =>
-            item.itemType == searchItem.itemType && item.itemClass == searchItem.itemClass); // weird
+            item.itemType == searchItem.itemType && item.itemClass == searchItem.itemClass);
         usedItem.amount--;
         if (usedItem.amount == 1)
         {

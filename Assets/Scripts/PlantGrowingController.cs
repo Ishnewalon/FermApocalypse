@@ -25,7 +25,7 @@ public class PlantGrowingController : MonoBehaviour
                 gameObject.SetActive(false);
                 ItemWorld.SpawnItemWorld(new Vector3(transform.position.x,
                         transform.position.y + 1, transform.position.z),
-                    new Item {itemType = _plantType, itemClass = Item.ItemClass.Produce, amount = 1});// changed item class to produce
+                    new Item {itemType = _plantType, itemClass = Item.ItemClass.Produce, amount = 1});
             }
         }
     }
