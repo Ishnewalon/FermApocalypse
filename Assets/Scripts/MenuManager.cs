@@ -68,8 +68,8 @@ public class MenuManager : MonoBehaviour
     }
     void Update()
     {
-        if (GameManager.Instance.CurrentGameState == GameManager.GameState.RUNNING)
-        {
+        /*if (GameManager.Instance.CurrentGameState == GameManager.GameState.RUNNING)
+        {*/
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 GameManager.Instance.TogglePause();
@@ -78,7 +78,7 @@ public class MenuManager : MonoBehaviour
             {
                 GameManager.Instance.ToggleNewDay();
             }
-        }
+       // }
 
         if (GameManager.Instance.CurrentGameState == GameManager.GameState.PREGAME)
         {
