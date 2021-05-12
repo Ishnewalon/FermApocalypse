@@ -57,6 +57,7 @@ public class GameManager : Singleton<GameManager>
     public Item _currentHeldItem = new Item { itemType = Item.ItemType.EmptyHand, itemClass = Item.ItemClass.Tools, amount = 1 };
     public List<PlantStateData> _allPlantStates = new List<PlantStateData>();
 
+    public UI_Shop UIShop;
     public Inventory PlayerInventory;
     
     public void Start()
@@ -65,9 +66,10 @@ public class GameManager : Singleton<GameManager>
         InstanciateSystemPrefab();
         _menuCamera = GameObject.FindWithTag("MainCamera");
         _allPlantSprites = Resources.LoadAll<Sprite>("Sprites/Plants/plants");
+        SetUpShop();
         SetUpCropSprites();
     }
-    
+
     void InstanciateSystemPrefab()
     {
         GameObject prefabInstance;
@@ -265,6 +267,11 @@ public class GameManager : Singleton<GameManager>
     public void ToggleGoToBedDialog()
     {
         UpdateGameState(_currentGameState == GameState.RUNNING ? GameState.GOTOBED : GameState.RUNNING);
+    }
+    
+    private void SetUpShop()
+    {
+        UIShop.InitializeShop(Instantiate(UIShop).gameObject);
     }
 
     private void SetUpCropSprites()

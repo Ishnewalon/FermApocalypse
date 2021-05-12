@@ -293,6 +293,7 @@ MonoBehaviour:
     itemType: 0
     itemClass: 0
     amount: 1
+  UIShop: {fileID: 2177151450305610704, guid: 5af92550adc4f8c478e6aff9d9731faf, type: 3}
 --- !u!4 &149024204
 Transform:
   m_ObjectHideFlags: 0

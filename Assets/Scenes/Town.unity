@@ -73187,6 +73187,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3936652815921279048, guid: 5f81e8c9edb201944862283ee27dbcd0, type: 3}
+      propertyPath: m_Size.x
+      value: 1.1539636
+      objectReference: {fileID: 0}
+    - target: {fileID: 3936652815921279048, guid: 5f81e8c9edb201944862283ee27dbcd0, type: 3}
+      propertyPath: m_Size.y
+      value: 2.5469313
+      objectReference: {fileID: 0}
+    - target: {fileID: 3936652815921279048, guid: 5f81e8c9edb201944862283ee27dbcd0, type: 3}
+      propertyPath: m_Offset.x
+      value: -2.2935803
+      objectReference: {fileID: 0}
+    - target: {fileID: 3936652815921279048, guid: 5f81e8c9edb201944862283ee27dbcd0, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.31659496
+      objectReference: {fileID: 0}
+    - target: {fileID: 3936652815921279048, guid: 5f81e8c9edb201944862283ee27dbcd0, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3936652815921279049, guid: 5f81e8c9edb201944862283ee27dbcd0, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -73241,6 +73261,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f81e8c9edb201944862283ee27dbcd0, type: 3}
+--- !u!1 &448949430 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3936652815921279055, guid: 5f81e8c9edb201944862283ee27dbcd0, type: 3}
+  m_PrefabInstance: {fileID: 448949429}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &448949431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 448949430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa5e205b5f7df5c4a94b5eeb3c925031, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &497612987
 GameObject:
   m_ObjectHideFlags: 0
@@ -79999,6 +80036,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3936652815921279048, guid: 5f81e8c9edb201944862283ee27dbcd0, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3936652815921279049, guid: 5f81e8c9edb201944862283ee27dbcd0, type: 3}
       propertyPath: m_RootOrder
       value: 3

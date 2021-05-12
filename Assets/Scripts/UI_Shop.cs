@@ -15,13 +15,16 @@ public class UI_Shop : MonoBehaviour
 
     private float rectY;
 
-    private int slotOffset = 70;
+    private int slotOffset = 10000;
 
     private bool create = true;
 
-    private void Awake()
+    private GameObject _gameObject;
+
+    public void InitializeShop(GameObject gameObject)
     {
-        shopContainer = transform.Find("ShopContainer");
+        _gameObject = gameObject;
+        shopContainer = _gameObject.transform.Find("ShopContainer");
         shopTemplate = shopContainer.Find("ShopTemplate");
 
         var templatePosition = shopTemplate.GetComponent<RectTransform>().anchoredPosition;
@@ -29,35 +32,41 @@ public class UI_Shop : MonoBehaviour
         rectY = templatePosition.y;
     }
 
-    private void Start()
+    public void CreateShopButton(List<ShopItem> shopItems)
     {
-
-    }
-
-    private void Update()
-    {
-        if (GameManager.Instance.PlayerInventory.GetItemList().Count > 2 && create)
-        {
-            CreateShopButton(GameManager.Instance.PlayerInventory.GetItemList());
-            create = false;
-        }
-    }
-
-    private void CreateShopButton(List<Item> shopItems)
-    {
+        _gameObject.SetActive(true);
         int shopRow = 0;
 
-        foreach (var item in shopItems)
+        foreach (var shopItem in shopItems)
         {
             var shopSlot = Instantiate(shopTemplate, shopContainer);
             shopSlot.GetComponent<RectTransform>().anchoredPosition = new Vector2(rectX, rectY - shopRow * slotOffset);
 
-            shopSlot.Find("ItemSprite").GetComponent<Image>().sprite = item.GetSprite();
-            shopSlot.Find("ItemName").GetComponent<TextMeshProUGUI>().SetText(item.itemType.ToString());
-            shopSlot.Find("Cost").GetComponent<TextMeshProUGUI>().SetText(item.GetCost().ToString());
+            shopSlot.Find("ItemSprite").GetComponent<Image>().sprite = shopItem.item.GetSprite();
+            shopSlot.Find("ItemName").GetComponent<TextMeshProUGUI>().SetText(shopItem.item.itemType.ToString());
             
+            if (shopItem.isOwned)
+            {
+                shopSlot.Find("Cost").GetComponent<TextMeshProUGUI>().SetText("FREE");
+            }
+            else
+            {
+                shopSlot.Find("Cost").GetComponent<TextMeshProUGUI>().SetText(shopItem.item.GetCost().ToString());
+            }
+
             shopSlot.gameObject.SetActive(true);
             shopRow++;
+        }
+    }
+
+    public void ClearShopButtons()
+    {
+        foreach (Transform child in shopContainer.transform)
+        {
+            if (child != shopTemplate)
+            {
+                Destroy(child.gameObject);
+            }
         }
     }
 }
