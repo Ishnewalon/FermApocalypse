@@ -139,7 +139,7 @@ public class Inventory
             {
                 if (inventoryItem.itemType == item.itemType && inventoryItem.itemClass == item.itemClass)
                 {
-                    inventoryItem.amount += item.amount;
+                    inventoryItem.amount++;
                     itemAlreadyInInventory = true;
                 }
             }
