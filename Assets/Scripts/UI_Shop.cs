@@ -77,7 +77,10 @@ public class UI_Shop : MonoBehaviour
 
     private void OnPointerClick(ShopItem shopItem)
     {
-        
+        if (GameManager.Instance.PlayerInventory.RemoveCoins(shopItem.item.GetCost()))
+        {
+            //GameManager.Instance.PlayerInventory.AddItem();
+        }
     }
 
     public void ClearShopButtons()
