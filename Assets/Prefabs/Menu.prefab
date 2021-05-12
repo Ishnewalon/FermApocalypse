@@ -2448,13 +2448,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dd190a38a38ae644a8766803844f564, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _background: {fileID: 4725851922752108797}
-  _startMenu: {fileID: 7028242794191814643}
-  _tutorialMenu: {fileID: 3753897036720260207}
-  _pauseMenu: {fileID: 8502609116986597397}
-  _endDayMenu: {fileID: 6361160557563035828}
-  _endDayTMP: {fileID: 9097004880227517149}
-  _goToBed: {fileID: 5468524105385352009}
+  background: {fileID: 4725851922752108797}
+  startMenu: {fileID: 7028242794191814643}
+  tutorialMenu: {fileID: 3753897036720260207}
+  pauseMenu: {fileID: 8502609116986597397}
+  endDayMenu: {fileID: 6361160557563035828}
+  endDayTMP: {fileID: 9097004880227517149}
+  goToBed: {fileID: 5468524105385352009}
+  endGame: {fileID: 2600229447942444595}
 --- !u!1 &4725851922237610037
 GameObject:
   m_ObjectHideFlags: 0
