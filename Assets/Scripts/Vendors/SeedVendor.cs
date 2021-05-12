@@ -2,11 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class SeedVendor : MonoBehaviour
 {
 
     private List<ShopItem> shopList;
+    private List<ShopItem> dailyList;
 
     private void Start()
     {
@@ -52,13 +54,32 @@ public class SeedVendor : MonoBehaviour
             false));
         shopList.Add(new ShopItem(new Item {itemType = Item.ItemType.Tomate, itemClass = Item.ItemClass.Seeds, amount = 1},
             false));
+        
+        GameManager.Instance.onGameStateChanged.AddListener(HandleGameStateChanged);
+        PopulateList();
+    }
 
+    private void HandleGameStateChanged(GameManager.GameState previous, GameManager.GameState current)
+    {
+        if (previous == GameManager.GameState.ENDDAY && current == GameManager.GameState.RUNNING)
+        {
+            PopulateList();
+        }
+    }
 
+    private void PopulateList()
+    {
+        dailyList = new List<ShopItem>();
+
+        while (dailyList.Count < 5)
+        {
+            dailyList.Add(shopList[Random.Range(0, shopList.Count)]);
+        }
     }
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        GameManager.Instance.UIShop.CreateShopButton(shopList);
+        GameManager.Instance.UIShop.CreateShopButton(dailyList);
     }
     
     private void OnTriggerExit2D(Collider2D other)
