@@ -221,7 +221,7 @@ public class GameManager : Singleton<GameManager>
     {
         _menuCamera.GetComponent<AudioListener>().enabled = false;
         LoadLevel("Farm");
-        hours = 15;         //TODO Change back time to 7 for start of day
+        hours = 15;
         minutes = 0;
         seconds = 0;
         day = 1;

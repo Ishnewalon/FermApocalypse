@@ -33,6 +33,16 @@ public class Inventory
         AddItem(new Item { itemType = Item.ItemType.Carotte, itemClass = Item.ItemClass.Seeds, amount = 10 });
     }
 
+    public bool ReplaceItem(Item newItem, Item itemToReplace)
+    {
+        var index = itemList.FindIndex(item =>
+            item.itemType == itemToReplace.itemType && item.itemClass == itemToReplace.itemClass);
+        
+        itemList.RemoveAt(index);
+        itemList.Insert(index, newItem);
+        return false;
+    }
+
     public void AddCoins(int amount)
     {
         coinBalance += amount;
