@@ -284,7 +284,6 @@ public class GameManager : Singleton<GameManager>
         for (int i = 0; i < _allPlantSprites.Length; i++)
         {
             String spriteName = _allPlantSprites[i].name.Substring(0, _allPlantSprites[i].name.IndexOf("_"));
-            //todo print(spriteName); muted cuz stop the spamm reeeee left for debug
             _plantSprites[_plantNameToItemType[spriteName]].Add(_allPlantSprites[i]);
         }
     }
@@ -398,7 +397,7 @@ public class GameManager : Singleton<GameManager>
         if (PlayerInventory.GetItemList().Contains(hoe) &&
             PlayerInventory.GetItemList().Contains(scythe) &&
             PlayerInventory.GetItemList().Contains(bucket) &&
-            PlayerInventory.GetBalance() == 10000)
+            PlayerInventory.GetBalance() >= 10000)
         {
             flag = true;
         }
