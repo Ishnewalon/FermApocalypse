@@ -390,13 +390,14 @@ public class GameManager : Singleton<GameManager>
 
     public bool IsGameWon()
     {
+        print("Testing ISGAMEWON");
         var flag = false;
-        Item hoe = new Item{ itemType = Item.ItemType.GoldenHoe, itemClass = Item.ItemClass.Tools, amount = 1 };
-        Item scythe = new Item{ itemType = Item.ItemType.GoldenScythe, itemClass = Item.ItemClass.Tools, amount = 1 };
-        Item bucket = new Item{ itemType = Item.ItemType.GoldenBucket, itemClass = Item.ItemClass.Tools, amount = 1 };
-        if (PlayerInventory.GetItemList().Contains(hoe) &&
-            PlayerInventory.GetItemList().Contains(scythe) &&
-            PlayerInventory.GetItemList().Contains(bucket) &&
+        if (PlayerInventory.GetItemList().Find(item =>
+                item.itemType == Item.ItemType.GoldenHoe && item.itemClass == Item.ItemClass.Tools )!= null &&
+            PlayerInventory.GetItemList().Find(item =>
+                item.itemType == Item.ItemType.GoldenScythe && item.itemClass == Item.ItemClass.Tools )!= null &&
+            PlayerInventory.GetItemList().Find(item =>
+                item.itemType == Item.ItemType.GoldenBucket && item.itemClass == Item.ItemClass.Tools )!= null &&
             PlayerInventory.GetBalance() >= 10000)
         {
             flag = true;
