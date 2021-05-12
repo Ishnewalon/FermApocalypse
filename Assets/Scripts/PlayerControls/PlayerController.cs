@@ -42,6 +42,7 @@ public class PlayerController : MonoBehaviour
         _inventory = new Inventory();
 
         GameManager.Instance.PlayerInventory = _inventory;
+        GameManager.Instance.moneyAtStartOfDay = GameManager.Instance.PlayerInventory.GetBalance();
         
         _uiInventory.SetInventory(_inventory, transform);
     }

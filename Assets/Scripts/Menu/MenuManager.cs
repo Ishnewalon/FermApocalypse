@@ -25,7 +25,16 @@ public class MenuManager : MonoBehaviour
     private GameObject endDayMenu;
     
     [SerializeField]
-    private Text endDayTMP;
+    private Text endDayTitleTMP;
+    
+    [SerializeField]
+    private Text endDayMoneyStartTMP;
+    
+    [SerializeField]
+    private Text endDayMoneyEndTMP;
+    
+    [SerializeField]
+    private Text endDayProfitTMP;
 
     [SerializeField] 
     private GameObject goToBed;
@@ -54,17 +63,11 @@ public class MenuManager : MonoBehaviour
         }
         else if (previousState == GameManager.GameState.RUNNING && currentState == GameManager.GameState.ENDDAY)
         {
-            endDayMenu.SetActive(true);
-            endDayTMP.text = "Fin de la Journée " + (GameManager.Instance.day - 1) + " Mois " 
-                              + GameManager.Instance.month + " Année " + GameManager.Instance.year;;
-            background.SetActive(true);
+            SetEndDayMenu();
         }
         else if (previousState == GameManager.GameState.GOTOBED && currentState == GameManager.GameState.ENDDAY)
         {
-            endDayMenu.SetActive(true);
-            endDayTMP.text = "Fin de la Journée " + (GameManager.Instance.day - 1) + " Mois " 
-                + GameManager.Instance.month + " Année " + GameManager.Instance.year;
-            background.SetActive(true);
+            SetEndDayMenu();
         }
         else if (previousState == GameManager.GameState.RUNNING && currentState == GameManager.GameState.GOTOBED)
         {
@@ -152,6 +155,7 @@ public class MenuManager : MonoBehaviour
             endDayMenu.gameObject.SetActive(false);
             background.gameObject.SetActive(false);
             GameManager.Instance.ToggleNewDay();
+            GameManager.Instance.moneyAtStartOfDay = GameManager.Instance.PlayerInventory.GetBalance();
         }
     }
 
@@ -168,5 +172,26 @@ public class MenuManager : MonoBehaviour
         GameManager.Instance.day++;
         goToBed.gameObject.SetActive(false);
         GameManager.Instance.ToggleNewDay();
+    }
+
+    private void SetEndDayMenu()
+    {
+        endDayMenu.SetActive(true);
+        endDayTitleTMP.text = "Fin de la Journée " + (GameManager.Instance.day - 1) + " Mois " 
+                              + GameManager.Instance.month + " Année " + GameManager.Instance.year;
+        endDayMoneyStartTMP.text = GameManager.Instance.moneyAtStartOfDay + " $";
+        endDayMoneyEndTMP.text = GameManager.Instance.PlayerInventory.GetBalance() + " $";
+        var profit = GameManager.Instance.PlayerInventory.GetBalance() - GameManager.Instance.moneyAtStartOfDay;
+        if (profit < 0)
+        {
+            endDayProfitTMP.color = Color.red;
+        }
+        else
+        {
+            endDayProfitTMP.color = Color.green;
+        }
+
+        endDayProfitTMP.text = profit + " $";
+        background.SetActive(true);
     }
 }

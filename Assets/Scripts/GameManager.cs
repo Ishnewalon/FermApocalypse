@@ -60,6 +60,7 @@ public class GameManager : Singleton<GameManager>
 
     public UI_Shop UIShop;
     public Inventory PlayerInventory;
+    public int moneyAtStartOfDay;
     
     public void Start()
     {
