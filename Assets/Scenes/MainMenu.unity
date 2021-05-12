@@ -376,7 +376,7 @@ MonoBehaviour:
   goldenBucket: {fileID: 2800000, guid: 96f32b7925d6e1b40a41e66cb1f4f07a, type: 3}
   goldenHoe: {fileID: 2800000, guid: 42f5d2c79acdee14e8870831c3289e98, type: 3}
   goldenScythe: {fileID: 2800000, guid: 3069e9859213f9b40992241bc4f09d02, type: 3}
-  limeScythe: {fileID: 0}
+  limeScythe: {fileID: 2800000, guid: 6d0d591a59c6ad14a87ce3646c64241c, type: 3}
   candyHoe: {fileID: 2800000, guid: 8219e57281231ab468beec51a8315f2c, type: 3}
   fireBucket: {fileID: 2800000, guid: 6e1987b114fdb4447862db70143a85dd, type: 3}
 --- !u!114 &149024206

@@ -18,15 +18,7 @@ public class Cursor : MonoBehaviour
         _activeItem = GameManager.Instance._currentHeldItem;
         if (_activeItem.itemClass == Item.ItemClass.Tools && _activeItem.itemType != Item.ItemType.EmptyHand)
         {
-            switch (_activeItem.itemType)
-            {
-                case Item.ItemType.Hoe: UnityEngine.Cursor.SetCursor(ItemAssets.Instance.basicHoe, _hotspot, _cursorMode);
-                    break;
-                case Item.ItemType.WaterBucket: UnityEngine.Cursor.SetCursor(_cursorList[1], _hotspot, _cursorMode);
-                    break;
-                case Item.ItemType.Scythe: UnityEngine.Cursor.SetCursor(_cursorList[0], _hotspot, _cursorMode);
-                    break;
-            }
+            UnityEngine.Cursor.SetCursor(_activeItem.GetTexture2D(), _hotspot, _cursorMode);
         }
 
         if (_activeItem.itemClass == Item.ItemClass.Seeds)
