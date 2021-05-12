@@ -15,7 +15,8 @@ public class GameManager : Singleton<GameManager>
         RUNNING,
         PAUSE,
         ENDDAY,
-        GOTOBED
+        GOTOBED,
+        ENDGAME
     }
 
     public enum SpawnLocation
@@ -177,6 +178,9 @@ public class GameManager : Singleton<GameManager>
             case GameState.GOTOBED:
                 Time.timeScale = 0;
                 break;
+            case GameState.ENDGAME:
+                Time.timeScale = 0;
+                break;
         }
     
         onGameStateChanged.Invoke(_currentGameState, previousGameState);
@@ -221,7 +225,7 @@ public class GameManager : Singleton<GameManager>
     {
         _menuCamera.GetComponent<AudioListener>().enabled = false;
         LoadLevel("Farm");
-        hours = 15;
+        hours = 7;
         minutes = 0;
         seconds = 0;
         day = 1;
@@ -384,6 +388,27 @@ public class GameManager : Singleton<GameManager>
             }
         }
     }
-    
+
+    public bool IsGameWon()
+    {
+        var flag = false;
+        Item hoe = new Item{ itemType = Item.ItemType.GoldenHoe, itemClass = Item.ItemClass.Tools, amount = 1 };
+        Item scythe = new Item{ itemType = Item.ItemType.GoldenScythe, itemClass = Item.ItemClass.Tools, amount = 1 };
+        Item bucket = new Item{ itemType = Item.ItemType.GoldenBucket, itemClass = Item.ItemClass.Tools, amount = 1 };
+        if (PlayerInventory.GetItemList().Contains(hoe) &&
+            PlayerInventory.GetItemList().Contains(scythe) &&
+            PlayerInventory.GetItemList().Contains(bucket) &&
+            PlayerInventory.GetBalance() == 10000)
+        {
+            flag = true;
+        }
+
+        return flag;
+    }
+
+    public void ToggleEndGame()
+    {
+        UpdateGameState(GameState.ENDGAME);
+    }
     
 }

@@ -10,27 +10,31 @@ using UnityEngine.UI;
 public class MenuManager : MonoBehaviour
 {
     [SerializeField] 
-    private GameObject _background;
+    private GameObject background;
     
     [SerializeField] 
-    private GameObject _startMenu;
+    private GameObject startMenu;
     
     [SerializeField] 
-    private GameObject _tutorialMenu;
+    private GameObject tutorialMenu;
     
     [SerializeField] 
-    private GameObject _pauseMenu;
+    private GameObject pauseMenu;
     
     [SerializeField] 
-    private GameObject _endDayMenu;
+    private GameObject endDayMenu;
     
     [SerializeField]
-    private Text _endDayTMP;
+    private Text endDayTMP;
 
     [SerializeField] 
-    private GameObject _goToBed;
+    private GameObject goToBed;
+
+    [SerializeField] 
+    private GameObject endGame;
     
     private string _playerGender;
+    
     public void Start()
     {
         GameManager.Instance.onGameStateChanged.AddListener(HandleGameStateChanged);
@@ -40,31 +44,36 @@ public class MenuManager : MonoBehaviour
     {
         if (previousState == GameManager.GameState.PREGAME && currentState == GameManager.GameState.RUNNING)
         {
-            _background.gameObject.SetActive(false);
-            _tutorialMenu.gameObject.SetActive(false);
+            background.SetActive(false);
+            tutorialMenu.SetActive(false);
         }
         else if (previousState == GameManager.GameState.RUNNING && currentState == GameManager.GameState.PAUSE)
         {
-            _pauseMenu.gameObject.SetActive(true);
-            _background.gameObject.SetActive(true);
+            pauseMenu.SetActive(true);
+            background.SetActive(true);
         }
         else if (previousState == GameManager.GameState.RUNNING && currentState == GameManager.GameState.ENDDAY)
         {
-            _endDayMenu.gameObject.SetActive(true);
-            _endDayTMP.text = "Fin de la Journée " + (GameManager.Instance.day - 1) + " Mois " 
+            endDayMenu.SetActive(true);
+            endDayTMP.text = "Fin de la Journée " + (GameManager.Instance.day - 1) + " Mois " 
                               + GameManager.Instance.month + " Année " + GameManager.Instance.year;;
-            _background.gameObject.SetActive(true);
+            background.SetActive(true);
         }
         else if (previousState == GameManager.GameState.GOTOBED && currentState == GameManager.GameState.ENDDAY)
         {
-            _endDayMenu.gameObject.SetActive(true);
-            _endDayTMP.text = "Fin de la Journée " + (GameManager.Instance.day - 1) + " Mois " 
+            endDayMenu.SetActive(true);
+            endDayTMP.text = "Fin de la Journée " + (GameManager.Instance.day - 1) + " Mois " 
                 + GameManager.Instance.month + " Année " + GameManager.Instance.year;
-            _background.gameObject.SetActive(true);
+            background.SetActive(true);
         }
         else if (previousState == GameManager.GameState.RUNNING && currentState == GameManager.GameState.GOTOBED)
         {
-            _goToBed.gameObject.SetActive(true);
+            goToBed.SetActive(true);
+        }
+        else if (previousState == GameManager.GameState.ENDDAY && currentState == GameManager.GameState.ENDGAME)
+        {
+            endDayMenu.SetActive(false);
+            endGame.SetActive(true);
         }
     }
     void Update()
@@ -94,8 +103,8 @@ public class MenuManager : MonoBehaviour
 
     public void ToTutorial()
     {
-        _startMenu.SetActive(false);
-        _tutorialMenu.SetActive(true);
+        startMenu.SetActive(false);
+        tutorialMenu.SetActive(true);
     }
 
     public void Restart()
@@ -105,8 +114,8 @@ public class MenuManager : MonoBehaviour
     }
     public void ResumeGame()
      {
-        _pauseMenu.gameObject.SetActive(false);
-        _background.gameObject.SetActive(false);
+        pauseMenu.gameObject.SetActive(false);
+        background.gameObject.SetActive(false);
         GameManager.Instance.TogglePause();
      }
 
@@ -122,26 +131,33 @@ public class MenuManager : MonoBehaviour
 
     public void NextDay()
     {
-        if (GameManager.Instance._currentSpawnLocation == GameManager.SpawnLocation.FARMFROMTOWN
-            || GameManager.Instance._currentSpawnLocation == GameManager.SpawnLocation.FARMFROMHOUSE)
+        if (GameManager.Instance.IsGameWon())
         {
-            GameManager.Instance.UnloadLevel("Farm");
-            GameManager.Instance.LoadLevel("FarmHouse");
+            GameManager.Instance.ToggleEndGame();
         }
-        else if (GameManager.Instance._currentSpawnLocation == GameManager.SpawnLocation.TOWN)
+        else
         {
-            GameManager.Instance.UnloadLevel("Town");
-            GameManager.Instance.LoadLevel("FarmHouse");
+            if (GameManager.Instance._currentSpawnLocation == GameManager.SpawnLocation.FARMFROMTOWN
+                || GameManager.Instance._currentSpawnLocation == GameManager.SpawnLocation.FARMFROMHOUSE)
+            {
+                GameManager.Instance.UnloadLevel("Farm");
+                GameManager.Instance.LoadLevel("FarmHouse");
+            }
+            else if (GameManager.Instance._currentSpawnLocation == GameManager.SpawnLocation.TOWN)
+            {
+                GameManager.Instance.UnloadLevel("Town");
+                GameManager.Instance.LoadLevel("FarmHouse");
+            }
+            GameManager.Instance.IncrementGrowingPlant();
+            endDayMenu.gameObject.SetActive(false);
+            background.gameObject.SetActive(false);
+            GameManager.Instance.ToggleNewDay();
         }
-        GameManager.Instance.IncrementGrowingPlant();
-        _endDayMenu.gameObject.SetActive(false);
-        _background.gameObject.SetActive(false);
-        GameManager.Instance.ToggleNewDay();
     }
 
     public void CancelGoToBed()
     {
-        _goToBed.gameObject.SetActive(false);
+        goToBed.gameObject.SetActive(false);
         GameManager.Instance.ToggleGoToBedDialog();
     }
 
@@ -150,7 +166,7 @@ public class MenuManager : MonoBehaviour
         GameManager.Instance.minutes = 0;
         GameManager.Instance.hours = 1;
         GameManager.Instance.day++;
-        _goToBed.gameObject.SetActive(false);
+        goToBed.gameObject.SetActive(false);
         GameManager.Instance.ToggleNewDay();
     }
 }
