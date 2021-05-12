@@ -18,6 +18,9 @@ public class TimeManager : MonoBehaviour
     [SerializeField] 
     private Text yearText;
     
+    [SerializeField] 
+    private Text moneyText;
+    
 
     void Update()
     {
@@ -25,7 +28,7 @@ public class TimeManager : MonoBehaviour
         CalculateCalendar();
     }
 
-    public void CalculateTime()
+    private void CalculateTime()
     {
         GameManager.Instance.seconds += Time.deltaTime * Timescale;
 
@@ -48,7 +51,7 @@ public class TimeManager : MonoBehaviour
         UpdateDisplay();
     }
 
-    public void CalculateCalendar()
+    private void CalculateCalendar()
     {
         if (GameManager.Instance.day > 28)
         {
@@ -62,11 +65,13 @@ public class TimeManager : MonoBehaviour
         }
     }
 
-    public void UpdateDisplay()
+    private void UpdateDisplay()
     {
         timeText.text = String.Format( "{0:00} : {1:00}"  , GameManager.Instance.hours, GameManager.Instance.minutes);
-        dayText.text = "Jour: " + (GameManager.Instance.day).ToString();
-        monthText.text = "Mois:" + (GameManager.Instance.month).ToString();
-        yearText.text = "Année: " + (GameManager.Instance.year).ToString();
+        dayText.text = "Jour: " + GameManager.Instance.day;
+        monthText.text = "Mois:" + GameManager.Instance.month;
+        yearText.text = "Année: " + GameManager.Instance.year;
+        moneyText.text = GameManager.Instance.PlayerInventory.GetBalance() + "$";
     }
+    
 }

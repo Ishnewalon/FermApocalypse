@@ -35,9 +35,9 @@ public class WorldManager : MonoBehaviour
         _characterPrefabs["Male"] = _malePlayer;
         _characterPrefabs["Female"] = _femalePlayer;
         _characterPrefabs["Non-Binary"] = _nonBinaryPlayer;
-        SpawnGameUI();
         SpawnMusicPlayer();
         CharacterSpawning();
+        SpawnGameUI();
     }
 
     public void SpawnLight()
