@@ -57,8 +57,8 @@ public class UI_Shop : MonoBehaviour
             }
             
             AddEvent(shopSlot, EventTriggerType.PointerClick, delegate {OnPointerClick(shopItem);});
-            AddEvent(shopSlot, EventTriggerType.PointerEnter, delegate {OnPointerEnter(shopItem, shopSlot);});
-            AddEvent(shopSlot, EventTriggerType.PointerExit, delegate {OnPointerExit(shopItem, shopSlot);});
+            //AddEvent(shopSlot, EventTriggerType.PointerEnter, delegate {OnPointerEnter(shopItem, shopSlot);});
+            //AddEvent(shopSlot, EventTriggerType.PointerExit, delegate {OnPointerExit(shopItem, shopSlot);});
 
             shopSlot.gameObject.SetActive(true);
             shopRow++;
@@ -77,9 +77,21 @@ public class UI_Shop : MonoBehaviour
 
     private void OnPointerClick(ShopItem shopItem)
     {
+        if (GameManager.Instance.PlayerInventory.isFull)
+        {
+            return;
+        }
         if (GameManager.Instance.PlayerInventory.RemoveCoins(shopItem.item.GetCost()))
         {
-            //GameManager.Instance.PlayerInventory.AddItem();
+            print(GameManager.Instance.PlayerInventory.GetBalance());
+            if (shopItem.item.itemClass == Item.ItemClass.Tools)
+            {
+                GameManager.Instance.PlayerInventory.ReplaceOrAddItem(shopItem.item);
+            }
+            else
+            {
+                GameManager.Instance.PlayerInventory.AddItem(shopItem.item);
+            }
         }
     }
 
