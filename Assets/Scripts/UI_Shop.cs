@@ -15,7 +15,7 @@ public class UI_Shop : MonoBehaviour
 
     private float rectY;
 
-    private int slotOffset = 10000;
+    private int slotOffset = 50;
 
     private bool create = true;
 
