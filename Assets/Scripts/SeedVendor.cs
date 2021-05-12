@@ -12,26 +12,48 @@ public class SeedVendor : MonoBehaviour
     {
         shopList = new List<ShopItem>();
         
-        shopList.Add(new ShopItem(new Item {itemType = Item.ItemType.Hoe, itemClass = Item.ItemClass.Tools, amount = 1},
+        shopList.Add(new ShopItem(new Item {itemType = Item.ItemType.Ananas, itemClass = Item.ItemClass.Seeds, amount = 1},
             false));
-        shopList.Add(new ShopItem(new Item {itemType = Item.ItemType.Scythe, itemClass = Item.ItemClass.Tools, amount = 1},
+        shopList.Add(new ShopItem(new Item {itemType = Item.ItemType.Aubergine, itemClass = Item.ItemClass.Seeds, amount = 1},
             false));
-        shopList.Add(new ShopItem(new Item {itemType = Item.ItemType.WaterBucket, itemClass = Item.ItemClass.Tools, amount = 1},
+        shopList.Add(new ShopItem(new Item {itemType = Item.ItemType.Bleuet, itemClass = Item.ItemClass.Seeds, amount = 1},
             false));
-        
-        shopList.Add(new ShopItem(new Item {itemType = Item.ItemType.GoldenHoe, itemClass = Item.ItemClass.Tools, amount = 1},
+        shopList.Add(new ShopItem(new Item {itemType = Item.ItemType.Carotte, itemClass = Item.ItemClass.Seeds, amount = 1},
             false));
-        shopList.Add(new ShopItem(new Item {itemType = Item.ItemType.GoldenScythe, itemClass = Item.ItemClass.Tools, amount = 1},
+        shopList.Add(new ShopItem(new Item {itemType = Item.ItemType.Celeri, itemClass = Item.ItemClass.Seeds, amount = 1},
             false));
-        shopList.Add(new ShopItem(new Item {itemType = Item.ItemType.GoldenBucket, itemClass = Item.ItemClass.Tools, amount = 1},
+        shopList.Add(new ShopItem(new Item {itemType = Item.ItemType.Chou, itemClass = Item.ItemClass.Seeds, amount = 1},
+            false));
+        shopList.Add(new ShopItem(new Item {itemType = Item.ItemType.Choufleur, itemClass = Item.ItemClass.Seeds, amount = 1},
+            false));
+        shopList.Add(new ShopItem(new Item {itemType = Item.ItemType.Citrouille, itemClass = Item.ItemClass.Seeds, amount = 1},
+            false));
+        shopList.Add(new ShopItem(new Item {itemType = Item.ItemType.Courge, itemClass = Item.ItemClass.Seeds, amount = 1},
+            false));
+        shopList.Add(new ShopItem(new Item {itemType = Item.ItemType.Fraise, itemClass = Item.ItemClass.Seeds, amount = 1},
+            false));
+        shopList.Add(new ShopItem(new Item {itemType = Item.ItemType.Haricot, itemClass = Item.ItemClass.Seeds, amount = 1},
+            false));
+        shopList.Add(new ShopItem(new Item {itemType = Item.ItemType.Mais, itemClass = Item.ItemClass.Seeds, amount = 1},
+            false));
+        shopList.Add(new ShopItem(new Item {itemType = Item.ItemType.Navet, itemClass = Item.ItemClass.Seeds, amount = 1},
+            false));
+        shopList.Add(new ShopItem(new Item {itemType = Item.ItemType.Oignon, itemClass = Item.ItemClass.Seeds, amount = 1},
+            false));
+        shopList.Add(new ShopItem(new Item {itemType = Item.ItemType.Pasteque, itemClass = Item.ItemClass.Seeds, amount = 1},
+            false));
+        shopList.Add(new ShopItem(new Item {itemType = Item.ItemType.Poireau, itemClass = Item.ItemClass.Seeds, amount = 1},
+            false));
+        shopList.Add(new ShopItem(new Item {itemType = Item.ItemType.Poivron, itemClass = Item.ItemClass.Seeds, amount = 1},
+            false));
+        shopList.Add(new ShopItem(new Item {itemType = Item.ItemType.Raisin, itemClass = Item.ItemClass.Seeds, amount = 1},
+            false));
+        shopList.Add(new ShopItem(new Item {itemType = Item.ItemType.Rockmelon, itemClass = Item.ItemClass.Seeds, amount = 1},
+            false));
+        shopList.Add(new ShopItem(new Item {itemType = Item.ItemType.Tomate, itemClass = Item.ItemClass.Seeds, amount = 1},
             false));
 
-        shopList.Add(new ShopItem(new Item {itemType = Item.ItemType.CandyHoe, itemClass = Item.ItemClass.Tools, amount = 1},
-            false));
-        shopList.Add(new ShopItem(new Item {itemType = Item.ItemType.LimeScythe, itemClass = Item.ItemClass.Tools, amount = 1},
-            false));
-        shopList.Add(new ShopItem(new Item {itemType = Item.ItemType.FireBucket, itemClass = Item.ItemClass.Tools, amount = 1},
-            false));
+
     }
     
     private void OnTriggerEnter2D(Collider2D other)

@@ -73263,10 +73263,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SeedVendor
       objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f81e8c9edb201944862283ee27dbcd0, type: 3}
 --- !u!1 &448949430 stripped
@@ -80138,6 +80134,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f81e8c9edb201944862283ee27dbcd0, type: 3}
+--- !u!1 &1425629121 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3936652815921279055, guid: 5f81e8c9edb201944862283ee27dbcd0, type: 3}
+  m_PrefabInstance: {fileID: 1425629120}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1425629122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425629121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b82112c39851ec468d8d9a1bec90f98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1775558929
 GameObject:
   m_ObjectHideFlags: 0
