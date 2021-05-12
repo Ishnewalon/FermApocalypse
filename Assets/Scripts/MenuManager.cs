@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
@@ -97,6 +98,11 @@ public class MenuManager : MonoBehaviour
         _tutorialMenu.SetActive(true);
     }
 
+    public void Restart()
+    {
+        Destroy(GameObject.Find("GameManager"));
+        SceneManager.LoadScene("MainMenu");
+    }
     public void ResumeGame()
      {
         _pauseMenu.gameObject.SetActive(false);
