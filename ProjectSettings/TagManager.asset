@@ -12,6 +12,7 @@ TagManager:
   - endDay
   - farmable
   - slot
+  - GM
   layers:
   - Default
   - TransparentFX
