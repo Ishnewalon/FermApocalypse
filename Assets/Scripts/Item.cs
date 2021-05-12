@@ -79,12 +79,12 @@ public class Item
                 case ItemType.Scythe: return 10;
                 case ItemType.Hoe: return 10;
                 case ItemType.WaterBucket: return 10;
-                case ItemType.GoldenHoe: return 300;
-                case ItemType.GoldenScythe: return 300;
-                case ItemType.GoldenBucket: return 300;
-                case ItemType.CandyHoe: return 1000;
-                case ItemType.LimeScythe: return 1000;
-                case ItemType.FireBucket: return 1000;
+                case ItemType.CandyHoe: return 300;
+                case ItemType.LimeScythe: return 300;
+                case ItemType.FireBucket: return 300;
+                case ItemType.GoldenHoe: return 1000;
+                case ItemType.GoldenScythe: return 1000;
+                case ItemType.GoldenBucket: return 1000;
             }
         }
         return 0;

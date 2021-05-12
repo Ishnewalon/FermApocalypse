@@ -2,29 +2,56 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Inventory
 {
 
-    public event EventHandler OnItemListChanged;
+    public class CoinBalanceChanged : UnityEvent<int>
+    {
+    }
 
-    public Boolean isFull = false;
+    public UnityEvent OnItemListChanged;
+
+    public CoinBalanceChanged OnCoinBalanceChanged;
+
+    public Boolean isFull;
     
     private List<Item> itemList;
+
+    private int coinBalance;
 
     public Inventory()
     {
         itemList = new List<Item>();
+        OnItemListChanged = new UnityEvent();
+        coinBalance = 100;
         
-        AddItem(new Item { itemType = Item.ItemType.GoldenHoe, itemClass = Item.ItemClass.Tools, amount = 1 });
-        AddItem(new Item { itemType = Item.ItemType.GoldenScythe, itemClass = Item.ItemClass.Tools, amount = 1 });
-        AddItem(new Item { itemType = Item.ItemType.GoldenBucket, itemClass = Item.ItemClass.Tools, amount = 1 });
-        AddItem(new Item { itemType = Item.ItemType.CandyHoe, itemClass = Item.ItemClass.Tools, amount = 1 });
-        AddItem(new Item { itemType = Item.ItemType.LimeScythe, itemClass = Item.ItemClass.Tools, amount = 1 });
-        AddItem(new Item { itemType = Item.ItemType.FireBucket, itemClass = Item.ItemClass.Tools, amount = 1 });
-        AddItem(new Item { itemType = Item.ItemType.Ananas, itemClass = Item.ItemClass.Seeds, amount = 50 });
-        AddItem(new Item { itemType = Item.ItemType.Citrouille, itemClass = Item.ItemClass.Seeds, amount = 50 });
-        AddItem(new Item { itemType = Item.ItemType.Raisin, itemClass = Item.ItemClass.Seeds, amount = 50 });
+        AddItem(new Item { itemType = Item.ItemType.Hoe, itemClass = Item.ItemClass.Tools, amount = 1 });
+        AddItem(new Item { itemType = Item.ItemType.Scythe, itemClass = Item.ItemClass.Tools, amount = 1 });
+        AddItem(new Item { itemType = Item.ItemType.WaterBucket, itemClass = Item.ItemClass.Tools, amount = 1 });
+        AddItem(new Item { itemType = Item.ItemType.Carotte, itemClass = Item.ItemClass.Seeds, amount = 10 });
+    }
+
+    public void AddCoins(int amount)
+    {
+        coinBalance += amount;
+    }
+
+    public bool RemoveCoins(int amount)
+    {
+        if (coinBalance - amount >= 0)
+        {
+            coinBalance -= amount;
+            return true;
+        }
+
+        return false;
+    }
+
+    public int GetBalance()
+    {
+        return coinBalance;
     }
 
     public void UseItem(Item searchItem)
@@ -37,7 +64,7 @@ public class Inventory
             GameManager.Instance._currentHeldItem = new Item { itemType = Item.ItemType.EmptyHand, itemClass = Item.ItemClass.Tools, amount = 1 };
             itemList.Remove(usedItem);
         }
-        OnItemListChanged?.Invoke(this, EventArgs.Empty);
+        OnItemListChanged?.Invoke();
     }
 
     public void DropItem(Item item, Vector3 position)
@@ -47,7 +74,7 @@ public class Inventory
             ItemWorld.SpawnItemWorld(new Vector3(position.x + 1, position.y, position.z), item);
             Debug.Log(itemList.Count);
         }
-        OnItemListChanged?.Invoke(this, EventArgs.Empty);
+        OnItemListChanged?.Invoke();
     }
 
     public void AddItem(Item item)
@@ -88,7 +115,7 @@ public class Inventory
             isFull = false;
         }
         
-        OnItemListChanged?.Invoke(this, EventArgs.Empty);
+        OnItemListChanged?.Invoke();
     }
 
     public List<Item> GetItemList()

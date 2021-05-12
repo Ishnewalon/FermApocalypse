@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class UI_Shop : MonoBehaviour
@@ -53,14 +55,34 @@ public class UI_Shop : MonoBehaviour
             {
                 shopSlot.Find("Cost").GetComponent<TextMeshProUGUI>().SetText(shopItem.item.GetCost().ToString());
             }
+            
+            AddEvent(shopSlot, EventTriggerType.PointerClick, delegate {OnPointerClick(shopItem);});
+            AddEvent(shopSlot, EventTriggerType.PointerEnter, delegate {OnPointerEnter(shopItem, shopSlot);});
+            AddEvent(shopSlot, EventTriggerType.PointerExit, delegate {OnPointerExit(shopItem, shopSlot);});
 
             shopSlot.gameObject.SetActive(true);
             shopRow++;
         }
     }
 
+    private void OnPointerExit(ShopItem shopItem, Transform slot)
+    {
+        throw new NotImplementedException();
+    }
+
+    private void OnPointerEnter(ShopItem shopItem, Transform slot)
+    {
+        throw new NotImplementedException();
+    }
+
+    private void OnPointerClick(ShopItem shopItem)
+    {
+        
+    }
+
     public void ClearShopButtons()
     {
+        _gameObject.SetActive(false);
         foreach (Transform child in shopContainer.transform)
         {
             if (child != shopTemplate)
@@ -68,6 +90,15 @@ public class UI_Shop : MonoBehaviour
                 Destroy(child.gameObject);
             }
         }
+    }
+    
+    private void AddEvent(Transform slotTransform, EventTriggerType type, UnityAction<BaseEventData> action)
+    {
+        EventTrigger trigger = slotTransform.gameObject.GetComponent<EventTrigger>();
+        EventTrigger.Entry eventTrigger = new EventTrigger.Entry();
+        eventTrigger.eventID = type;
+        eventTrigger.callback.AddListener((data) => { action((PointerEventData)data);});
+        trigger.triggers.Add(eventTrigger);
     }
 }
 

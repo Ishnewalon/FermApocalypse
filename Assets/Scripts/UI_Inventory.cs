@@ -46,13 +46,8 @@ public class UI_Inventory : MonoBehaviour
         itemSlotContainer = go.transform.Find("itemSlotContainer");
         itemSlotTemplate = itemSlotContainer.Find("itemSlotTemplate");
 
-        inventory.OnItemListChanged += InventoryOnItemListChanged;
+        inventory.OnItemListChanged.AddListener(RefreshInventory);
         
-        RefreshInventory();
-    }
-
-    private void InventoryOnItemListChanged(object sender, EventArgs e)
-    {
         RefreshInventory();
     }
 
