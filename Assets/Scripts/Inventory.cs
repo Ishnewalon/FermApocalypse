@@ -25,7 +25,8 @@ public class Inventory
     {
         itemList = new List<Item>();
         OnItemListChanged = new UnityEvent();
-        coinBalance = 100;
+        OnCoinBalanceChanged = new CoinBalanceChanged();
+        coinBalance = 10000;
         
         AddItem(new Item { itemType = Item.ItemType.Hoe, itemClass = Item.ItemClass.Tools, amount = 1 });
         AddItem(new Item { itemType = Item.ItemType.Scythe, itemClass = Item.ItemClass.Tools, amount = 1 });
@@ -33,19 +34,55 @@ public class Inventory
         AddItem(new Item { itemType = Item.ItemType.Carotte, itemClass = Item.ItemClass.Seeds, amount = 10 });
     }
 
-    public bool ReplaceItem(Item newItem, Item itemToReplace)
+    public void ReplaceOrAddItem(Item newItem)
     {
+        var originalItem = FindItemToReplace(newItem);
+        
+        if (originalItem == null)
+        {
+            AddItem(newItem);
+            return;
+        }
+        
         var index = itemList.FindIndex(item =>
-            item.itemType == itemToReplace.itemType && item.itemClass == itemToReplace.itemClass);
+            item.itemType == originalItem.itemType && item.itemClass == originalItem.itemClass);
         
         itemList.RemoveAt(index);
         itemList.Insert(index, newItem);
-        return false;
+        OnItemListChanged?.Invoke();
+    }
+
+    public Item FindItemToReplace(Item newItem)
+    {
+        String itemName = "";
+        if (newItem.itemType.ToString().Contains("Hoe"))
+        {
+            itemName = "Hoe";
+        }
+        if (newItem.itemType.ToString().Contains("Scythe"))
+        {
+            itemName = "Scythe";
+        }
+        if (newItem.itemType.ToString().Contains("Bucket"))
+        {
+            itemName = "Bucket";
+        }
+        
+        foreach (var item in itemList)
+        {
+            if (item.itemClass == Item.ItemClass.Tools && item.itemType.ToString().Contains(itemName))
+            {
+                return item;
+            }
+        }
+
+        return null;
     }
 
     public void AddCoins(int amount)
     {
         coinBalance += amount;
+        OnCoinBalanceChanged?.Invoke(coinBalance);
     }
 
     public bool RemoveCoins(int amount)
@@ -53,6 +90,7 @@ public class Inventory
         if (coinBalance - amount >= 0)
         {
             coinBalance -= amount;
+            OnCoinBalanceChanged?.Invoke(coinBalance);
             return true;
         }
 

@@ -105,7 +105,7 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         ItemWorld itemWorld = other.GetComponent<ItemWorld>();
-        if (itemWorld != null)
+        if (itemWorld != null && !_inventory.isFull)
         {
             _audioSource.PlayOneShot(_audioClips[1], 1);
             _inventory.AddItem(itemWorld.GetItem());
