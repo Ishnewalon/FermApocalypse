@@ -199,10 +199,10 @@ public class GameManager : Singleton<GameManager>
         switch (_currentSpawnLocation)
         {
             case SpawnLocation.FARMFROMTOWN:
-                _characterSpawnPoint = new Vector3(32, 21, 0);
+                _characterSpawnPoint = new Vector3(32, 22, 0);
                 break;
             case SpawnLocation.TOWN:
-                _characterSpawnPoint = new Vector3(-26, 13, 0);
+                _characterSpawnPoint = new Vector3(-26, 14, 0);
                 break;
             case SpawnLocation.HOUSE:
                 _characterSpawnPoint = new Vector3(-10, 14, 0);
