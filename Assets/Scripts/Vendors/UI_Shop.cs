@@ -66,8 +66,8 @@ public class UI_Shop : MonoBehaviour
             }
             
             AddEvent(shopSlot, EventTriggerType.PointerClick, delegate {OnPointerClick(shopItem);});
-            //AddEvent(shopSlot, EventTriggerType.PointerEnter, delegate {OnPointerEnter(shopItem, shopSlot);});
-            //AddEvent(shopSlot, EventTriggerType.PointerExit, delegate {OnPointerExit(shopItem, shopSlot);});
+            AddEvent(shopSlot, EventTriggerType.PointerEnter, delegate {OnPointerEnter(shopItem, shopSlot);});
+            AddEvent(shopSlot, EventTriggerType.PointerExit, delegate {OnPointerExit(shopItem, shopSlot);});
 
             shopSlot.gameObject.SetActive(true);
             shopRow++;
@@ -78,25 +78,27 @@ public class UI_Shop : MonoBehaviour
     {
         _gameObject.SetActive(flag);
         shopProduce.gameObject.SetActive(flag);
-        shopProduce.Find("btn_vendre").GetComponent<Button>().onClick.AddListener(delegate { SellAllProduce(); });
+        shopProduce.Find("btn_vendre").GetComponent<Button>().onClick.RemoveAllListeners();
+        shopProduce.Find("btn_vendre").GetComponent<Button>().onClick.AddListener(delegate {SellAllProduce();});
         shopProduce.Find("montant").gameObject.SetActive(false);
         shopName.SetText("Acheteur");
     }
 
     public void SellAllProduce()
     {
-        shopProduce.Find("montant").GetComponent<TextMeshProUGUI>().SetText("+"+GameManager.Instance.PlayerInventory.SellAllProduce()+"$");
+        var amount = GameManager.Instance.PlayerInventory.SellAllProduce();
+        shopProduce.Find("montant").GetComponent<TextMeshProUGUI>().SetText("+" + amount + "$");
         shopProduce.Find("montant").gameObject.SetActive(true);
     }
 
     private void OnPointerExit(ShopItem shopItem, Transform slot)
     {
-        throw new NotImplementedException();
+        slot.Find("Background").GetComponent<Image>().color = Color.white;
     }
 
     private void OnPointerEnter(ShopItem shopItem, Transform slot)
     {
-        throw new NotImplementedException();
+        slot.Find("Background").GetComponent<Image>().color = Color.red;
     }
 
     private void OnPointerClick(ShopItem shopItem)
@@ -107,7 +109,6 @@ public class UI_Shop : MonoBehaviour
         }
         if (GameManager.Instance.PlayerInventory.RemoveCoins(shopItem.item.GetCost()))
         {
-            print(GameManager.Instance.PlayerInventory.GetBalance());
             if (shopItem.item.itemClass == Item.ItemClass.Tools)
             {
                 GameManager.Instance.PlayerInventory.ReplaceOrAddItem(shopItem.item);

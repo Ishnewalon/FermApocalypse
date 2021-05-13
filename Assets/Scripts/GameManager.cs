@@ -361,7 +361,6 @@ public class GameManager : Singleton<GameManager>
         GameObject[] allFarmableTerrain = GameObject.FindGameObjectsWithTag("farmable");
         for (int i = 0; i < allFarmableTerrain.Length; i++)
         {
-            print(allFarmableTerrain[i]);
             _allPlantStates.Add(allFarmableTerrain[i].GetComponent<TerrainManager>().getStateData());
         }
     }
@@ -391,7 +390,6 @@ public class GameManager : Singleton<GameManager>
 
     public bool IsGameWon()
     {
-        print("Testing ISGAMEWON");
         var flag = false;
         if (PlayerInventory.GetItemList().Find(item =>
                 item.itemType == Item.ItemType.GoldenHoe && item.itemClass == Item.ItemClass.Tools )!= null &&
@@ -399,7 +397,7 @@ public class GameManager : Singleton<GameManager>
                 item.itemType == Item.ItemType.GoldenScythe && item.itemClass == Item.ItemClass.Tools )!= null &&
             PlayerInventory.GetItemList().Find(item =>
                 item.itemType == Item.ItemType.GoldenBucket && item.itemClass == Item.ItemClass.Tools )!= null &&
-            PlayerInventory.GetBalance() >= 10000)
+            PlayerInventory.GetBalance() >= 5000)
         {
             flag = true;
         }
