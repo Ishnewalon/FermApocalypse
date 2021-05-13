@@ -85,8 +85,8 @@ public class UI_Shop : MonoBehaviour
 
     public void SellAllProduce()
     {
-        shopProduce.Find("montant").gameObject.SetActive(true);
         shopProduce.Find("montant").GetComponent<TextMeshProUGUI>().SetText("+"+GameManager.Instance.PlayerInventory.SellAllProduce()+"$");
+        shopProduce.Find("montant").gameObject.SetActive(true);-
     }
 
     private void OnPointerExit(ShopItem shopItem, Transform slot)
