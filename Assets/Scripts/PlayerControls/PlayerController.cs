@@ -51,7 +51,6 @@ public class PlayerController : MonoBehaviour
     {
         _heading = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
         
-        // if player is moving
         if (!_heading.sqrMagnitude.Equals(0f))
         {
             SetAnimationHeading();
@@ -69,11 +68,9 @@ public class PlayerController : MonoBehaviour
         {
             _audioSource.Stop();
         }
-
-        // idle vs walk
+        
         _animator.SetFloat(_animatorVelocity, _rigidbody2D.velocity.sqrMagnitude);
-
-        // Toggle Inventory (tab)
+        
         if (Input.GetButtonDown("Inventory"))
         {
             ToggleInventory();
