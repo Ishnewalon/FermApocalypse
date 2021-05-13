@@ -13,6 +13,10 @@ public class UI_Shop : MonoBehaviour
 
     private Transform shopTemplate;
 
+    private Transform shopProduce;
+
+    private TextMeshProUGUI shopName;
+
     private float rectX;
 
     private float rectY;
@@ -28,15 +32,20 @@ public class UI_Shop : MonoBehaviour
         _gameObject = gameObject;
         shopContainer = _gameObject.transform.Find("ShopContainer");
         shopTemplate = shopContainer.Find("ShopTemplate");
+        shopProduce = _gameObject.transform.Find("ProduceBuyer");
+        shopName = _gameObject.transform.Find("ShopName").GetComponent<TextMeshProUGUI>();
+        
+        
 
         var templatePosition = shopTemplate.GetComponent<RectTransform>().anchoredPosition;
         rectX = templatePosition.x;
         rectY = templatePosition.y;
     }
 
-    public void CreateShopButton(List<ShopItem> shopItems)
+    public void CreateShopButton(List<ShopItem> shopItems, String name)
     {
         _gameObject.SetActive(true);
+        shopName.SetText(name);
         int shopRow = 0;
 
         foreach (var shopItem in shopItems)
@@ -63,6 +72,21 @@ public class UI_Shop : MonoBehaviour
             shopSlot.gameObject.SetActive(true);
             shopRow++;
         }
+    }
+
+    public void ToggleSellShop(bool flag)
+    {
+        _gameObject.SetActive(flag);
+        shopProduce.gameObject.SetActive(flag);
+        shopProduce.Find("btn_vendre").GetComponent<Button>().onClick.AddListener(delegate { SellAllProduce(); });
+        shopProduce.Find("montant").gameObject.SetActive(false);
+        shopName.SetText("Acheteur");
+    }
+
+    public void SellAllProduce()
+    {
+        shopProduce.Find("montant").gameObject.SetActive(true);
+        shopProduce.Find("montant").GetComponent<TextMeshProUGUI>().SetText("+"+GameManager.Instance.PlayerInventory.SellAllProduce()+"$");
     }
 
     private void OnPointerExit(ShopItem shopItem, Transform slot)

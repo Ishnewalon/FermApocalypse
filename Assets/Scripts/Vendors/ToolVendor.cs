@@ -35,7 +35,7 @@ public class ToolVendor : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        GameManager.Instance.UIShop.CreateShopButton(shopList);
+        GameManager.Instance.UIShop.CreateShopButton(shopList, "Vendeur d'outils");
     }
     
     private void OnTriggerExit2D(Collider2D other)

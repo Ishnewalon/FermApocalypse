@@ -32,6 +32,7 @@ public class Inventory
         AddItem(new Item { itemType = Item.ItemType.Scythe, itemClass = Item.ItemClass.Tools, amount = 1 });
         AddItem(new Item { itemType = Item.ItemType.WaterBucket, itemClass = Item.ItemClass.Tools, amount = 1 });
         AddItem(new Item { itemType = Item.ItemType.Carotte, itemClass = Item.ItemClass.Seeds, amount = 10 });
+        AddItem(new Item { itemType = Item.ItemType.Carotte, itemClass = Item.ItemClass.Produce, amount = 100 });
     }
 
     public void ReplaceOrAddItem(Item newItem)
@@ -100,6 +101,29 @@ public class Inventory
     public int GetBalance()
     {
         return coinBalance;
+    }
+
+    public int SellAllProduce()
+    {
+        int montant = 0;
+        List<Item> tmpList = new List<Item>();
+        foreach (var item in itemList)
+        {
+            if (item.itemClass == Item.ItemClass.Produce)
+            {
+                montant += item.GetCost() * item.amount;
+            }
+            else
+            {
+                tmpList.Add(item);
+            }
+        }
+
+        itemList = tmpList;
+        OnItemListChanged?.Invoke();
+
+        AddCoins(montant);
+        return montant;
     }
 
     public void UseItem(Item searchItem)

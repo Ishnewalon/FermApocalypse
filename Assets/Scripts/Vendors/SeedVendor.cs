@@ -79,7 +79,7 @@ public class SeedVendor : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        GameManager.Instance.UIShop.CreateShopButton(dailyList);
+        GameManager.Instance.UIShop.CreateShopButton(dailyList, "Vendeur de Semences");
     }
     
     private void OnTriggerExit2D(Collider2D other)
