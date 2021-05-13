@@ -73,7 +73,11 @@ public class SeedVendor : MonoBehaviour
 
         while (dailyList.Count < 5)
         {
-            dailyList.Add(shopList[Random.Range(0, shopList.Count)]);
+            var rdm = shopList[Random.Range(0, shopList.Count)];
+            if (!dailyList.Contains(rdm))
+            {
+                dailyList.Add(rdm);
+            }
         }
     }
     
