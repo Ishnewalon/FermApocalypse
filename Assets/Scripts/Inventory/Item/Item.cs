@@ -52,7 +52,13 @@ public class Item
         {
             case ItemType.Hoe: return "Une houe pour labourer la terre";
             case ItemType.Scythe: return "Une faux pour faire la recolte";
-            case ItemType.WaterBucket: return "Un seau d'eau"; //todo add desc for new items!!!!!!!!!!!
+            case ItemType.WaterBucket: return "Un seau d'eau";
+            case ItemType.CandyHoe: return "Une Houe en bonbon!";
+            case ItemType.LimeScythe: return "Un Faux de lime";
+            case ItemType.FireBucket: return "Un Seau de Feu!";
+            case ItemType.GoldenHoe: return "Une Houe en or!";
+            case ItemType.GoldenScythe: return "Un Faux d'or!";
+            case ItemType.GoldenBucket: return "Un Seau d'or!";
         }
         switch (itemClass)
         {
