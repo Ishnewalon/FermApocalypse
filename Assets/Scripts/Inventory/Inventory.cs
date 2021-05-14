@@ -28,9 +28,9 @@ public class Inventory
         OnCoinBalanceChanged = new CoinBalanceChanged();
         coinBalance = 100;
         
-        AddItem(new Item { itemType = Item.ItemType.Hoe, itemClass = Item.ItemClass.Tools, amount = 1 });
-        AddItem(new Item { itemType = Item.ItemType.Scythe, itemClass = Item.ItemClass.Tools, amount = 1 });
-        AddItem(new Item { itemType = Item.ItemType.WaterBucket, itemClass = Item.ItemClass.Tools, amount = 1 });
+        AddItem(new Item { itemType = Item.ItemType.Houe, itemClass = Item.ItemClass.Tools, amount = 1 });
+        AddItem(new Item { itemType = Item.ItemType.Faux, itemClass = Item.ItemClass.Tools, amount = 1 });
+        AddItem(new Item { itemType = Item.ItemType.Seau, itemClass = Item.ItemClass.Tools, amount = 1 });
         AddItem(new Item { itemType = Item.ItemType.Carotte, itemClass = Item.ItemClass.Seeds, amount = 10 });
     }
 

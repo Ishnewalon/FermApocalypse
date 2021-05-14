@@ -382,11 +382,11 @@ public class GameManager : Singleton<GameManager>
     {
         var flag = false;
         if (PlayerInventory.GetItemList().Find(item =>
-                item.itemType == Item.ItemType.GoldenHoe && item.itemClass == Item.ItemClass.Tools )!= null &&
+                item.itemType == Item.ItemType.HoueOr && item.itemClass == Item.ItemClass.Tools )!= null &&
             PlayerInventory.GetItemList().Find(item =>
-                item.itemType == Item.ItemType.GoldenScythe && item.itemClass == Item.ItemClass.Tools )!= null &&
+                item.itemType == Item.ItemType.FauxOr && item.itemClass == Item.ItemClass.Tools )!= null &&
             PlayerInventory.GetItemList().Find(item =>
-                item.itemType == Item.ItemType.GoldenBucket && item.itemClass == Item.ItemClass.Tools )!= null &&
+                item.itemType == Item.ItemType.SeauOr && item.itemClass == Item.ItemClass.Tools )!= null &&
             PlayerInventory.GetBalance() >= 5000)
         {
             flag = true;

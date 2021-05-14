@@ -50,15 +50,15 @@ public class Item
     {
         switch (itemType)
         {
-            case ItemType.Hoe: return "Une houe pour labourer la terre";
-            case ItemType.Scythe: return "Une faux pour faire la recolte";
-            case ItemType.WaterBucket: return "Un seau d'eau";
-            case ItemType.CandyHoe: return "Une Houe en bonbon!";
-            case ItemType.LimeScythe: return "Un Faux de lime";
-            case ItemType.FireBucket: return "Un Seau de Feu!";
-            case ItemType.GoldenHoe: return "Une Houe en or!";
-            case ItemType.GoldenScythe: return "Un Faux d'or!";
-            case ItemType.GoldenBucket: return "Un Seau d'or!";
+            case ItemType.Houe: return "Une houe pour labourer la terre";
+            case ItemType.Faux: return "Une faux pour faire la recolte";
+            case ItemType.Seau: return "Un seau d'eau";
+            case ItemType.HoueBonbon: return "Une Houe en bonbon!";
+            case ItemType.FauxLime: return "Un Faux de lime";
+            case ItemType.SeauFeu: return "Un Seau de Feu!";
+            case ItemType.HoueOr: return "Une Houe en or!";
+            case ItemType.FauxOr: return "Un Faux d'or!";
+            case ItemType.SeauOr: return "Un Seau d'or!";
         }
         switch (itemClass)
         {
@@ -82,15 +82,15 @@ public class Item
         {
             switch (itemType)
             {
-                case ItemType.Scythe: return 10;
-                case ItemType.Hoe: return 10;
-                case ItemType.WaterBucket: return 10;
-                case ItemType.CandyHoe: return 300;
-                case ItemType.LimeScythe: return 300;
-                case ItemType.FireBucket: return 300;
-                case ItemType.GoldenHoe: return 1000;
-                case ItemType.GoldenScythe: return 1000;
-                case ItemType.GoldenBucket: return 1000;
+                case ItemType.Faux: return 10;
+                case ItemType.Houe: return 10;
+                case ItemType.Seau: return 10;
+                case ItemType.HoueBonbon: return 300;
+                case ItemType.FauxLime: return 300;
+                case ItemType.SeauFeu: return 300;
+                case ItemType.HoueOr: return 1000;
+                case ItemType.FauxOr: return 1000;
+                case ItemType.SeauOr: return 1000;
             }
         }
         return 0;
@@ -100,15 +100,15 @@ public class Item
     {
         switch (itemType)
         {
-            case ItemType.Hoe: return ItemAssets.Instance.basicHoe;
-            case ItemType.Scythe: return ItemAssets.Instance.basicScythe;
-            case ItemType.WaterBucket: return ItemAssets.Instance.basicBucket;
-            case ItemType.GoldenHoe: return ItemAssets.Instance.goldenHoe;
-            case ItemType.GoldenScythe: return ItemAssets.Instance.goldenScythe;
-            case ItemType.GoldenBucket: return ItemAssets.Instance.goldenBucket;
-            case ItemType.CandyHoe: return ItemAssets.Instance.candyHoe;
-            case ItemType.LimeScythe: return ItemAssets.Instance.limeScythe;
-            case ItemType.FireBucket: return ItemAssets.Instance.fireBucket;
+            case ItemType.Houe: return ItemAssets.Instance.basicHoe;
+            case ItemType.Faux: return ItemAssets.Instance.basicScythe;
+            case ItemType.Seau: return ItemAssets.Instance.basicBucket;
+            case ItemType.HoueOr: return ItemAssets.Instance.goldenHoe;
+            case ItemType.FauxOr: return ItemAssets.Instance.goldenScythe;
+            case ItemType.SeauOr: return ItemAssets.Instance.goldenBucket;
+            case ItemType.HoueBonbon: return ItemAssets.Instance.candyHoe;
+            case ItemType.FauxLime: return ItemAssets.Instance.limeScythe;
+            case ItemType.SeauFeu: return ItemAssets.Instance.fireBucket;
         }
 
         return null;
@@ -172,15 +172,15 @@ public class Item
         {
             switch (itemType)
             {
-                case ItemType.Scythe: return ItemAssets.Instance.scytheSprite;
-                case ItemType.Hoe: return ItemAssets.Instance.hoeSprite;
-                case ItemType.WaterBucket: return ItemAssets.Instance.waterBucketSprite;
-                case ItemType.GoldenHoe: return ItemAssets.Instance.GoldenHoeSprite;
-                case ItemType.GoldenScythe: return ItemAssets.Instance.GoldenScytheSprite;
-                case ItemType.GoldenBucket: return ItemAssets.Instance.GoldenBucketSprite;
-                case ItemType.CandyHoe: return ItemAssets.Instance.CandyHoeSprite;
-                case ItemType.LimeScythe: return ItemAssets.Instance.LimeScytheSprite;
-                case ItemType.FireBucket: return ItemAssets.Instance.FireBucketSprite;
+                case ItemType.Faux: return ItemAssets.Instance.scytheSprite;
+                case ItemType.Houe: return ItemAssets.Instance.hoeSprite;
+                case ItemType.Seau: return ItemAssets.Instance.waterBucketSprite;
+                case ItemType.HoueOr: return ItemAssets.Instance.GoldenHoeSprite;
+                case ItemType.FauxOr: return ItemAssets.Instance.GoldenScytheSprite;
+                case ItemType.SeauOr: return ItemAssets.Instance.GoldenBucketSprite;
+                case ItemType.HoueBonbon: return ItemAssets.Instance.CandyHoeSprite;
+                case ItemType.FauxLime: return ItemAssets.Instance.LimeScytheSprite;
+                case ItemType.SeauFeu: return ItemAssets.Instance.FireBucketSprite;
             }
         }
         return ItemAssets.Instance.bean;
@@ -197,15 +197,15 @@ public class Item
     {
         EmptyHand,
         
-        Hoe,
-        Scythe,
-        WaterBucket,
-        GoldenHoe,
-        GoldenScythe,
-        GoldenBucket,
-        CandyHoe,
-        LimeScythe,
-        FireBucket,
+        Houe,
+        Faux,
+        Seau,
+        HoueOr,
+        FauxOr,
+        SeauOr,
+        HoueBonbon,
+        FauxLime,
+        SeauFeu,
         
         Haricot,
         Bleuet,

@@ -11,25 +11,25 @@ public class ToolVendor : MonoBehaviour
     {
         shopList = new List<ShopItem>();
         
-        shopList.Add(new ShopItem(new Item {itemType = Item.ItemType.Hoe, itemClass = Item.ItemClass.Tools, amount = 1},
+        shopList.Add(new ShopItem(new Item {itemType = Item.ItemType.Houe, itemClass = Item.ItemClass.Tools, amount = 1},
             false));
-        shopList.Add(new ShopItem(new Item {itemType = Item.ItemType.Scythe, itemClass = Item.ItemClass.Tools, amount = 1},
+        shopList.Add(new ShopItem(new Item {itemType = Item.ItemType.Faux, itemClass = Item.ItemClass.Tools, amount = 1},
             false));
-        shopList.Add(new ShopItem(new Item {itemType = Item.ItemType.WaterBucket, itemClass = Item.ItemClass.Tools, amount = 1},
+        shopList.Add(new ShopItem(new Item {itemType = Item.ItemType.Seau, itemClass = Item.ItemClass.Tools, amount = 1},
             false));
         
-        shopList.Add(new ShopItem(new Item {itemType = Item.ItemType.GoldenHoe, itemClass = Item.ItemClass.Tools, amount = 1},
+        shopList.Add(new ShopItem(new Item {itemType = Item.ItemType.HoueOr, itemClass = Item.ItemClass.Tools, amount = 1},
             false));
-        shopList.Add(new ShopItem(new Item {itemType = Item.ItemType.GoldenScythe, itemClass = Item.ItemClass.Tools, amount = 1},
+        shopList.Add(new ShopItem(new Item {itemType = Item.ItemType.FauxOr, itemClass = Item.ItemClass.Tools, amount = 1},
             false));
-        shopList.Add(new ShopItem(new Item {itemType = Item.ItemType.GoldenBucket, itemClass = Item.ItemClass.Tools, amount = 1},
+        shopList.Add(new ShopItem(new Item {itemType = Item.ItemType.SeauOr, itemClass = Item.ItemClass.Tools, amount = 1},
             false));
 
-        shopList.Add(new ShopItem(new Item {itemType = Item.ItemType.CandyHoe, itemClass = Item.ItemClass.Tools, amount = 1},
+        shopList.Add(new ShopItem(new Item {itemType = Item.ItemType.HoueBonbon, itemClass = Item.ItemClass.Tools, amount = 1},
             false));
-        shopList.Add(new ShopItem(new Item {itemType = Item.ItemType.LimeScythe, itemClass = Item.ItemClass.Tools, amount = 1},
+        shopList.Add(new ShopItem(new Item {itemType = Item.ItemType.FauxLime, itemClass = Item.ItemClass.Tools, amount = 1},
             false));
-        shopList.Add(new ShopItem(new Item {itemType = Item.ItemType.FireBucket, itemClass = Item.ItemClass.Tools, amount = 1},
+        shopList.Add(new ShopItem(new Item {itemType = Item.ItemType.SeauFeu, itemClass = Item.ItemClass.Tools, amount = 1},
             false));
     }
     
