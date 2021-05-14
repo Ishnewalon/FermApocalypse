@@ -211,13 +211,7 @@ public class GameManager : Singleton<GameManager>
                 break;
         }
     }
-    
-    public SpawnLocation CurrentSpawnLocation
-    {
-        get => _currentSpawnLocation;
-        private set => _currentSpawnLocation = value;
-    }
-    
+
     public void StartGame()
     {
         _menuCamera.GetComponent<AudioListener>().enabled = false;
@@ -287,7 +281,7 @@ public class GameManager : Singleton<GameManager>
 
     private void FillCropDictionaries()
     {
-        _plantNameToItemType.Add("bean", Item.ItemType.Haricot); // changed item types to new format
+        _plantNameToItemType.Add("bean", Item.ItemType.Haricot);
         _plantNameToItemType.Add("blueberry",Item.ItemType.Bleuet);
         _plantNameToItemType.Add("cabbage", Item.ItemType.Chou);
         _plantNameToItemType.Add("carrot", Item.ItemType.Carotte);
@@ -329,7 +323,7 @@ public class GameManager : Singleton<GameManager>
         List<Sprite> _turnip = new List<Sprite>();
         List<Sprite> _watermelon = new List<Sprite>();
         
-        _plantSprites.Add(Item.ItemType.Haricot, _bean ); // changed item types to new format
+        _plantSprites.Add(Item.ItemType.Haricot, _bean );
         _plantSprites.Add(Item.ItemType.Bleuet, _blueberry);
         _plantSprites.Add(Item.ItemType.Chou, _cabbage);
         _plantSprites.Add(Item.ItemType.Carotte, _carrot);

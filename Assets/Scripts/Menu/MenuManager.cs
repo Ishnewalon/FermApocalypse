@@ -81,17 +81,14 @@ public class MenuManager : MonoBehaviour
     }
     void Update()
     {
-        /*if (GameManager.Instance.CurrentGameState == GameManager.GameState.RUNNING)
-        {*/
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                GameManager.Instance.TogglePause();
-            }
-            else if (GameManager.Instance.hours == 1)
-            {
-                GameManager.Instance.ToggleNewDay();
-            }
-       // }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            GameManager.Instance.TogglePause();
+        }
+        else if (GameManager.Instance.hours == 1)
+        {
+            GameManager.Instance.ToggleNewDay();
+        }
 
         if (GameManager.Instance.CurrentGameState == GameManager.GameState.PREGAME)
         {
