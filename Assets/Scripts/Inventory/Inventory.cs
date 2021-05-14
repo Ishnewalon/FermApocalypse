@@ -26,7 +26,7 @@ public class Inventory
         itemList = new List<Item>();
         OnItemListChanged = new UnityEvent();
         OnCoinBalanceChanged = new CoinBalanceChanged();
-        coinBalance = 10000;
+        coinBalance = 100;
         
         AddItem(new Item { itemType = Item.ItemType.Houe, itemClass = Item.ItemClass.Tools, amount = 1 });
         AddItem(new Item { itemType = Item.ItemType.Faux, itemClass = Item.ItemClass.Tools, amount = 1 });
