@@ -13,12 +13,16 @@ public class PlantGrowingController : MonoBehaviour
     {
         if (GameManager.Instance._currentHeldItem.itemClass == Item.ItemClass.Tools)
         {
-            if (GameManager.Instance._currentHeldItem.itemType == Item.ItemType.Seau)
+            if (GameManager.Instance._currentHeldItem.itemType == Item.ItemType.Seau || 
+                GameManager.Instance._currentHeldItem.itemType == Item.ItemType.SeauFeu ||
+                GameManager.Instance._currentHeldItem.itemType == Item.ItemType.SeauOr)
             {
                 isPlantWatered = true;
                 gameObject.transform.parent.GetComponent<TerrainManager>().TerrainWatered();
             }
-            else if (GameManager.Instance._currentHeldItem.itemType == Item.ItemType.Faux &&
+            else if ((GameManager.Instance._currentHeldItem.itemType == Item.ItemType.Faux ||
+                      GameManager.Instance._currentHeldItem.itemType == Item.ItemType.FauxLime ||
+                      GameManager.Instance._currentHeldItem.itemType == Item.ItemType.FauxOr) &&
                      _currrentGrowthStage == 3)
             {
                 gameObject.transform.parent.GetComponent<TerrainManager>().PlantHasBeenHarvested();

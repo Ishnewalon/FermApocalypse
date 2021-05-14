@@ -17,7 +17,9 @@ public class TerrainManager : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (GetComponent<SpriteRenderer>().sprite == _plantableSoil && GameManager.Instance._currentHeldItem.itemType == Item.ItemType.Houe)
+        if (GetComponent<SpriteRenderer>().sprite == _plantableSoil && (GameManager.Instance._currentHeldItem.itemType == Item.ItemType.Houe || 
+                                                                        GameManager.Instance._currentHeldItem.itemType == Item.ItemType.HoueOr ||
+                                                                        GameManager.Instance._currentHeldItem.itemType == Item.ItemType.HoueBonbon))
         {
             TillTheSoil();
         }

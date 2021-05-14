@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 [Serializable]
 public class Item
@@ -72,7 +73,7 @@ public class Item
     {
         if (itemClass == ItemClass.Produce)
         {
-            return 10;
+            return Random.Range(12, 25);
         }
         if (itemClass == ItemClass.Seeds)
         {
