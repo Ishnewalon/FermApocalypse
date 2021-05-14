@@ -26,7 +26,7 @@ public class Inventory
         itemList = new List<Item>();
         OnItemListChanged = new UnityEvent();
         OnCoinBalanceChanged = new CoinBalanceChanged();
-        coinBalance = 100;
+        coinBalance = 10000;
         
         AddItem(new Item { itemType = Item.ItemType.Houe, itemClass = Item.ItemClass.Tools, amount = 1 });
         AddItem(new Item { itemType = Item.ItemType.Faux, itemClass = Item.ItemClass.Tools, amount = 1 });
@@ -55,17 +55,17 @@ public class Inventory
     public Item FindItemToReplace(Item newItem)
     {
         String itemName = "";
-        if (newItem.itemType.ToString().Contains("Hoe"))
+        if (newItem.itemType.ToString().Contains("Houe"))
         {
-            itemName = "Hoe";
+            itemName = "Houe";
         }
-        if (newItem.itemType.ToString().Contains("Scythe"))
+        if (newItem.itemType.ToString().Contains("Faux"))
         {
-            itemName = "Scythe";
+            itemName = "Faux";
         }
-        if (newItem.itemType.ToString().Contains("Bucket"))
+        if (newItem.itemType.ToString().Contains("Seau"))
         {
-            itemName = "Bucket";
+            itemName = "Seau";
         }
         
         foreach (var item in itemList)
