@@ -1,10 +1,7 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Xml.Schema;
 using DefaultNamespace;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
@@ -54,7 +51,6 @@ public class GameManager : Singleton<GameManager>
     private Sprite[] _allPlantSprites;
     public Dictionary<Item.ItemType, List<Sprite>> _plantSprites = new Dictionary<Item.ItemType, List<Sprite>>();
     private Dictionary<String, Item.ItemType> _plantNameToItemType = new Dictionary<String, Item.ItemType>();
-    public List<Item.ItemType> _cropSeedEnum = new List<Item.ItemType>(); // unused?
     public Item _currentHeldItem = new Item { itemType = Item.ItemType.EmptyHand, itemClass = Item.ItemClass.Tools, amount = 1 };
     public List<PlantStateData> _allPlantStates = new List<PlantStateData>();
 

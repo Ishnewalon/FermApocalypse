@@ -6,8 +6,7 @@ using Random = System.Random;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] 
-    private float walkSpeed = 10f;
+    [SerializeField] private float walkSpeed = 10f;
 
     private Vector2 _heading;
     

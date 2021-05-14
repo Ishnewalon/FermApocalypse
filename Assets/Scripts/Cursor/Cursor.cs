@@ -36,7 +36,6 @@ public class Cursor : MonoBehaviour
     {
         foreach (var cursor in _cursorList)
         {
-            print("Lookin for "+seed+" checkin "+cursor);
             if (cursor.name.Equals(seed))
             {
                 return cursor;

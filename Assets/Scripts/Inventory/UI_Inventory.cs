@@ -24,17 +24,11 @@ public class UI_Inventory : MonoBehaviour
 
     public GameObject go;
 
-    Dictionary<Transform, Item> _inventorySlots = new Dictionary<Transform, Item>();
-    
     float itemSlotOffset = 98f;
 
     private float x_start = 1150;
     private float y_start = -280;
 
-    private void Awake()
-    {
-    }
-    
     public void SetInventory(Inventory inventory, Transform player)
     {
         _inventory = inventory;
